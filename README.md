@@ -116,4 +116,4 @@ Contributions are welcome! Here's how to get involved:
 - 🧪 Unit and integration tests
 - 🎨 UI/UX enhancements
 
-Please keep PRs focused and make sure the app builds without errors before submitting (`npm run build` and `npm run lint`).
+Please keep PRs focused and make sure the app builds without errors before submitting (`npm run build` and `npm run preview`).
