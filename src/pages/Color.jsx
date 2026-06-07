@@ -3,102 +3,130 @@ import StartComponent from "../components/StartComponent";
 import Timer from "../components/Timer";
 import Score from "../components/Score";
 
-export default function Color(){
-    const selectedBgColor = ["#B0C4DE", "9DC183", "#E6E6FA", "#F5F5DC", "#D3D3D3", "#AFEEEE", "#FFE5B4", "#caffcaff", "#87CEEB", "#FFFDD0"];
+export default function Color() {
+  const selectedBgColor = [
+    "#B0C4DE",
+    "9DC183",
+    "#E6E6FA",
+    "#F5F5DC",
+    "#D3D3D3",
+    "#AFEEEE",
+    "#FFE5B4",
+    "#caffcaff",
+    "#87CEEB",
+    "#FFFDD0",
+  ];
 
-    const colors = [
-        {colorName: "White", colorValue: "#FFFFFF"},
-        {colorName: "Black", colorValue: "#000000"},
-        {colorName: "Red", colorValue: "#FF0000"},
-        {colorName: "Green", colorValue: "#00FF00"},
-        {colorName: "Blue", colorValue: "#0000FF"},
-        {colorName: "Yellow", colorValue: "#FFFF00"},
-        {colorName: "Orange", colorValue: "#FFA500"},
-        {colorName: "Purple", colorValue: "#800080"},
-        {colorName: "Pink", colorValue: "#FFC0CB"},
-        {colorName: "Gray", colorValue: "#808080"},
-        {colorName: "Cyan", colorValue: "#00FFFF"},
-        {colorName: "Magenta", colorValue: "#FF00FF"},
-    ]
+  const colors = [
+    { colorName: "White", colorValue: "#FFFFFF" },
+    { colorName: "Black", colorValue: "#000000" },
+    { colorName: "Red", colorValue: "#FF0000" },
+    { colorName: "Green", colorValue: "#00FF00" },
+    { colorName: "Blue", colorValue: "#0000FF" },
+    { colorName: "Yellow", colorValue: "#FFFF00" },
+    { colorName: "Orange", colorValue: "#FFA500" },
+    { colorName: "Purple", colorValue: "#800080" },
+    { colorName: "Pink", colorValue: "#FFC0CB" },
+    { colorName: "Gray", colorValue: "#808080" },
+    { colorName: "Cyan", colorValue: "#00FFFF" },
+    { colorName: "Magenta", colorValue: "#FF00FF" },
+  ];
 
+  const [result, setResult] = useState("#FFFFFF");
+  const [points, setPoints] = useState(0);
+  const [start, setStart] = useState(true);
+  const [first, setFirst] = useState(true);
+  const [bgColor, setBgColor] = useState(selectedBgColor[0]);
+  const [color, setColour] = useState(
+    Math.floor(Math.random() * colors.length),
+  );
+  const [textBtn1, setTextBtn1] = useState("White");
+  const [textBtn2, setTextBtn2] = useState("Blue");
 
-    const [result, setResult] = useState("#FFFFFF");
-    const [points, setPoints] = useState(0);
-    const [start, setStart] = useState(true);
-    const [first, setFirst] = useState(true);
-    const [bgColor, setBgColor] = useState(selectedBgColor[0]);
-    const [color, setColour] = useState(Math.floor(Math.random() * colors.length));
-    const [textBtn1, setTextBtn1] = useState("White");
-    const [textBtn2, setTextBtn2] = useState("Blue");
+  const changeColor = () => {
+    const nuovoColore =
+      selectedBgColor[Math.floor(Math.random() * selectedBgColor.length)];
+    setBgColor(nuovoColore);
+  };
 
-    const changeColor = () => {
-        const nuovoColore = selectedBgColor[Math.floor(Math.random() * selectedBgColor.length)];
-        setBgColor(nuovoColore);
+  const changeOperation = () => {
+    const newColor =
+      colors[Math.floor(Math.random() * colors.length)].colorName;
+    let newIDColor = colors.findIndex((c) => c.colorName === newColor);
+    newIDColor = colors[newIDColor].colorValue;
+    setColour(newColor);
+    randomButton(newIDColor);
+  };
+
+  const randomButton = (correctValue) => {
+    let wrong = correctValue;
+    while (wrong === correctValue) {
+      wrong = colors[Math.floor(Math.random() * colors.length)].colorValue;
     }
+    const arr = [correctValue, wrong].sort(() => Math.random() - 0.5);
+    setResult(correctValue);
+    setTextBtn1(arr[0]);
+    setTextBtn2(arr[1]);
+  };
 
+  const handleStart = () => {
+    changeColor();
+    changeOperation();
+    setPoints(0);
+    setStart(false);
+    setFirst(false);
+  };
 
-    const changeOperation = () => {
-    
-        const newColor = colors[Math.floor(Math.random() * colors.length)].colorName;
-        let newIDColor = colors.findIndex(c => c.colorName === newColor);
-        newIDColor = colors[newIDColor].colorValue;
-        setColour(newColor);
-        randomButton(newIDColor);
+  const handleTimerOver = () => {
+    setStart(true);
+  };
+
+  const handleClick = (e) => {
+    const value = e.target.value;
+    if (value === result) {
+      setPoints(points + 1);
     }
+  };
 
-    const randomButton = (correctValue) => {
-        let wrong = correctValue;
-        while (wrong === correctValue) {
-            wrong = colors[Math.floor(Math.random() * colors.length)].colorValue;
-        }   
-        const arr = [correctValue, wrong].sort(() => Math.random() - 0.5);
-        setResult(correctValue);
-        setTextBtn1(arr[0]);
-        setTextBtn2(arr[1]);
-    }   
-
-    const handleStart = () => {
-        changeColor();
-        changeOperation();
-        setPoints(0);
-        setStart(false);
-        setFirst(false);
-    }
-
-    const handleTimerOver = () => {
-        setStart(true);
-    }
-
-    const handleClick = (e) => {
-        const value = e.target.value;
-        if (value === result) {
-            setPoints(points + 1);
-        }
-    }
-
-    return (
-        <>
-            <div className="container-color" style={{backgroundColor: bgColor}}>
-                {start && first ? (
-                    <StartComponent title="Color Game" onStart={handleStart} />
-                ) : !start ? (
-                    <div>
-                        <div className="points">Score: {points}</div>
-                        <Timer onTimeOver={handleTimerOver}/>
-                        <div className="game-container">
-                            <h2>{color}</h2>
-                            <div className="buttons-container">
-                                <button value={textBtn1} className="btn" style={{backgroundColor: textBtn1}} onClick={(e) => {changeColor(); changeOperation(); handleClick(e)}}></button>
-                                <button value={textBtn2} className="btn" style={{backgroundColor: textBtn2}} onClick={(e) => {changeColor(); changeOperation(); handleClick(e)}}></button>
-                            </div>
-                        </div>
-                    </div>
-                ) : (
-                    <Score points={points} onStart={handleStart} />
-                )
-            }
-            </div>     
-        </>
-    );
-
+  return (
+    <>
+      <div className="container-color" style={{ backgroundColor: bgColor }}>
+        {start && first ? (
+          <StartComponent title="Color Game" onStart={handleStart} />
+        ) : !start ? (
+          <div>
+            <div className="points">Score: {points}</div>
+            <Timer onTimeOver={handleTimerOver} />
+            <div className="game-container">
+              <h2>{color}</h2>
+              <div className="buttons-container">
+                <button
+                  value={textBtn1}
+                  className="btn-color"
+                  style={{ backgroundColor: textBtn1 }}
+                  onClick={(e) => {
+                    changeColor();
+                    changeOperation();
+                    handleClick(e);
+                  }}
+                />
+                <button
+                  value={textBtn2}
+                  className="btn-color"
+                  style={{ backgroundColor: textBtn2 }}
+                  onClick={(e) => {
+                    changeColor();
+                    changeOperation();
+                    handleClick(e);
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+        ) : (
+          <Score points={points} onStart={handleStart} />
+        )}
+      </div>
+    </>
+  );
 }
