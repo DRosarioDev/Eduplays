@@ -67,15 +67,19 @@ npm run preview
 ```
 src/
 ├── pages/
-│   ├── Home.jsx          # Game selection menu
-│   ├── Maths.jsx         # Math game page
-│   └── Color.jsx         # Color game page
+│   ├── Home.jsx              # Game selection menu
+│   ├── Maths.jsx             # Math game
+│   ├── Color.jsx             # Color game
+│   └── Help.jsx              # Help & rules page
 ├── components/
-│   ├── StartComponent.jsx    # Game start screen
-│   ├── Timer.jsx             # 30-second countdown timer
+│   ├── Header.jsx            # Site header with navigation
+│   ├── Footer.jsx            # Site footer
+│   ├── CardGame.jsx          # Reusable game card for Home
+│   ├── StartComponent.jsx    # Reusable start screen
+│   ├── Timer.jsx             # Countdown timer
 │   ├── Score.jsx             # End-of-game score screen
-│   └── NotificationContext.jsx  # Global notification system
-└── index.css             # Global styles & responsive layout
+│   └── NotificationContext.jsx
+└── index.css
 ```
 
 ---
@@ -114,5 +118,7 @@ Contributions are welcome! Here's how to get involved:
 - ♿ Accessibility improvements
 - 🧪 Unit and integration tests
 - 🎨 UI/UX enhancements
+
+For more infos, read [Contributing.md](https://github.com/DRosarioDev/Eduplays/blob/main/CONTRIBUTING.md)
 
 Please keep PRs focused and make sure the app builds without errors before submitting (`npm run build` and `npm run preview`).
