@@ -1,4 +1,4 @@
-# 🧠 MindRush
+# 🧠 Eduplays
 
 A fast-paced browser game collection built with **React**, **Vite**, and **React Router**. These mini-games are designed for children, people with cognitive difficulties of any kind, or those with other types of difficulties
 
@@ -25,8 +25,8 @@ A color name appears on screen. Two colored buttons are shown. Click the one tha
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/mindrush.git
-   cd mindrush
+   git clone https://github.com/your-username/eduplays.git
+   cd Eduplays
    ```
 
 2. Install dependencies:
@@ -84,7 +84,7 @@ src/
 
 The project is configured for deployment on **Vercel**. The `vercel.json` file handles SPA routing so all paths correctly resolve to `index.html`.
 
-Website: [MindRush](https://mindrush-teal.vercel.app/)
+Website: [Eduplays](https://eduplays.vercel.app/)
 
 ---
 
@@ -111,9 +111,8 @@ Contributions are welcome! Here's how to get involved:
 
 - 🆕 New game modes (e.g. memory, typing speed, word puzzles)
 - 🌍 Internationalization (i18n) support
-- 🏆 High score persistence (mainly localStorage)
 - ♿ Accessibility improvements
 - 🧪 Unit and integration tests
 - 🎨 UI/UX enhancements
 
-Please keep PRs focused and make sure the app builds without errors before submitting (`npm run build` and `npm run lint`).
+Please keep PRs focused and make sure the app builds without errors before submitting (`npm run build` and `npm run preview`).
