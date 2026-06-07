@@ -1,4 +1,4 @@
-# 🤝 Contributing to MindRush
+# 🤝 Contributing to Eduplays
 
 First of all, thanks for taking the time to contribute! Every bit of help is appreciated, whether it's a bug fix, a new game, or a UI improvement.
 
@@ -25,8 +25,8 @@ When you open a PR, the CLA bot will post a comment with a link to sign. Simply 
 ### 1. Fork & Clone
 
 ```bash
-git clone https://github.com/your-username/mindrush.git
-cd mindrush
+git clone https://github.com/DRosarioDev/Eduplays.git
+cd Eduplays
 ```
 
 ### 2. Install Dependencies
@@ -97,7 +97,6 @@ Then open a Pull Request against the `main` branch on GitHub. Include:
 | `npm run dev`     | Start local dev server (port 5173) |
 | `npm run build`   | Production build                   |
 | `npm run preview` | Preview the production build       |
-| `npm run lint`    | Run ESLint                         |
 
 ---
 
@@ -108,13 +107,18 @@ src/
 ├── pages/
 │   ├── Home.jsx              # Game selection menu
 │   ├── Maths.jsx             # Math game
-│   └── Color.jsx             # Color game
+│   ├── Color.jsx             # Color game
+│   └── Help.jsx              # Help & rules page
 ├── components/
+│   ├── Header.jsx            # Site header with navigation
+│   ├── Footer.jsx            # Site footer
+│   ├── CardGame.jsx          # Reusable game card for Home
 │   ├── StartComponent.jsx    # Reusable start screen
-│   ├── Timer.jsx             # 30-second countdown
+│   ├── Timer.jsx             # Countdown timer
 │   ├── Score.jsx             # End-of-game score screen
 │   └── NotificationContext.jsx
 └── index.css
+
 ```
 
 ### Adding a New Game
@@ -146,13 +150,21 @@ Looking for something to work on? Here are some open ideas:
 | Area | Idea |
 |------|------|
 | 🆕 New game | Memory card flip game |
-| 🆕 New game | Typing speed challenge |
-| 🆕 New game | Word anagram puzzle |
-| 🏆 Feature | High score persistence with `localStorage` |
+| 🆕 New game | Flag guessing game |
+| 🆕 New game | Greater / Less than number comparison |
+| 🆕 New game | Emoji meaning quiz |
+| 🆕 New game | Sequence memory |
+| 🆕 New game | Word scramble / anagram |
+| 🏆 Feature | Difficulty levels (Easy / Normal / Hard) |
+| 🏆 Feature | Infinite mode & survival mode |
+| 🏆 Feature | Optional no-timer toggle |
 | 🌍 Feature | Internationalization (i18n) — Italian & English |
-| ♿ Feature | Accessibility audit (ARIA labels, keyboard nav) |
+| ♿ Feature | Audio feedback for answers |
+| ♿ Feature | High contrast mode & larger text option |
+| ♿ Feature | Adaptive difficulty |
 | 🧪 Testing | Unit tests for game logic (e.g. Vitest) |
 | 🎨 UI | Animated transitions between game states |
+
 
 Feel free to open an issue to discuss any of these (or your own idea) before starting work on it.
 
@@ -160,7 +172,7 @@ Feel free to open an issue to discuss any of these (or your own idea) before sta
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0 (AGPL v3.0)](https://github.com/DRosarioDev/MindRush/blob/main/LICENSE).
+By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0 (AGPL v3.0)](https://github.com/DRosarioDev/Eduplays/blob/main/LICENSE).
 
 ---
 
