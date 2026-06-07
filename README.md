@@ -25,7 +25,7 @@ A color name appears on screen. Two colored buttons are shown. Click the one tha
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/eduplays.git
+   git clone https://github.com/DRosarioDev/eduplays.git
    cd Eduplays
    ```
 
