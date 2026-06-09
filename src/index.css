@@ -293,7 +293,7 @@ header {
   border-radius: 50px;
   padding: 40px 50px;
   gap: 20px;
-  min-width: 300px;
+  min-width: 500px;
 }
 
 .timer h2 {
@@ -358,12 +358,12 @@ header {
 
 .memory-game {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  width: 400px;
-  max-width: 100%;
-  margin: 0 auto;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
 }
+
 
 .card-memory-game {
   display: flex;
@@ -381,6 +381,7 @@ header {
   font-family: "Atkinson Hyperlegible", sans-serif;
   transition: transform 0.15s;
   user-select: none;
+  box-sizing: border-box;
 }
 
 .card-memory-game p {
@@ -607,8 +608,8 @@ footer {
   /* Memory Game */
   .memory-game {
     gap: 10px;
-    width: 60vw;
-    padding: 20px;
+    width: 100%;
+    padding: 0;
   }
 
   .card-memory-game {
@@ -668,6 +669,7 @@ footer {
     font-size: 28px;
   }
 
+
   .buttons-container .btn {
     font-size: 16px;
     padding: 12px 0;
@@ -676,16 +678,14 @@ footer {
   .game-not-started {
     width: 92vw;
   }
-
+ 
   .buttons-container .btn-color {
     width: 100%;
     height: 90px;
   }
 
   .memory-game {
-    gap: 8px;
-    width: 75vw;
-    padding: 15px;
+    gap: 6px;
   }
 
   .card-memory-game {

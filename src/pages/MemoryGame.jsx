@@ -228,7 +228,7 @@ function clickHandle(index) {
           <h1 style={{ display: "flex", justifyContent: "center" }}>
             Memory Game
           </h1>
-          <div className="game-container">
+          <div className="game-container memory">
             <div className="memory-game">
               {cards.map((card, index) => (
                 <CardMemoryGame
