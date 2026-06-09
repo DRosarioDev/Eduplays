@@ -12,6 +12,9 @@ Solve arithmetic operations as fast as possible. Each round presents a calculati
 ### 🎨 Color Game
 A color name appears on screen. Two colored buttons are shown. Click the one that matches the displayed color name. Quick reflexes and color recognition are key.
 
+### 🃏 Memory Game
+A 4×4 grid of face-down color cards. Flip two at a time — find all matching pairs to win!
+
 ---
 
 ## 🚀 Getting Started
@@ -70,14 +73,16 @@ src/
 │   ├── Home.jsx              # Game selection menu
 │   ├── Maths.jsx             # Math game
 │   ├── Color.jsx             # Color game
+│   ├── MemoryGame.jsx        # Memory card flip game
 │   └── Help.jsx              # Help & rules page
 ├── components/
 │   ├── Header.jsx            # Site header with navigation
 │   ├── Footer.jsx            # Site footer
 │   ├── CardGame.jsx          # Reusable game card for Home
+│   ├── CardMemoryGame.jsx    # Single card for the Memory game
 │   ├── StartComponent.jsx    # Reusable start screen
 │   ├── Timer.jsx             # Countdown timer
-│   ├── Score.jsx             # End-of-game score screen
+│   ├── Score.jsx             # End-of-game score/win screen
 │   └── NotificationContext.jsx
 └── index.css
 ```
@@ -113,7 +118,7 @@ Contributions are welcome! Here's how to get involved:
 
 ### Ideas for contributions
 
-- 🆕 New game modes (e.g. memory, typing speed, word puzzles)
+- 🆕 New game modes (e.g. typing speed, word puzzles)
 - 🌍 Internationalization (i18n) support
 - ♿ Accessibility improvements
 - 🧪 Unit and integration tests
