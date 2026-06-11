@@ -116,7 +116,7 @@ export default function Maths() {
             </div>
           </div>
         ) : (
-          <Score points={null} isPoint={true} onStart={handleStart} />
+          <Score points={points} isPoint={true} onStart={handleStart} />
         )}
       </div>
     </>

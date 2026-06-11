@@ -126,7 +126,7 @@ export default function Color() {
             </div>
           </div>
         ) : (
-          <Score points={points} onStart={handleStart} />
+          <Score points={points} onStart={handleStart} isPoint={true}/>
         )}
       </div>
     </>
