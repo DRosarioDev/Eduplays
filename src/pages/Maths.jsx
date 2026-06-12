@@ -37,12 +37,24 @@ export default function Maths() {
     const newOperation =
       operations[Math.floor(Math.random() * operations.length)];
 
-    const firstNum = Math.floor(Math.random() * 10) + 1;
-    const secondNum = Math.floor(Math.random() * 10) + 1;
+    let firstNum, secondNum;
+
+    if (newOperation == "/") {
+      secondNum = Math.floor(Math.random() * 9) + 1; // From 1 to 9
+      const multiplier = Math.floor(Math.random() * 9) + 1;
+      firstNum = secondNum * multiplier;
+      setCalculus(`${firstNum} ${newOperation} ${secondNum}`)
+    } else {
+      firstNum = Math.floor(Math.random() * 10) + 1;
+      secondNum = Math.floor(Math.random() * 10) + 1;
+      setCalculus(`${firstNum} ${newOperation} ${secondNum}`)
+    }
 
     let correct = eval(firstNum + newOperation + secondNum);
-    if (correct % 1 !== 0) {
-      correct = Number(correct.toFixed(2));
+
+    if (newOperation == "-" && correct < 0){
+      correct = secondNum - firstNum;
+      setCalculus(`${secondNum} ${newOperation} ${firstNum}`)
     }
 
     let wrong = correct;
@@ -55,7 +67,6 @@ export default function Maths() {
     setResult(correct);
     setTextBtn1(String(arr[0]));
     setTextBtn2(String(arr[1]));
-    setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
   };
 
   const handleTimerOver = () => {
