@@ -3,6 +3,8 @@ import StartComponent from "../components/StartComponent";
 import Timer from "../components/Timer";
 import Score from "../components/Score";
 
+import { useSound } from "../hooks/useSound";
+
 export default function Maths() {
   // const selectedColor = [
   //   "#B0C4DE",
@@ -25,6 +27,9 @@ export default function Maths() {
   const [points, setPoints] = useState(0);
   const [start, setStart] = useState(true);
   const [first, setFirst] = useState(true);
+  const [timeEnabled, setTimeEnabled] = useState(true);
+  
+  const { playCorrect } = useSound();
 
   // const changeColor = () => {
   //   const nuovoColore =
@@ -43,18 +48,18 @@ export default function Maths() {
       secondNum = Math.floor(Math.random() * 9) + 1; // From 1 to 9
       const multiplier = Math.floor(Math.random() * 9) + 1;
       firstNum = secondNum * multiplier;
-      setCalculus(`${firstNum} ${newOperation} ${secondNum}`)
+      setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
     } else {
       firstNum = Math.floor(Math.random() * 10) + 1;
       secondNum = Math.floor(Math.random() * 10) + 1;
-      setCalculus(`${firstNum} ${newOperation} ${secondNum}`)
+      setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
     }
 
     let correct = eval(firstNum + newOperation + secondNum);
 
-    if (newOperation == "-" && correct < 0){
+    if (newOperation == "-" && correct < 0) {
       correct = secondNum - firstNum;
-      setCalculus(`${secondNum} ${newOperation} ${firstNum}`)
+      setCalculus(`${secondNum} ${newOperation} ${firstNum}`);
     }
 
     let wrong = correct;
@@ -73,17 +78,19 @@ export default function Maths() {
     setStart(true);
   };
 
-  const handleStart = () => {
+  const handleStart = (timeEnable) => {
     //changeColor();
     changeOperation();
     setPoints(0);
     setStart(false);
     setFirst(false);
+    setTimeEnabled(timeEnable);
   };
 
   const handleClick = (e) => {
     const valore = e.target.value;
     if (Number(valore) === result) {
+      playCorrect();
       setPoints(points + 1);
     }
   };
@@ -91,11 +98,18 @@ export default function Maths() {
     <>
       <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
         {start && first ? (
-          <StartComponent title="Math Game" onStart={handleStart} />
+          <StartComponent
+            title="Math Game"
+            onStart={(timeEnable) => {
+              handleStart();
+              setTimeEnabled(timeEnable);
+            }}
+            isTime={true}
+          />
         ) : !start ? (
           <div>
             <div className="game-header">
-              <Timer onTimeOver={handleTimerOver} />
+              <Timer onTimeOver={handleTimerOver} isTimer={timeEnabled} />
               <div className="points">Score: {points}</div>
             </div>
             <div className="game-container">

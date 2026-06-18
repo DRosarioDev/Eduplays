@@ -3,6 +3,7 @@ import { useState } from "react";
 import StartComponent from "../components/StartComponent";
 import Timer from "../components/Timer";
 import Score from "../components/Score";
+import { useSound } from "../hooks/useSound";
 
 export default function Color() {
   const selectedBgColor = [
@@ -43,6 +44,9 @@ export default function Color() {
   });
   const [textBtn1, setTextBtn1] = useState("White");
   const [textBtn2, setTextBtn2] = useState("Blue");
+  const [timeEnabled, setTimeEnabled] = useState(true);
+
+  const { playCorrect } = useSound();
 
   const changeColor = () => {
     const nuovoColore =
@@ -51,7 +55,8 @@ export default function Color() {
   };
 
   const changeOperation = () => {
-    const newColor = colors[Math.floor(Math.random() * colors.length)].colorName;
+    const newColor =
+      colors[Math.floor(Math.random() * colors.length)].colorName;
     let newIDColor = colors.findIndex((c) => c.colorName === newColor);
     newIDColor = colors[newIDColor].colorValue;
     setColour(newColor);
@@ -69,12 +74,13 @@ export default function Color() {
     setTextBtn2(arr[1]);
   };
 
-  const handleStart = () => {
+  const handleStart = (timeEnabled) => {
     changeColor();
     changeOperation();
     setPoints(0);
     setStart(false);
     setFirst(false);
+    setTimeEnabled(timeEnabled)
   };
 
   const handleTimerOver = () => {
@@ -84,6 +90,7 @@ export default function Color() {
   const handleClick = (e) => {
     const value = e.target.value;
     if (value === result) {
+      playCorrect();
       setPoints(points + 1);
     }
   };
@@ -92,11 +99,13 @@ export default function Color() {
     <>
       <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
         {start && first ? (
-          <StartComponent title="Color Game" onStart={handleStart} />
+          <StartComponent title="Color Game" isTime={true} onStart={(timeEnabled) => {
+            handleStart(timeEnabled);
+          }} />
         ) : !start ? (
           <div>
             <div className="game-header">
-              <Timer onTimeOver={handleTimerOver} />
+              <Timer onTimeOver={handleTimerOver} isTimer={timeEnabled}/>
               <div className="points">Score: {points}</div>
             </div>
             <div className="game-container">
@@ -126,7 +135,7 @@ export default function Color() {
             </div>
           </div>
         ) : (
-          <Score points={points} onStart={handleStart} isPoint={true}/>
+          <Score points={points} onStart={handleStart} isPoint={true} />
         )}
       </div>
     </>

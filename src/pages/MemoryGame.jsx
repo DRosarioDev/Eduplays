@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CardMemoryGame from "../components/CardMemoryGame";
 import Score from "../components/Score";
 import StartComponent from "../components/StartComponent";
+import { useSound } from "../hooks/useSound";
 
 const colors = [
   {
@@ -125,6 +126,8 @@ export default function MemoryGame() {
   const [start, setStart] = useState(true);
   const [first, setFirst] = useState(true);
 
+  const {playFlip, playMatch, playWin} = useSound();
+
   // Fisher Yates Shuffle Algorithm
 
   function swap(array, i, j) {
@@ -184,6 +187,8 @@ function clickHandle(index) {
     if (isLocked) return;
     if (cards[index].isFlipped || cards[index].isMatched) return;
 
+    playFlip();
+
     const newCards = cards.map((card, i) =>
       i === index ? { ...card, isFlipped: true } : card,
     );
@@ -195,6 +200,7 @@ function clickHandle(index) {
       const isMatch = cards[firstCard].colorValue === cards[index].colorValue;
 
       if (isMatch) {
+        playMatch();
         setCards(newCards);
         setIsLocked(true);
         setTimeout(() => {
@@ -207,6 +213,7 @@ function clickHandle(index) {
           setSecondCard(null);
           setIsLocked(false);
           if (allMatched) {
+            playWin();
             setTimeout(() => setStart(true), 100);
           }
         }, 500);
@@ -222,7 +229,7 @@ function clickHandle(index) {
   return (
     <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
       {start && first ? (
-        <StartComponent title="Memory Game" onStart={handleStart} />
+        <StartComponent title="Memory Game" onStart={handleStart} isTime={false}/>
       ) : !start ? (
         <div>
           <h1 style={{ display: "flex", justifyContent: "center" }}>
