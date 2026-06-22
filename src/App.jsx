@@ -8,6 +8,7 @@ import Help from './pages/Help';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import MemoryGame from './pages/MemoryGame';
+import Multiplication from './pages/Multiplication';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/color" element={<Color />} />
             <Route path="/math" element={<Maths />} />
+            <Route path="/math/multiplication" element={<Multiplication />} />
             <Route path="/aiuto" element={<Help />} />
             <Route path="/memory" element={<MemoryGame />} />
           </Routes>

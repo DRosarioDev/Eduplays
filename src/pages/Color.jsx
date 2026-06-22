@@ -99,7 +99,7 @@ export default function Color() {
     <>
       <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
         {start && first ? (
-          <StartComponent title="Color Game" isTime={true} onStart={(timeEnabled) => {
+          <StartComponent title="Indovina il colore" isTime={true} onStart={(timeEnabled) => {
             handleStart(timeEnabled);
           }} />
         ) : !start ? (

@@ -2,7 +2,8 @@ import CardGame from "../components/CardGame";
 import mascotte from "../assets/mascotte.png";
 import mathGame from "../assets/math_game.png";
 import colorGame from "../assets/color_game.png";
-import memoryGame from "../assets/memory_game.png"
+import memoryGame from "../assets/memory_game.png";
+import multiplicationGame from "../assets/multiplication_game.png";
 
 export default function Home() {
   return (
@@ -24,9 +25,17 @@ export default function Home() {
         <div className="cards-container">
           <CardGame
             imgGame={mathGame}
-            title="Math Game"
+            title="Giochi di matematica"
             desc="Risolvi operazioni aritmetiche il più veloce possibile."
             link="/math"
+            btnColor="#FFD200"
+          />
+
+          <CardGame
+            imgGame={multiplicationGame}
+            title="Moltiplicazioni"
+            desc="Risolvi le moltiplicazioni il più veloce possibile."
+            link="/math/multiplication"
             btnColor="#FFD200"
           />
           <CardGame
@@ -38,7 +47,7 @@ export default function Home() {
           />
           <CardGame
             imgGame={memoryGame}
-            title="Memory game"
+            title="Giochi di memoria"
             desc="Trova la coppia di colori corretta"
             link="/memory"
             btnColor="#86bfff"

@@ -229,7 +229,7 @@ function clickHandle(index) {
   return (
     <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
       {start && first ? (
-        <StartComponent title="Memory Game" onStart={handleStart} isTime={false}/>
+        <StartComponent title="Giochi di memoria" onStart={handleStart} isTime={false}/>
       ) : !start ? (
         <div>
           <h1 style={{ display: "flex", justifyContent: "center" }}>

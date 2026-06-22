@@ -5,7 +5,7 @@ import Score from "../components/Score";
 
 import { useSound } from "../hooks/useSound";
 
-export default function Maths() {
+export default function Multiplication() {
   // const selectedColor = [
   //   "#B0C4DE",
   //   "9DC183",
@@ -28,7 +28,7 @@ export default function Maths() {
   const [start, setStart] = useState(true);
   const [first, setFirst] = useState(true);
   const [timeEnabled, setTimeEnabled] = useState(true);
-  
+
   const { playCorrect } = useSound();
 
   // const changeColor = () => {
@@ -38,22 +38,12 @@ export default function Maths() {
   // };
 
   const changeOperation = () => {
-    const operations = ["+", "-", "*", "/"];
-    const newOperation =
-      operations[Math.floor(Math.random() * operations.length)];
-
+    const newOperation = "*";
     let firstNum, secondNum;
 
-    if (newOperation == "/") {
-      secondNum = Math.floor(Math.random() * 9) + 1; // From 1 to 9
-      const multiplier = Math.floor(Math.random() * 9) + 1;
-      firstNum = secondNum * multiplier;
-      setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
-    } else {
-      firstNum = Math.floor(Math.random() * 10) + 1;
-      secondNum = Math.floor(Math.random() * 10) + 1;
-      setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
-    }
+    firstNum = Math.floor(Math.random() * 10) + 1;
+    secondNum = Math.floor(Math.random() * 10) + 1;
+    setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
 
     let correct = eval(firstNum + newOperation + secondNum);
 
@@ -99,7 +89,7 @@ export default function Maths() {
       <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
         {start && first ? (
           <StartComponent
-            title="Operazioni Matematiche"
+            title="Moltiplicazioni"
             onStart={(timeEnable) => {
               handleStart();
               setTimeEnabled(timeEnable);
