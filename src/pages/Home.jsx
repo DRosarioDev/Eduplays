@@ -3,6 +3,7 @@ import mascotte from "../assets/mascotte.png";
 import mathGame from "../assets/math_game.png";
 import colorGame from "../assets/color_game.png";
 import memoryGame from "../assets/memory_game.png";
+import flagGame from "../assets/flag_game.png";
 import multiplicationGame from "../assets/multiplication_game.png";
 
 export default function Home() {
@@ -51,6 +52,13 @@ export default function Home() {
             desc="Trova la coppia di colori corretta"
             link="/memory"
             btnColor="#86bfff"
+          />
+          <CardGame
+            imgGame={flagGame}
+            title="Indovina la bandiera"
+            desc="Riconosci la bandiera nel più breve tempo possibile."
+            link="/flag"
+            btnColor="#ff8686"
           />
         </div>
       </section>
