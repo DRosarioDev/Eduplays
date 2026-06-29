@@ -85,7 +85,7 @@ export default function Help() {
                 className="fa-regular fa-envelope"
                 style={{ marginRight: "8px" }}
               ></i>
-              domenicorosario.alberti5@gmail.com
+              supporto@eduplays.it
             </a>
             <a
               className="btn"
