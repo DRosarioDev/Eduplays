@@ -74,7 +74,7 @@ export default function Help() {
           >
             <a
               className="btn"
-              href="mailto:domenicorosario.alberti5@gmail.com"
+              href="mailto:supporto@eduplays.it"
               style={{
                 backgroundColor: "#FFD200",
                 textDecoration: "none",
