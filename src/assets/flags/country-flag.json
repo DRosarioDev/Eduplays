@@ -5,7 +5,11 @@
     "code": "ar",
     "id": 11,
     "country_it": "Argentina",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Buenos Aires",
+    "capital_it": "Buenos Aires",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1fa.svg",
@@ -13,7 +17,11 @@
     "code": "au",
     "id": 14,
     "country_it": "Australia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Canberra",
+    "capital_it": "Canberra",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f9.svg",
@@ -21,7 +29,11 @@
     "code": "at",
     "id": 13,
     "country_it": "Austria",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Wien",
+    "capital_it": "Vienna",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ea.svg",
@@ -29,7 +41,11 @@
     "code": "be",
     "id": 21,
     "country_it": "Belgio",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Bruxelles",
+    "capital_it": "Bruxelles",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f7.svg",
@@ -37,7 +53,11 @@
     "code": "br",
     "id": 32,
     "country_it": "Brasile",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Brasília",
+    "capital_it": "Brasilia",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1e6.svg",
@@ -45,7 +65,11 @@
     "code": "ca",
     "id": 39,
     "country_it": "Canada",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Ottawa",
+    "capital_it": "Ottawa",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1f3.svg",
@@ -53,7 +77,11 @@
     "code": "cn",
     "id": 49,
     "country_it": "Cina",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Beijing",
+    "capital_it": "Pechino",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1f0.svg",
@@ -61,7 +89,11 @@
     "code": "dk",
     "id": 62,
     "country_it": "Danimarca",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Copenhagen",
+    "capital_it": "Copenhagen",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1eb-1f1ee.svg",
@@ -69,7 +101,11 @@
     "code": "fi",
     "id": 75,
     "country_it": "Finlandia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Helsinki",
+    "capital_it": "Helsinki",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1eb-1f1f7.svg",
@@ -77,7 +113,11 @@
     "code": "fr",
     "id": 80,
     "country_it": "Francia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Paris",
+    "capital_it": "Parigi",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1ea.svg",
@@ -85,7 +125,11 @@
     "code": "de",
     "id": 59,
     "country_it": "Germania",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Berlin",
+    "capital_it": "Berlino",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f7.svg",
@@ -93,7 +137,11 @@
     "code": "gr",
     "id": 94,
     "country_it": "Grecia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Athene",
+    "capital_it": "Atene",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f3.svg",
@@ -101,7 +149,11 @@
     "code": "in",
     "id": 111,
     "country_it": "India",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "New Delhi",
+    "capital_it": "Nuova Delhi",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1ea.svg",
@@ -109,7 +161,11 @@
     "code": "ie",
     "id": 108,
     "country_it": "Irlanda",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Dublin",
+    "capital_it": "Dublino",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f9.svg",
@@ -117,7 +173,11 @@
     "code": "it",
     "id": 116,
     "country_it": "Italia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Rome",
+    "capital_it": "Roma",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ef-1f1f5.svg",
@@ -125,7 +185,11 @@
     "code": "jp",
     "id": 120,
     "country_it": "Giappone",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Tokyo",
+    "capital_it": "Tokyo",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1fd.svg",
@@ -133,7 +197,11 @@
     "code": "mx",
     "id": 163,
     "country_it": "Messico",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Mexico City",
+    "capital_it": "Città del Messico",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1f1.svg",
@@ -141,7 +209,11 @@
     "code": "nl",
     "id": 172,
     "country_it": "Paesi Bassi",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Amsterdam",
+    "capital_it": "Amsterdam",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1f4.svg",
@@ -149,7 +221,11 @@
     "code": "no",
     "id": 173,
     "country_it": "Norvegia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Oslo",
+    "capital_it": "Oslo",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1f9.svg",
@@ -157,7 +233,11 @@
     "code": "pt",
     "id": 190,
     "country_it": "Portogallo",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Lisbon",
+    "capital_it": "Lisbona",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f7-1f1fa.svg",
@@ -165,7 +245,11 @@
     "code": "ru",
     "id": 197,
     "country_it": "Russia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Moscow",
+    "capital_it": "Mosca",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1f8.svg",
@@ -173,7 +257,11 @@
     "code": "es",
     "id": 72,
     "country_it": "Spagna",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Madrid",
+    "capital_it": "Madrid",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1ea.svg",
@@ -181,7 +269,11 @@
     "code": "se",
     "id": 203,
     "country_it": "Svezia",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Stockholm",
+    "capital_it": "Stoccolma",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1ed.svg",
@@ -189,7 +281,11 @@
     "code": "ch",
     "id": 44,
     "country_it": "Svizzera",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Bern",
+    "capital_it": "Berna",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1e7.svg",
@@ -197,7 +293,11 @@
     "code": "gb",
     "id": 82,
     "country_it": "Regno Unito",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "London",
+    "capital_it": "Londra",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fa-1f1f8.svg",
@@ -205,7 +305,11 @@
     "code": "us",
     "id": 241,
     "country_it": "Stati Uniti",
-    "difficulty": 0
+    "difficulty": 0,
+    "capital": "Washington D.C.",
+    "capital_it": "Washington D.C.",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ed-1f1f7.svg",
@@ -213,7 +317,11 @@
     "code": "hr",
     "id": 103,
     "country_it": "Croazia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Zagreb",
+    "capital_it": "Zagabria",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1ff.svg",
@@ -221,7 +329,11 @@
     "code": "cz",
     "id": 58,
     "country_it": "Repubblica Ceca",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Prague",
+    "capital_it": "Praga",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1ec.svg",
@@ -229,7 +341,11 @@
     "code": "eg",
     "id": 69,
     "country_it": "Egypt",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Cairo",
+    "capital_it": "Cairo",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ed-1f1fa.svg",
@@ -237,7 +353,11 @@
     "code": "hu",
     "id": 105,
     "country_it": "Ungheria",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Budapest",
+    "capital_it": "Budapest",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f1.svg",
@@ -245,7 +365,11 @@
     "code": "il",
     "id": 109,
     "country_it": "Israele",
-    "difficulty": 2
+    "difficulty": 2,
+    "capital": "Jerusalem",
+    "capital_it": "Gerusalemme",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1ff.svg",
@@ -253,7 +377,11 @@
     "code": "nz",
     "id": 177,
     "country_it": "Nuova Zelanda",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Wellington",
+    "capital_it": "Wellington",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1f5.svg",
@@ -261,7 +389,11 @@
     "code": "kp",
     "id": 127,
     "country_it": "Corea del Nord",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Pyongyang",
+    "capital_it": "Pyongyang",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1f1.svg",
@@ -269,7 +401,11 @@
     "code": "pl",
     "id": 185,
     "country_it": "Polonia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Warszawa",
+    "capital_it": "Varsavia",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f7-1f1f4.svg",
@@ -277,7 +413,11 @@
     "code": "ro",
     "id": 195,
     "country_it": "Romania",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Bucharest",
+    "capital_it": "Bucarest",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f7-1f1f8.svg",
@@ -285,7 +425,11 @@
     "code": "yu",
     "id": 196,
     "country_it": "Serbia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Belgrade",
+    "capital_it": "Belgrado",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f0.svg",
@@ -293,7 +437,11 @@
     "code": "sk",
     "id": 208,
     "country_it": "Slovacchia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Bratislava",
+    "capital_it": "Bratislava",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1ee.svg",
@@ -301,7 +449,11 @@
     "code": "si",
     "id": 206,
     "country_it": "Slovenia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Ljubljana",
+    "capital_it": "Lubiana",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ff-1f1e6.svg",
@@ -309,7 +461,11 @@
     "code": "za",
     "id": 256,
     "country_it": "Sudafrica",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Pretoria",
+    "capital_it": "Pretoria",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1f7.svg",
@@ -317,7 +473,11 @@
     "code": "kr",
     "id": 128,
     "country_it": "Corea del Sud",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Seoul",
+    "capital_it": "Seul",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1f7.svg",
@@ -325,7 +485,11 @@
     "code": "tr",
     "id": 232,
     "country_it": "Turchia",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Ankara",
+    "capital_it": "Ankara",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fa-1f1e6.svg",
@@ -333,7 +497,11 @@
     "code": "ua",
     "id": 237,
     "country_it": "Ucraina",
-    "difficulty": 1
+    "difficulty": 1,
+    "capital": "Kyiv",
+    "capital_it": "Kiev",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1eb.svg",
@@ -341,7 +509,11 @@
     "code": "af",
     "id": 4,
     "country_it": "Afghanistan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kabul",
+    "capital_it": "Kabul",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f1.svg",
@@ -349,7 +521,11 @@
     "code": "al",
     "id": 7,
     "country_it": "Albania",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tirana",
+    "capital_it": "Tirana",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1ff.svg",
@@ -357,7 +533,11 @@
     "code": "dz",
     "id": 65,
     "country_it": "Algeria",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Alger",
+    "capital_it": "Algeri",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f8.svg",
@@ -365,7 +545,11 @@
     "code": "as",
     "id": 12,
     "country_it": "Samoa Americane",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Fagatogo",
+    "capital_it": "Fagatogo",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1e9.svg",
@@ -373,7 +557,11 @@
     "code": "ad",
     "id": 2,
     "country_it": "Andorra",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Andorra la Vella",
+    "capital_it": "Andorra la Vella",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f4.svg",
@@ -381,7 +569,11 @@
     "code": "ad",
     "id": 9,
     "country_it": "Angola",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Luanda",
+    "capital_it": "Luanda",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1ee.svg",
@@ -389,7 +581,11 @@
     "code": "ai",
     "id": 6,
     "country_it": "Anguilla",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "The Valley",
+    "capital_it": "The Valley",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1ec.svg",
@@ -397,7 +593,11 @@
     "code": "ag",
     "id": 5,
     "country_it": "Antigua & Barbuda",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "St. John's",
+    "capital_it": "St. John's",
+    "continent": "America del Nord",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1f2.svg",
@@ -405,7 +605,11 @@
     "code": "am",
     "id": 8,
     "country_it": "Armenia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Yerevan",
+    "capital_it": "Yerevan",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1fc.svg",
@@ -413,7 +617,11 @@
     "code": "aw",
     "id": 15,
     "country_it": "Aruba",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Oranjestad",
+    "capital_it": "Oranjestad",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1ff.svg",
@@ -421,7 +629,11 @@
     "code": "az",
     "id": 17,
     "country_it": "Azerbaijan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Baku",
+    "capital_it": "Baku",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f8.svg",
@@ -429,7 +641,11 @@
     "code": "bs",
     "id": 33,
     "country_it": "Bahamas",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nassau",
+    "capital_it": "Nassau",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ed.svg",
@@ -437,7 +653,11 @@
     "code": "bh",
     "id": 24,
     "country_it": "Bahrain",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "al-Manama",
+    "capital_it": "Manama",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1e9.svg",
@@ -445,7 +665,11 @@
     "code": "bd",
     "id": 20,
     "country_it": "Bangladesh",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Dhaka",
+    "capital_it": "Dacca",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1e7.svg",
@@ -453,7 +677,11 @@
     "code": "bb",
     "id": 19,
     "country_it": "Barbados",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bridgetown",
+    "capital_it": "Bridgetown",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1fe.svg",
@@ -461,7 +689,11 @@
     "code": "by",
     "id": 37,
     "country_it": "Bielorussia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Minsk",
+    "capital_it": "Minsk",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ff.svg",
@@ -469,7 +701,11 @@
     "code": "bz",
     "id": 38,
     "country_it": "Belize",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Belmopan",
+    "capital_it": "Belmopan",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ef.svg",
@@ -477,7 +713,11 @@
     "code": "bj",
     "id": 26,
     "country_it": "Benin",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Porto-Novo",
+    "capital_it": "Porto-Novo",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f2.svg",
@@ -485,7 +725,11 @@
     "code": "bm",
     "id": 28,
     "country_it": "Bermuda",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Hamilton",
+    "capital_it": "Hamilton",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f9.svg",
@@ -493,7 +737,11 @@
     "code": "bt",
     "id": 34,
     "country_it": "Bhutan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Thimphu",
+    "capital_it": "Thimphu",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f4.svg",
@@ -501,7 +749,11 @@
     "code": "bo",
     "id": 30,
     "country_it": "Bolivia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "La Paz",
+    "capital_it": "La Paz",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1e6.svg",
@@ -509,7 +761,11 @@
     "code": "ba",
     "id": 18,
     "country_it": "Bosnia & Herzegovina",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Sarajevo",
+    "capital_it": "Sarajevo",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1fc.svg",
@@ -517,7 +773,11 @@
     "code": "bw",
     "id": 36,
     "country_it": "Botswana",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Gaborone",
+    "capital_it": "Gaborone",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f3.svg",
@@ -525,7 +785,11 @@
     "code": "bn",
     "id": 29,
     "country_it": "Brunei",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bandar Seri Begawan",
+    "capital_it": "Bandar Seri Begawan",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ec.svg",
@@ -533,7 +797,11 @@
     "code": "bg",
     "id": 23,
     "country_it": "Bulgaria",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Sofia",
+    "capital_it": "Sofia",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1eb.svg",
@@ -541,7 +809,11 @@
     "code": "bf",
     "id": 22,
     "country_it": "Burkina Faso",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Ouagadougou",
+    "capital_it": "Ouagadougou",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1ee.svg",
@@ -549,7 +821,11 @@
     "code": "bi",
     "id": 25,
     "country_it": "Burundi",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bujumbura",
+    "capital_it": "Bujumbura",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1ed.svg",
@@ -557,7 +833,11 @@
     "code": "kh",
     "id": 123,
     "country_it": "Cambogia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Phnom Penh",
+    "capital_it": "Phnom Penh",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1f2.svg",
@@ -565,7 +845,11 @@
     "code": "cm",
     "id": 48,
     "country_it": "Cameroon",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Yaounde",
+    "capital_it": "Yaounde",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1fb.svg",
@@ -573,14 +857,22 @@
     "code": "cv",
     "id": 54,
     "country_it": "Capo Verde",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Praia",
+    "capital_it": "Praia",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e7-1f1f6.svg",
     "country": "Caribbean Netherlands",
     "id": 31,
     "country_it": "Paesi Bassi caraibici",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bonaire",
+    "capital_it": "Bonaire",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1eb.svg",
@@ -588,7 +880,11 @@
     "code": "cf",
     "id": 42,
     "country_it": "Repubblica Centrafricana",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bangui",
+    "capital_it": "Bangui",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1e9.svg",
@@ -596,7 +892,11 @@
     "code": "td",
     "id": 222,
     "country_it": "Chad",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "N'Djamena",
+    "capital_it": "N'Djamena",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1f1.svg",
@@ -604,7 +904,11 @@
     "code": "cl",
     "id": 47,
     "country_it": "Cile",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Santiago",
+    "capital_it": "Santiago del Cile",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1f4.svg",
@@ -612,7 +916,11 @@
     "code": "co",
     "id": 50,
     "country_it": "Colombia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bogota",
+    "capital_it": "Bogotá",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1f2.svg",
@@ -620,7 +928,11 @@
     "code": "km",
     "id": 125,
     "country_it": "Comore",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Moroni",
+    "capital_it": "Moroni",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1ec.svg",
@@ -628,15 +940,23 @@
     "code": "cd",
     "id": 43,
     "country_it": "Congo",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Brazzaville",
+    "capital_it": "Brazzaville",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1e9.svg",
-    "country": "Congo - Kinshasa",
+    "country": "Democratic Republic of Congo",
     "code": "cg",
     "id": 41,
-    "country_it": "Congo - Kinshasa",
-    "difficulty": 3
+    "country_it": "Repubblica democratica del Congo",
+    "difficulty": 3,
+    "capital": "Kinshasa",
+    "capital_it": "Kinshasa",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1f7.svg",
@@ -644,7 +964,11 @@
     "code": "cr",
     "id": 52,
     "country_it": "Costa Rica",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "San José",
+    "capital_it": "San José",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1fa.svg",
@@ -652,7 +976,11 @@
     "code": "cu",
     "id": 53,
     "country_it": "Cuba",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Havana",
+    "capital_it": "Avana",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1fc.svg",
@@ -660,7 +988,11 @@
     "code": "cw",
     "id": 55,
     "country_it": "Curaçao",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Willemstad",
+    "capital_it": "Willemstad",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1fe.svg",
@@ -668,7 +1000,11 @@
     "code": "cy",
     "id": 57,
     "country_it": "Cipro",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nicosia",
+    "capital_it": "Nicosia",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e8-1f1ee.svg",
@@ -676,7 +1012,11 @@
     "code": "ci",
     "id": 45,
     "country_it": "Costa d’Avorio",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": " Yamoussoukro",
+    "capital_it": " Yamoussoukro",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1ec.svg",
@@ -684,7 +1024,11 @@
     "code": "dg",
     "id": 60,
     "country_it": "Diego Garcia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Diego Garcia",
+    "capital_it": "Diego Garcia",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1ef.svg",
@@ -692,7 +1036,11 @@
     "code": "dj",
     "id": 61,
     "country_it": "Gibuti",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Djibouti",
+    "capital_it": "Gibuti",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1f2.svg",
@@ -700,7 +1048,11 @@
     "code": "dm",
     "id": 63,
     "country_it": "Dominica",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Roseau",
+    "capital_it": "Roseau",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e9-1f1f4.svg",
@@ -708,7 +1060,11 @@
     "code": "do",
     "id": 64,
     "country_it": "Repubblica Dominicana",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Santo Domingo de Guzm",
+    "capital_it": "San Domenico di Guzman",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1e8.svg",
@@ -716,7 +1072,11 @@
     "code": "ec",
     "id": 67,
     "country_it": "Ecuador",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Quito",
+    "capital_it": "Quito",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1fb.svg",
@@ -724,7 +1084,11 @@
     "code": "sv",
     "id": 216,
     "country_it": "El Salvador",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "San Salvador",
+    "capital_it": "San Salvador",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f3f4-e0067-e0062-e0065-e006e-e0067-e007f.svg",
@@ -732,7 +1096,11 @@
     "code": "uk",
     "id": 259,
     "country_it": "Inghilterra",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "London",
+    "capital_it": "Londra",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f6.svg",
@@ -740,7 +1108,11 @@
     "code": "gq",
     "id": 93,
     "country_it": "Guinea Equatoriale",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Malabo",
+    "capital_it": "Malabo",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1f7.svg",
@@ -748,7 +1120,11 @@
     "code": "er",
     "id": 71,
     "country_it": "Eritrea",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Asmara",
+    "capital_it": "Asmara",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1ea.svg",
@@ -756,7 +1132,11 @@
     "code": "ee",
     "id": 68,
     "country_it": "Estonia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tallinn",
+    "capital_it": "Tallinn",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1ff.svg",
@@ -764,7 +1144,11 @@
     "code": "sz",
     "id": 219,
     "country_it": "Eswatini",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Mbabane",
+    "capital_it": "Mbabane",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ea-1f1f9.svg",
@@ -772,7 +1156,11 @@
     "code": "et",
     "id": 73,
     "country_it": "Etiopia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Addis Abeba",
+    "capital_it": "Addis Abeba",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1eb-1f1ef.svg",
@@ -780,7 +1168,11 @@
     "code": "fj",
     "id": 76,
     "country_it": "Fiji",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Suva",
+    "capital_it": "Suva",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1eb.svg",
@@ -788,7 +1180,11 @@
     "code": "pf",
     "id": 181,
     "country_it": "Polinesia francese",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Papeete",
+    "capital_it": "Papeete",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1e6.svg",
@@ -796,7 +1192,11 @@
     "code": "ga",
     "id": 81,
     "country_it": "Gabon",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Libreville",
+    "capital_it": "Libreville",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f2.svg",
@@ -804,7 +1204,11 @@
     "code": "gm",
     "id": 90,
     "country_it": "Gambia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Banjul",
+    "capital_it": "Banjul",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1ea.svg",
@@ -812,7 +1216,11 @@
     "code": "ge",
     "id": 84,
     "country_it": "Georgia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tbilisi",
+    "capital_it": "Tbilisi",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1ed.svg",
@@ -820,7 +1228,11 @@
     "code": "gh",
     "id": 87,
     "country_it": "Ghana",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Accra",
+    "capital_it": "Accra",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1ee.svg",
@@ -828,7 +1240,11 @@
     "code": "gi",
     "id": 88,
     "country_it": "Gibilterra",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Gibraltar",
+    "capital_it": "Gibilterra",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f1.svg",
@@ -836,7 +1252,11 @@
     "code": "gl",
     "id": 89,
     "country_it": "Groelandia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nuuk",
+    "capital_it": "Nuuk",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1e9.svg",
@@ -844,7 +1264,11 @@
     "code": "gd",
     "id": 83,
     "country_it": "Grenada",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Saint George's",
+    "capital_it": "Saint George's",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f5.svg",
@@ -852,7 +1276,11 @@
     "code": "gp",
     "id": 92,
     "country_it": "Guadalupa",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Basse-Terre",
+    "capital_it": "Basse-Terre",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f9.svg",
@@ -860,7 +1288,11 @@
     "code": "gt",
     "id": 96,
     "country_it": "Guatemala",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Ciudad de Guatemala",
+    "capital_it": "Ciudad de Guatemala",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1ec.svg",
@@ -868,7 +1300,11 @@
     "code": "gg",
     "id": 86,
     "country_it": "Guernsey",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Saint Peter Port",
+    "capital_it": "Saint Peter Port",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1f3.svg",
@@ -876,7 +1312,11 @@
     "code": "gn",
     "id": 91,
     "country_it": "Guinea",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Conakry",
+    "capital_it": "Conakry",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1fc.svg",
@@ -884,7 +1324,11 @@
     "code": "gw",
     "id": 98,
     "country_it": "Guinea-Bissau",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bissau",
+    "capital_it": "Bissau",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1fe.svg",
@@ -892,7 +1336,11 @@
     "code": "gy",
     "id": 99,
     "country_it": "Guyana",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Georgetown",
+    "capital_it": "Georgetown",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ed-1f1f9.svg",
@@ -900,7 +1348,11 @@
     "code": "ht",
     "id": 104,
     "country_it": "Haiti",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Port-au-Prince",
+    "capital_it": "Port-au-Prince",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ed-1f1f3.svg",
@@ -908,7 +1360,11 @@
     "code": "hn",
     "id": 102,
     "country_it": "Honduras",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tegucigalpa",
+    "capital_it": "Tegucigalpa",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f8.svg",
@@ -916,7 +1372,11 @@
     "code": "is",
     "id": 115,
     "country_it": "Islanda",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Reykjavík",
+    "capital_it": "Reykjavík",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1e9.svg",
@@ -924,14 +1384,22 @@
     "code": "id",
     "id": 107,
     "country_it": "Indonesia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Jakarta",
+    "capital_it": "Jakarta",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f7.svg",
     "country": "Iran",
     "id": 114,
     "country_it": "Iran",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tehran",
+    "capital_it": "Tehran",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f6.svg",
@@ -939,7 +1407,11 @@
     "code": "iq",
     "id": 113,
     "country_it": "Iraq",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Baghdad",
+    "capital_it": "Baghdad",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ee-1f1f2.svg",
@@ -947,7 +1419,11 @@
     "code": "im",
     "id": 110,
     "country_it": "Isola di Man",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Douglas",
+    "capital_it": "Douglas",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ef-1f1f2.svg",
@@ -955,7 +1431,11 @@
     "code": "jm",
     "id": 118,
     "country_it": "Giamaica",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kingston",
+    "capital_it": "Kingston",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ef-1f1ea.svg",
@@ -963,7 +1443,11 @@
     "code": "je",
     "id": 117,
     "country_it": "Jersey",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Saint Helier",
+    "capital_it": "Saint Helier",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ef-1f1f4.svg",
@@ -971,7 +1455,11 @@
     "code": "jo",
     "id": 119,
     "country_it": "Giordania",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Amman",
+    "capital_it": "Amman",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1ff.svg",
@@ -979,7 +1467,11 @@
     "code": "kz",
     "id": 131,
     "country_it": "Kazakhstan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Astana",
+    "capital_it": "Astana",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1ea.svg",
@@ -987,7 +1479,11 @@
     "code": "ke",
     "id": 121,
     "country_it": "Kenya",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nairobi",
+    "capital_it": "Nairobi",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1ee.svg",
@@ -995,7 +1491,11 @@
     "code": "ki",
     "id": 124,
     "country_it": "Kiribati",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bairiki",
+    "capital_it": "Bairiki",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fd-1f1f0.svg",
@@ -1003,7 +1503,11 @@
     "code": "xk",
     "id": 253,
     "country_it": "Kosovo",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Pristina",
+    "capital_it": "Pristina",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1fc.svg",
@@ -1011,7 +1515,11 @@
     "code": "kw",
     "id": 129,
     "country_it": "Kuwait",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kuwait",
+    "capital_it": "Kuwait",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f0-1f1ec.svg",
@@ -1019,7 +1527,11 @@
     "code": "kg",
     "id": 122,
     "country_it": "Kyrgyzstan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bishkek",
+    "capital_it": "Bishkek",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1e6.svg",
@@ -1027,7 +1539,11 @@
     "code": "la",
     "id": 132,
     "country_it": "Laos",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Vientiane",
+    "capital_it": "Vientiane",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1fb.svg",
@@ -1035,7 +1551,11 @@
     "code": "lv",
     "id": 141,
     "country_it": "Lettonia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Riga",
+    "capital_it": "Riga",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1e7.svg",
@@ -1043,7 +1563,11 @@
     "code": "lb",
     "id": 133,
     "country_it": "Libano",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Beirut",
+    "capital_it": "Beirut",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1f8.svg",
@@ -1051,7 +1575,11 @@
     "code": "ls",
     "id": 138,
     "country_it": "Lesotho",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Maseru",
+    "capital_it": "Maseru",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1f7.svg",
@@ -1059,7 +1587,11 @@
     "code": "lr",
     "id": 137,
     "country_it": "Liberia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Monrovia",
+    "capital_it": "Monrovia",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1fe.svg",
@@ -1067,7 +1599,11 @@
     "code": "ly",
     "id": 142,
     "country_it": "Libia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tripoli",
+    "capital_it": "Tripoli",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1ee.svg",
@@ -1075,7 +1611,11 @@
     "code": "li",
     "id": 135,
     "country_it": "Liechtenstein",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Vaduz",
+    "capital_it": "Vaduz",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1f9.svg",
@@ -1083,7 +1623,11 @@
     "code": "lt",
     "id": 139,
     "country_it": "Lituania",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Vilnius",
+    "capital_it": "Vilnius",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1fa.svg",
@@ -1091,7 +1635,11 @@
     "code": "lu",
     "id": 140,
     "country_it": "Lussemburgo",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Luxembourg",
+    "capital_it": "Lussemburgo",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1ec.svg",
@@ -1099,7 +1647,11 @@
     "code": "mg",
     "id": 148,
     "country_it": "Madagascar",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Antananarivo",
+    "capital_it": "Antananarivo",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1fc.svg",
@@ -1107,7 +1659,11 @@
     "code": "mw",
     "id": 162,
     "country_it": "Malawi",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Lilongwe",
+    "capital_it": "Lilongwe",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1fe.svg",
@@ -1115,7 +1671,11 @@
     "code": "my",
     "id": 164,
     "country_it": "Malesia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kuala Lumpur",
+    "capital_it": "Kuala Lumpur",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1fb.svg",
@@ -1123,7 +1683,11 @@
     "code": "mv",
     "id": 161,
     "country_it": "Maldive",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Male",
+    "capital_it": "Male",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f1.svg",
@@ -1131,7 +1695,11 @@
     "code": "ml",
     "id": 151,
     "country_it": "Mali",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bamako",
+    "capital_it": "Bamako",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f9.svg",
@@ -1139,7 +1707,11 @@
     "code": "mt",
     "id": 159,
     "country_it": "Malta",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Valletta",
+    "capital_it": "Valletta",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f7.svg",
@@ -1147,7 +1719,11 @@
     "code": "mr",
     "id": 157,
     "country_it": "Mauritania",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nouakchott",
+    "capital_it": "Nouakchott",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1fa.svg",
@@ -1155,7 +1731,11 @@
     "code": "mu",
     "id": 160,
     "country_it": "Mauritius",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Port-Louis",
+    "capital_it": "Port-Louis",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1eb-1f1f2.svg",
@@ -1163,7 +1743,11 @@
     "code": "fm",
     "id": 78,
     "country_it": "Micronesia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Palikir",
+    "capital_it": "Palikir",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1e9.svg",
@@ -1171,7 +1755,11 @@
     "code": "md",
     "id": 145,
     "country_it": "Moldova",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Chisinau",
+    "capital_it": "Chisinau",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1e8.svg",
@@ -1179,7 +1767,11 @@
     "code": "mc",
     "id": 144,
     "country_it": "Monaco",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Monaco-Ville",
+    "capital_it": "Monaco-Ville",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f3.svg",
@@ -1187,7 +1779,11 @@
     "code": "mn",
     "id": 153,
     "country_it": "Mongolia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Ulan Bator",
+    "capital_it": "Ulan Bator",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1ea.svg",
@@ -1195,7 +1791,11 @@
     "code": "me",
     "id": 146,
     "country_it": "Montenegro",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Podgorica",
+    "capital_it": "Podgorica",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f8.svg",
@@ -1203,7 +1803,11 @@
     "code": "ms",
     "id": 158,
     "country_it": "Montserrat",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Plymouth",
+    "capital_it": "Plymouth",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1e6.svg",
@@ -1211,7 +1815,11 @@
     "code": "ma",
     "id": 143,
     "country_it": "Marocco",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Rabat",
+    "capital_it": "Rabat",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1ff.svg",
@@ -1219,7 +1827,11 @@
     "code": "mz",
     "id": 165,
     "country_it": "Mozambico",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Maputo",
+    "capital_it": "Maputo",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f2.svg",
@@ -1227,7 +1839,11 @@
     "code": "mm",
     "id": 152,
     "country_it": "Myanmar (Birmania)",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Rangoon (Yangon)",
+    "capital_it": "Rangoon (Yangon)",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1e6.svg",
@@ -1235,7 +1851,11 @@
     "code": "na",
     "id": 166,
     "country_it": "Namibia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Windhoek",
+    "capital_it": "Windhoek",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1f7.svg",
@@ -1243,7 +1863,11 @@
     "code": "nr",
     "id": 175,
     "country_it": "Nauru",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Yaren",
+    "capital_it": "Yaren",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1f5.svg",
@@ -1251,7 +1875,11 @@
     "code": "np",
     "id": 174,
     "country_it": "Nepal",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kathmandu",
+    "capital_it": "Kathmandu",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1e8.svg",
@@ -1259,7 +1887,11 @@
     "code": "nc",
     "id": 167,
     "country_it": "Nuova Caledonia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Noum",
+    "capital_it": "Noum",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1ee.svg",
@@ -1267,7 +1899,11 @@
     "code": "ni",
     "id": 171,
     "country_it": "Nicaragua",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Managua",
+    "capital_it": "Managua",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1ea.svg",
@@ -1275,7 +1911,11 @@
     "code": "ne",
     "id": 168,
     "country_it": "Niger",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Niamey",
+    "capital_it": "Niamey",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1ec.svg",
@@ -1283,7 +1923,11 @@
     "code": "ng",
     "id": 170,
     "country_it": "Nigeria",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Abuja",
+    "capital_it": "Abuja",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f3-1f1fa.svg",
@@ -1291,7 +1935,11 @@
     "code": "nu",
     "id": 176,
     "country_it": "Niue",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Alofi",
+    "capital_it": "Alofi",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1f0.svg",
@@ -1299,7 +1947,11 @@
     "code": "mk",
     "id": 150,
     "country_it": "Macedonia del Nord",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Skopje",
+    "capital_it": "Skopje",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f4-1f1f2.svg",
@@ -1307,7 +1959,11 @@
     "code": "om",
     "id": 178,
     "country_it": "Oman",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Masqat",
+    "capital_it": "Masqat",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1f0.svg",
@@ -1315,7 +1971,11 @@
     "code": "pk",
     "id": 184,
     "country_it": "Pakistan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Islamabad",
+    "capital_it": "Islamabad",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1fc.svg",
@@ -1323,7 +1983,11 @@
     "code": "pw",
     "id": 191,
     "country_it": "Palau",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Koror",
+    "capital_it": "Koror",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1e6.svg",
@@ -1331,7 +1995,11 @@
     "code": "pa",
     "id": 179,
     "country_it": "Panama",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Panama City",
+    "capital_it": "Città di Panama",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1ec.svg",
@@ -1339,7 +2007,11 @@
     "code": "pg",
     "id": 182,
     "country_it": "Papua Nuova Guinea",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Port Moresby",
+    "capital_it": "Port Moresby",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1fe.svg",
@@ -1347,7 +2019,11 @@
     "code": "py",
     "id": 192,
     "country_it": "Paraguay",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Asunción",
+    "capital_it": "Asunción",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1ea.svg",
@@ -1355,7 +2031,11 @@
     "code": "pe",
     "id": 180,
     "country_it": "Perù",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Lima",
+    "capital_it": "Lima",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1ed.svg",
@@ -1363,7 +2043,11 @@
     "code": "ph",
     "id": 183,
     "country_it": "Filippine",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Manila",
+    "capital_it": "Manila",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1f7.svg",
@@ -1371,7 +2055,11 @@
     "code": "pr",
     "id": 188,
     "country_it": "Porto Rico",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "San Juan",
+    "capital_it": "San Juan",
+    "continent": "North America",
+    "continent_it": "America del Nord"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f6-1f1e6.svg",
@@ -1379,7 +2067,11 @@
     "code": "qa",
     "id": 193,
     "country_it": "Qatar",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Doha",
+    "capital_it": "Doha",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f7-1f1fc.svg",
@@ -1387,7 +2079,11 @@
     "code": "rw",
     "id": 198,
     "country_it": "Ruanda",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kigali",
+    "capital_it": "Kigali",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fc-1f1f8.svg",
@@ -1395,7 +2091,11 @@
     "code": "ws",
     "id": 252,
     "country_it": "Samoa",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Apia",
+    "capital_it": "Apia",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f2.svg",
@@ -1403,7 +2103,11 @@
     "code": "sm",
     "id": 210,
     "country_it": "San Marino",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "San Marino",
+    "capital_it": "San Marino",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1e6.svg",
@@ -1411,7 +2115,11 @@
     "code": "sa",
     "id": 199,
     "country_it": "Arabia Saudita",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Riyadh",
+    "capital_it": "Riyadh",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f3f4-e0067-e0062-e0073-e0063-e0074-e007f.svg",
@@ -1419,7 +2127,11 @@
     "code": "uk",
     "id": 260,
     "country_it": "Scozia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Edinburgh",
+    "capital_it": "Edimburgo",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f3.svg",
@@ -1427,7 +2139,11 @@
     "code": "sn",
     "id": 211,
     "country_it": "Senegal",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Dakar",
+    "capital_it": "Dakar",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1e8.svg",
@@ -1435,7 +2151,11 @@
     "code": "sc",
     "id": 201,
     "country_it": "Seychelles",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Victoria",
+    "capital_it": "Victoria",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f1.svg",
@@ -1443,7 +2163,11 @@
     "code": "sl",
     "id": 209,
     "country_it": "Sierra Leone",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Freetown",
+    "capital_it": "Freetown",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1ec.svg",
@@ -1451,7 +2175,11 @@
     "code": "sg",
     "id": 204,
     "country_it": "Singapore",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Singapore",
+    "capital_it": "Singapore",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f4.svg",
@@ -1459,7 +2187,11 @@
     "code": "so",
     "id": 212,
     "country_it": "Somalia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Mogadishu",
+    "capital_it": "Mogadishu",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f8.svg",
@@ -1467,7 +2199,11 @@
     "code": "ss",
     "id": 214,
     "country_it": "Sudan del Sud",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Juba",
+    "capital_it": "Juba",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f1-1f1f0.svg",
@@ -1475,7 +2211,11 @@
     "code": "lk",
     "id": 136,
     "country_it": "Sri Lanka",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Sri Jayawardenepura Kotte",
+    "capital_it": "Sri Jayawardenepura Kotte",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1e9.svg",
@@ -1483,7 +2223,11 @@
     "code": "sd",
     "id": 202,
     "country_it": "Sudan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Khartum",
+    "capital_it": "Khartum",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1f7.svg",
@@ -1491,7 +2235,11 @@
     "code": "sr",
     "id": 213,
     "country_it": "Suriname",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Paramaribo",
+    "capital_it": "Paramaribo",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1fe.svg",
@@ -1499,7 +2247,11 @@
     "code": "sy",
     "id": 218,
     "country_it": "Siria",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Damascus",
+    "capital_it": "Damasco",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1fc.svg",
@@ -1507,7 +2259,11 @@
     "code": "tw",
     "id": 235,
     "country_it": "Taiwan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Taipei",
+    "capital_it": "Taipei",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1ef.svg",
@@ -1515,7 +2271,11 @@
     "code": "tj",
     "id": 226,
     "country_it": "Tajikistan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Dushanbe",
+    "capital_it": "Dushanbe",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1ff.svg",
@@ -1523,7 +2283,11 @@
     "code": "tz",
     "id": 236,
     "country_it": "Tanzania",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Dodoma",
+    "capital_it": "Dodoma",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1ed.svg",
@@ -1531,7 +2295,11 @@
     "code": "th",
     "id": 225,
     "country_it": "Tailandia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Bangkok",
+    "capital_it": "Bangkok",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1ec.svg",
@@ -1539,7 +2307,11 @@
     "code": "tg",
     "id": 224,
     "country_it": "Togo",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Lomé",
+    "capital_it": "Lomé",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1f4.svg",
@@ -1547,7 +2319,11 @@
     "code": "to",
     "id": 231,
     "country_it": "Tonga",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Nuku'alofa",
+    "capital_it": "Nuku'alofa",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1f9.svg",
@@ -1555,7 +2331,11 @@
     "code": "tt",
     "id": 233,
     "country_it": "Trinidad & Tobago",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Port of Spain",
+    "capital_it": "Porto di Spagna",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1f3.svg",
@@ -1563,7 +2343,11 @@
     "code": "tn",
     "id": 230,
     "country_it": "Tunisia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Tunis",
+    "capital_it": "Tunisi",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f9-1f1f2.svg",
@@ -1571,7 +2355,11 @@
     "code": "tm",
     "id": 229,
     "country_it": "Turkmenistan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Ashgabat",
+    "capital_it": "Ashgabat",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fa-1f1ec.svg",
@@ -1579,7 +2367,11 @@
     "code": "ug",
     "id": 238,
     "country_it": "Uganda",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Kampala",
+    "capital_it": "Kampala",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1e6-1f1ea.svg",
@@ -1587,7 +2379,11 @@
     "code": "ae",
     "id": 3,
     "country_it": "Emirati Arabi Uniti",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Abu Dhabi",
+    "capital_it": "Abu Dhabi",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fa-1f1fe.svg",
@@ -1595,7 +2391,11 @@
     "code": "uy",
     "id": 242,
     "country_it": "Uruguay",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Montevideo",
+    "capital_it": "Montevideo",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fa-1f1ff.svg",
@@ -1603,7 +2403,11 @@
     "code": "uz",
     "id": 243,
     "country_it": "Uzbekistan",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Toskent",
+    "capital_it": "Toskent",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fb-1f1e6.svg",
@@ -1611,7 +2415,11 @@
     "code": "va",
     "id": 244,
     "country_it": "Città del Vaticano",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Vatican City",
+    "capital_it": "Città del Vaticano",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fb-1f1ea.svg",
@@ -1619,7 +2427,11 @@
     "code": "ve",
     "id": 246,
     "country_it": "Venezuela",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Caracas",
+    "capital_it": "Caracas",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fb-1f1f3.svg",
@@ -1627,7 +2439,11 @@
     "code": "vn",
     "id": 249,
     "country_it": "Vietnam",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Hanoi",
+    "capital_it": "Hanoi",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f3f4-e0067-e0062-e0077-e006c-e0073-e007f.svg",
@@ -1635,7 +2451,11 @@
     "code": "uk",
     "id": 261,
     "country_it": "Galles",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Cardiff",
+    "capital_it": "Cardiff",
+    "continent": "Europe",
+    "continent_it": "Europa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1fe-1f1ea.svg",
@@ -1643,7 +2463,11 @@
     "code": "ye",
     "id": 254,
     "country_it": "Yemen",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Sanaa",
+    "capital_it": "Sanaa",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ff-1f1f2.svg",
@@ -1651,7 +2475,11 @@
     "code": "zm",
     "id": 257,
     "country_it": "Zambia",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Lusaka",
+    "capital_it": "Lusaka",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ff-1f1fc.svg",
@@ -1659,7 +2487,11 @@
     "code": "zw",
     "id": 258,
     "country_it": "Zimbabwe",
-    "difficulty": 3
+    "difficulty": 3,
+    "capital": "Harare",
+    "capital_it": "Harare",
+    "continent": "Africa",
+    "continent_it": "Africa"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1eb.svg",
@@ -1667,7 +2499,11 @@
     "code": "gf",
     "id": 85,
     "country_it": "Guiana Francese",
-    "difficulty": 4
+    "difficulty": 4,
+    "capital": "Cayenne",
+    "capital_it": "Cayenne",
+    "continent": "South America",
+    "continent_it": "America del Sud"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1ec-1f1fa.svg",
@@ -1675,7 +2511,11 @@
     "code": "gu",
     "id": 97,
     "country_it": "Guam",
-    "difficulty": 4
+    "difficulty": 4,
+    "capital": "Aga",
+    "capital_it": "Aga",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f2-1f1ed.svg",
@@ -1683,7 +2523,11 @@
     "code": "mh",
     "id": 149,
     "country_it": "Isole Marshall",
-    "difficulty": 4
+    "difficulty": 4,
+    "capital": "Dalap-Uliga-Darrit",
+    "capital_it": "Dalap-Uliga-Darrit",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f5-1f1f8.svg",
@@ -1691,7 +2535,11 @@
     "code": "ps",
     "id": 189,
     "country_it": "Palestina",
-    "difficulty": 2
+    "difficulty": 2,
+    "capital": "Gaza",
+    "capital_it": "Gaza",
+    "continent": "Asia",
+    "continent_it": "Asia"
   },
   {
     "flag": "https://twemoji.maxcdn.com/2/svg/1f1f8-1f1e7.svg",
@@ -1699,6 +2547,10 @@
     "code": "sb",
     "id": 200,
     "country_it": "Isole di Solomone",
-    "difficulty": 4
+    "difficulty": 4,
+    "capital": "Honiara",
+    "capital_it": "Honiara",
+    "continent": "Oceania",
+    "continent_it": "Oceania"
   }
 ]

@@ -1,0 +1,1402 @@
+[
+  {
+    "id": 1,
+    "word": "grande",
+    "synonym": "enorme",
+    "antonym": "piccolo",
+    "difficulty": 0
+  },
+  {
+    "id": 2,
+    "word": "piccolo",
+    "synonym": "minuscolo",
+    "antonym": "grande",
+    "difficulty": 0
+  },
+  {
+    "id": 3,
+    "word": "lungo",
+    "synonym": "esteso",
+    "antonym": "corto",
+    "difficulty": 0
+  },
+  {
+    "id": 4,
+    "word": "corto",
+    "synonym": "breve",
+    "antonym": "lungo",
+    "difficulty": 0
+  },
+  {
+    "id": 5,
+    "word": "largo",
+    "synonym": "ampio",
+    "antonym": "stretto",
+    "difficulty": 0
+  },
+  {
+    "id": 6,
+    "word": "stretto",
+    "synonym": "angusto",
+    "antonym": "largo",
+    "difficulty": 1
+  },
+  {
+    "id": 7,
+    "word": "alto",
+    "synonym": "elevato",
+    "antonym": "basso",
+    "difficulty": 0
+  },
+  {
+    "id": 8,
+    "word": "basso",
+    "synonym": "ridotto",
+    "antonym": "alto",
+    "difficulty": 0
+  },
+  {
+    "id": 9,
+    "word": "pieno",
+    "synonym": "colmo",
+    "antonym": "vuoto",
+    "difficulty": 0
+  },
+  {
+    "id": 10,
+    "word": "vuoto",
+    "synonym": "svuotato",
+    "antonym": "pieno",
+    "difficulty": 0
+  },
+  {
+    "id": 11,
+    "word": "molto",
+    "synonym": "tanto",
+    "antonym": "poco",
+    "difficulty": 0
+  },
+  {
+    "id": 12,
+    "word": "poco",
+    "synonym": "scarso",
+    "antonym": "molto",
+    "difficulty": 0
+  },
+  {
+    "id": 13,
+    "word": "tutto",
+    "synonym": "intero",
+    "antonym": "niente",
+    "difficulty": 1
+  },
+  {
+    "id": 14,
+    "word": "spesso",
+    "synonym": "denso",
+    "antonym": "sottile",
+    "difficulty": 1
+  },
+  {
+    "id": 15,
+    "word": "sottile",
+    "synonym": "fine",
+    "antonym": "spesso",
+    "difficulty": 1
+  },
+  {
+    "id": 16,
+    "word": "profondo",
+    "synonym": "fondo",
+    "antonym": "superficiale",
+    "difficulty": 1
+  },
+  {
+    "id": 17,
+    "word": "superficiale",
+    "synonym": "esteriore",
+    "antonym": "profondo",
+    "difficulty": 2
+  },
+  {
+    "id": 18,
+    "word": "gigante",
+    "synonym": "colossale",
+    "antonym": "minuscolo",
+    "difficulty": 1
+  },
+  {
+    "id": 19,
+    "word": "immenso",
+    "synonym": "sterminato",
+    "antonym": "minimo",
+    "difficulty": 2
+  },
+  {
+    "id": 20,
+    "word": "numeroso",
+    "synonym": "molteplice",
+    "antonym": "scarso",
+    "difficulty": 2
+  },
+  {
+    "id": 21,
+    "word": "veloce",
+    "synonym": "rapido",
+    "antonym": "lento",
+    "difficulty": 0
+  },
+  {
+    "id": 22,
+    "word": "lento",
+    "synonym": "piano",
+    "antonym": "veloce",
+    "difficulty": 0
+  },
+  {
+    "id": 23,
+    "word": "fermo",
+    "synonym": "immobile",
+    "antonym": "mobile",
+    "difficulty": 1
+  },
+  {
+    "id": 24,
+    "word": "mobile",
+    "synonym": "movibile",
+    "antonym": "fermo",
+    "difficulty": 1
+  },
+  {
+    "id": 25,
+    "word": "correre",
+    "synonym": "sprintare",
+    "antonym": "fermarsi",
+    "difficulty": 0
+  },
+  {
+    "id": 26,
+    "word": "camminare",
+    "synonym": "passeggiare",
+    "antonym": "correre",
+    "difficulty": 0
+  },
+  {
+    "id": 27,
+    "word": "salire",
+    "synonym": "ascendere",
+    "antonym": "scendere",
+    "difficulty": 0
+  },
+  {
+    "id": 28,
+    "word": "scendere",
+    "synonym": "discendere",
+    "antonym": "salire",
+    "difficulty": 0
+  },
+  {
+    "id": 29,
+    "word": "entrare",
+    "synonym": "accedere",
+    "antonym": "uscire",
+    "difficulty": 0
+  },
+  {
+    "id": 30,
+    "word": "uscire",
+    "synonym": "andarsene",
+    "antonym": "entrare",
+    "difficulty": 0
+  },
+  {
+    "id": 31,
+    "word": "caldo",
+    "synonym": "torrido",
+    "antonym": "freddo",
+    "difficulty": 0
+  },
+  {
+    "id": 32,
+    "word": "freddo",
+    "synonym": "gelido",
+    "antonym": "caldo",
+    "difficulty": 0
+  },
+  {
+    "id": 33,
+    "word": "chiaro",
+    "synonym": "luminoso",
+    "antonym": "scuro",
+    "difficulty": 0
+  },
+  {
+    "id": 34,
+    "word": "scuro",
+    "synonym": "buio",
+    "antonym": "chiaro",
+    "difficulty": 0
+  },
+  {
+    "id": 35,
+    "word": "acceso",
+    "synonym": "illuminato",
+    "antonym": "spento",
+    "difficulty": 1
+  },
+  {
+    "id": 36,
+    "word": "spento",
+    "synonym": "estinto",
+    "antonym": "acceso",
+    "difficulty": 1
+  },
+  {
+    "id": 37,
+    "word": "sereno",
+    "synonym": "limpido",
+    "antonym": "nuvoloso",
+    "difficulty": 1
+  },
+  {
+    "id": 38,
+    "word": "nuvoloso",
+    "synonym": "coperto",
+    "antonym": "sereno",
+    "difficulty": 1
+  },
+  {
+    "id": 39,
+    "word": "dolce",
+    "synonym": "zuccherino",
+    "antonym": "amaro",
+    "difficulty": 0
+  },
+  {
+    "id": 40,
+    "word": "amaro",
+    "synonym": "aspro",
+    "antonym": "dolce",
+    "difficulty": 0
+  },
+  {
+    "id": 41,
+    "word": "duro",
+    "synonym": "rigido",
+    "antonym": "morbido",
+    "difficulty": 0
+  },
+  {
+    "id": 42,
+    "word": "morbido",
+    "synonym": "soffice",
+    "antonym": "duro",
+    "difficulty": 0
+  },
+  {
+    "id": 43,
+    "word": "liscio",
+    "synonym": "levigato",
+    "antonym": "ruvido",
+    "difficulty": 1
+  },
+  {
+    "id": 44,
+    "word": "ruvido",
+    "synonym": "scabro",
+    "antonym": "liscio",
+    "difficulty": 2
+  },
+  {
+    "id": 45,
+    "word": "salato",
+    "synonym": "sapido",
+    "antonym": "insipido",
+    "difficulty": 1
+  },
+  {
+    "id": 46,
+    "word": "insipido",
+    "synonym": "scipito",
+    "antonym": "saporito",
+    "difficulty": 2
+  },
+  {
+    "id": 47,
+    "word": "sano",
+    "synonym": "salutare",
+    "antonym": "malato",
+    "difficulty": 0
+  },
+  {
+    "id": 48,
+    "word": "malato",
+    "synonym": "ammalato",
+    "antonym": "sano",
+    "difficulty": 0
+  },
+  {
+    "id": 49,
+    "word": "giovane",
+    "synonym": "fresco",
+    "antonym": "anziano",
+    "difficulty": 0
+  },
+  {
+    "id": 50,
+    "word": "anziano",
+    "synonym": "vecchio",
+    "antonym": "giovane",
+    "difficulty": 0
+  },
+  {
+    "id": 51,
+    "word": "forte",
+    "synonym": "robusto",
+    "antonym": "debole",
+    "difficulty": 0
+  },
+  {
+    "id": 52,
+    "word": "debole",
+    "synonym": "fragile",
+    "antonym": "forte",
+    "difficulty": 0
+  },
+  {
+    "id": 53,
+    "word": "stanco",
+    "synonym": "spossato",
+    "antonym": "riposato",
+    "difficulty": 1
+  },
+  {
+    "id": 54,
+    "word": "riposato",
+    "synonym": "ristorato",
+    "antonym": "stanco",
+    "difficulty": 1
+  },
+  {
+    "id": 55,
+    "word": "vivo",
+    "synonym": "in vita",
+    "antonym": "morto",
+    "difficulty": 1
+  },
+  {
+    "id": 56,
+    "word": "morto",
+    "synonym": "defunto",
+    "antonym": "vivo",
+    "difficulty": 2
+  },
+  {
+    "id": 57,
+    "word": "felice",
+    "synonym": "contento",
+    "antonym": "triste",
+    "difficulty": 0
+  },
+  {
+    "id": 58,
+    "word": "triste",
+    "synonym": "infelice",
+    "antonym": "felice",
+    "difficulty": 0
+  },
+  {
+    "id": 59,
+    "word": "allegro",
+    "synonym": "gioioso",
+    "antonym": "malinconico",
+    "difficulty": 1
+  },
+  {
+    "id": 60,
+    "word": "malinconico",
+    "synonym": "mesto",
+    "antonym": "allegro",
+    "difficulty": 2
+  },
+  {
+    "id": 61,
+    "word": "calmo",
+    "synonym": "tranquillo",
+    "antonym": "agitato",
+    "difficulty": 0
+  },
+  {
+    "id": 62,
+    "word": "agitato",
+    "synonym": "nervoso",
+    "antonym": "calmo",
+    "difficulty": 0
+  },
+  {
+    "id": 63,
+    "word": "coraggioso",
+    "synonym": "valoroso",
+    "antonym": "pauroso",
+    "difficulty": 1
+  },
+  {
+    "id": 64,
+    "word": "pauroso",
+    "synonym": "timoroso",
+    "antonym": "coraggioso",
+    "difficulty": 1
+  },
+  {
+    "id": 65,
+    "word": "spensierato",
+    "synonym": "rilassato",
+    "antonym": "preoccupato",
+    "difficulty": 1
+  },
+  {
+    "id": 66,
+    "word": "preoccupato",
+    "synonym": "ansioso",
+    "antonym": "spensierato",
+    "difficulty": 1
+  },
+  {
+    "id": 67,
+    "word": "affezionato",
+    "synonym": "legato",
+    "antonym": "indifferente",
+    "difficulty": 2
+  },
+  {
+    "id": 68,
+    "word": "amare",
+    "synonym": "adorare",
+    "antonym": "odiare",
+    "difficulty": 0
+  },
+  {
+    "id": 69,
+    "word": "odiare",
+    "synonym": "detestare",
+    "antonym": "amare",
+    "difficulty": 0
+  },
+  {
+    "id": 70,
+    "word": "ridere",
+    "synonym": "sorridere",
+    "antonym": "piangere",
+    "difficulty": 0
+  },
+  {
+    "id": 71,
+    "word": "piangere",
+    "synonym": "singhiozzare",
+    "antonym": "ridere",
+    "difficulty": 0
+  },
+  {
+    "id": 72,
+    "word": "buono",
+    "synonym": "gentile",
+    "antonym": "cattivo",
+    "difficulty": 0
+  },
+  {
+    "id": 73,
+    "word": "cattivo",
+    "synonym": "malvagio",
+    "antonym": "buono",
+    "difficulty": 0
+  },
+  {
+    "id": 74,
+    "word": "onesto",
+    "synonym": "sincero",
+    "antonym": "disonesto",
+    "difficulty": 1
+  },
+  {
+    "id": 75,
+    "word": "disonesto",
+    "synonym": "bugiardo",
+    "antonym": "onesto",
+    "difficulty": 1
+  },
+  {
+    "id": 76,
+    "word": "generoso",
+    "synonym": "altruista",
+    "antonym": "avaro",
+    "difficulty": 1
+  },
+  {
+    "id": 77,
+    "word": "avaro",
+    "synonym": "tirchio",
+    "antonym": "generoso",
+    "difficulty": 1
+  },
+  {
+    "id": 78,
+    "word": "paziente",
+    "synonym": "tollerante",
+    "antonym": "impaziente",
+    "difficulty": 1
+  },
+  {
+    "id": 79,
+    "word": "impaziente",
+    "synonym": "insofferente",
+    "antonym": "paziente",
+    "difficulty": 2
+  },
+  {
+    "id": 80,
+    "word": "gentile",
+    "synonym": "cortese",
+    "antonym": "scortese",
+    "difficulty": 1
+  },
+  {
+    "id": 81,
+    "word": "scortese",
+    "synonym": "maleducato",
+    "antonym": "gentile",
+    "difficulty": 1
+  },
+  {
+    "id": 82,
+    "word": "timido",
+    "synonym": "riservato",
+    "antonym": "estroverso",
+    "difficulty": 1
+  },
+  {
+    "id": 83,
+    "word": "estroverso",
+    "synonym": "socievole",
+    "antonym": "timido",
+    "difficulty": 2
+  },
+  {
+    "id": 84,
+    "word": "intelligente",
+    "synonym": "sveglio",
+    "antonym": "stupido",
+    "difficulty": 1
+  },
+  {
+    "id": 85,
+    "word": "stupido",
+    "synonym": "sciocco",
+    "antonym": "intelligente",
+    "difficulty": 1
+  },
+  {
+    "id": 86,
+    "word": "saggio",
+    "synonym": "sapiente",
+    "antonym": "sciocco",
+    "difficulty": 2
+  },
+  {
+    "id": 87,
+    "word": "umile",
+    "synonym": "modesto",
+    "antonym": "orgoglioso",
+    "difficulty": 1
+  },
+  {
+    "id": 88,
+    "word": "orgoglioso",
+    "synonym": "superbo",
+    "antonym": "umile",
+    "difficulty": 2
+  },
+  {
+    "id": 89,
+    "word": "bello",
+    "synonym": "carino",
+    "antonym": "brutto",
+    "difficulty": 0
+  },
+  {
+    "id": 90,
+    "word": "brutto",
+    "synonym": "orribile",
+    "antonym": "bello",
+    "difficulty": 0
+  },
+  {
+    "id": 91,
+    "word": "elegante",
+    "synonym": "raffinato",
+    "antonym": "trasandato",
+    "difficulty": 1
+  },
+  {
+    "id": 92,
+    "word": "trasandato",
+    "synonym": "sciatto",
+    "antonym": "elegante",
+    "difficulty": 2
+  },
+  {
+    "id": 93,
+    "word": "pulito",
+    "synonym": "lindo",
+    "antonym": "sporco",
+    "difficulty": 0
+  },
+  {
+    "id": 94,
+    "word": "sporco",
+    "synonym": "lercio",
+    "antonym": "pulito",
+    "difficulty": 0
+  },
+  {
+    "id": 95,
+    "word": "facile",
+    "synonym": "semplice",
+    "antonym": "difficile",
+    "difficulty": 0
+  },
+  {
+    "id": 96,
+    "word": "difficile",
+    "synonym": "complicato",
+    "antonym": "facile",
+    "difficulty": 0
+  },
+  {
+    "id": 97,
+    "word": "comodo",
+    "synonym": "agevole",
+    "antonym": "scomodo",
+    "difficulty": 1
+  },
+  {
+    "id": 98,
+    "word": "scomodo",
+    "synonym": "disagevole",
+    "antonym": "comodo",
+    "difficulty": 1
+  },
+  {
+    "id": 99,
+    "word": "possibile",
+    "synonym": "fattibile",
+    "antonym": "impossibile",
+    "difficulty": 1
+  },
+  {
+    "id": 100,
+    "word": "impossibile",
+    "synonym": "irrealizzabile",
+    "antonym": "possibile",
+    "difficulty": 1
+  },
+  {
+    "id": 101,
+    "word": "nuovo",
+    "synonym": "recente",
+    "antonym": "vecchio",
+    "difficulty": 0
+  },
+  {
+    "id": 102,
+    "word": "vecchio",
+    "synonym": "antico",
+    "antonym": "nuovo",
+    "difficulty": 0
+  },
+  {
+    "id": 103,
+    "word": "moderno",
+    "synonym": "attuale",
+    "antonym": "antiquato",
+    "difficulty": 1
+  },
+  {
+    "id": 104,
+    "word": "antiquato",
+    "synonym": "obsoleto",
+    "antonym": "moderno",
+    "difficulty": 2
+  },
+  {
+    "id": 105,
+    "word": "presto",
+    "synonym": "in anticipo",
+    "antonym": "tardi",
+    "difficulty": 1
+  },
+  {
+    "id": 106,
+    "word": "tardi",
+    "synonym": "in ritardo",
+    "antonym": "presto",
+    "difficulty": 1
+  },
+  {
+    "id": 107,
+    "word": "prima",
+    "synonym": "precedentemente",
+    "antonym": "dopo",
+    "difficulty": 1
+  },
+  {
+    "id": 108,
+    "word": "dopo",
+    "synonym": "successivamente",
+    "antonym": "prima",
+    "difficulty": 1
+  },
+  {
+    "id": 109,
+    "word": "iniziare",
+    "synonym": "cominciare",
+    "antonym": "finire",
+    "difficulty": 0
+  },
+  {
+    "id": 110,
+    "word": "finire",
+    "synonym": "terminare",
+    "antonym": "iniziare",
+    "difficulty": 0
+  },
+  {
+    "id": 111,
+    "word": "vicino",
+    "synonym": "prossimo",
+    "antonym": "lontano",
+    "difficulty": 0
+  },
+  {
+    "id": 112,
+    "word": "lontano",
+    "synonym": "distante",
+    "antonym": "vicino",
+    "difficulty": 0
+  },
+  {
+    "id": 113,
+    "word": "dentro",
+    "synonym": "interno",
+    "antonym": "fuori",
+    "difficulty": 0
+  },
+  {
+    "id": 114,
+    "word": "fuori",
+    "synonym": "esterno",
+    "antonym": "dentro",
+    "difficulty": 0
+  },
+  {
+    "id": 115,
+    "word": "sopra",
+    "synonym": "superiormente",
+    "antonym": "sotto",
+    "difficulty": 0
+  },
+  {
+    "id": 116,
+    "word": "sotto",
+    "synonym": "inferiormente",
+    "antonym": "sopra",
+    "difficulty": 0
+  },
+  {
+    "id": 117,
+    "word": "davanti",
+    "synonym": "di fronte",
+    "antonym": "dietro",
+    "difficulty": 0
+  },
+  {
+    "id": 118,
+    "word": "dietro",
+    "synonym": "retro",
+    "antonym": "davanti",
+    "difficulty": 0
+  },
+  {
+    "id": 119,
+    "word": "destra",
+    "synonym": "mano destra",
+    "antonym": "sinistra",
+    "difficulty": 1
+  },
+  {
+    "id": 120,
+    "word": "sinistra",
+    "synonym": "mano sinistra",
+    "antonym": "destra",
+    "difficulty": 1
+  },
+  {
+    "id": 121,
+    "word": "sicuro",
+    "synonym": "certo",
+    "antonym": "incerto",
+    "difficulty": 1
+  },
+  {
+    "id": 122,
+    "word": "incerto",
+    "synonym": "dubbio",
+    "antonym": "sicuro",
+    "difficulty": 1
+  },
+  {
+    "id": 123,
+    "word": "pericoloso",
+    "synonym": "rischioso",
+    "antonym": "sicuro",
+    "difficulty": 1
+  },
+  {
+    "id": 124,
+    "word": "protetto",
+    "synonym": "salvo",
+    "antonym": "esposto",
+    "difficulty": 2
+  },
+  {
+    "id": 125,
+    "word": "ricco",
+    "synonym": "benestante",
+    "antonym": "povero",
+    "difficulty": 0
+  },
+  {
+    "id": 126,
+    "word": "povero",
+    "synonym": "misero",
+    "antonym": "ricco",
+    "difficulty": 0
+  },
+  {
+    "id": 127,
+    "word": "costoso",
+    "synonym": "caro",
+    "antonym": "economico",
+    "difficulty": 1
+  },
+  {
+    "id": 128,
+    "word": "economico",
+    "synonym": "conveniente",
+    "antonym": "costoso",
+    "difficulty": 1
+  },
+  {
+    "id": 129,
+    "word": "prezioso",
+    "synonym": "di valore",
+    "antonym": "insignificante",
+    "difficulty": 2
+  },
+  {
+    "id": 130,
+    "word": "utile",
+    "synonym": "vantaggioso",
+    "antonym": "inutile",
+    "difficulty": 1
+  },
+  {
+    "id": 131,
+    "word": "inutile",
+    "synonym": "superfluo",
+    "antonym": "utile",
+    "difficulty": 1
+  },
+  {
+    "id": 132,
+    "word": "aprire",
+    "synonym": "schiudere",
+    "antonym": "chiudere",
+    "difficulty": 0
+  },
+  {
+    "id": 133,
+    "word": "chiudere",
+    "synonym": "serrare",
+    "antonym": "aprire",
+    "difficulty": 0
+  },
+  {
+    "id": 134,
+    "word": "accendere",
+    "synonym": "attivare",
+    "antonym": "spegnere",
+    "difficulty": 0
+  },
+  {
+    "id": 135,
+    "word": "spegnere",
+    "synonym": "disattivare",
+    "antonym": "accendere",
+    "difficulty": 0
+  },
+  {
+    "id": 136,
+    "word": "comprare",
+    "synonym": "acquistare",
+    "antonym": "vendere",
+    "difficulty": 0
+  },
+  {
+    "id": 137,
+    "word": "vendere",
+    "synonym": "cedere",
+    "antonym": "comprare",
+    "difficulty": 0
+  },
+  {
+    "id": 138,
+    "word": "dare",
+    "synonym": "offrire",
+    "antonym": "prendere",
+    "difficulty": 0
+  },
+  {
+    "id": 139,
+    "word": "prendere",
+    "synonym": "afferrare",
+    "antonym": "dare",
+    "difficulty": 0
+  },
+  {
+    "id": 140,
+    "word": "trovare",
+    "synonym": "scoprire",
+    "antonym": "perdere",
+    "difficulty": 0
+  },
+  {
+    "id": 141,
+    "word": "perdere",
+    "synonym": "smarrire",
+    "antonym": "trovare",
+    "difficulty": 0
+  },
+  {
+    "id": 142,
+    "word": "vincere",
+    "synonym": "trionfare",
+    "antonym": "perdere",
+    "difficulty": 0
+  },
+  {
+    "id": 143,
+    "word": "guadagnare",
+    "synonym": "ricavare",
+    "antonym": "perdere",
+    "difficulty": 1
+  },
+  {
+    "id": 144,
+    "word": "costruire",
+    "synonym": "edificare",
+    "antonym": "distruggere",
+    "difficulty": 1
+  },
+  {
+    "id": 145,
+    "word": "distruggere",
+    "synonym": "demolire",
+    "antonym": "costruire",
+    "difficulty": 1
+  },
+  {
+    "id": 146,
+    "word": "aiutare",
+    "synonym": "assistere",
+    "antonym": "ostacolare",
+    "difficulty": 1
+  },
+  {
+    "id": 147,
+    "word": "ostacolare",
+    "synonym": "intralciare",
+    "antonym": "aiutare",
+    "difficulty": 2
+  },
+  {
+    "id": 148,
+    "word": "permettere",
+    "synonym": "consentire",
+    "antonym": "vietare",
+    "difficulty": 1
+  },
+  {
+    "id": 149,
+    "word": "vietare",
+    "synonym": "proibire",
+    "antonym": "permettere",
+    "difficulty": 1
+  },
+  {
+    "id": 150,
+    "word": "unire",
+    "synonym": "collegare",
+    "antonym": "separare",
+    "difficulty": 1
+  },
+  {
+    "id": 151,
+    "word": "separare",
+    "synonym": "dividere",
+    "antonym": "unire",
+    "difficulty": 1
+  },
+  {
+    "id": 152,
+    "word": "aumentare",
+    "synonym": "incrementare",
+    "antonym": "diminuire",
+    "difficulty": 1
+  },
+  {
+    "id": 153,
+    "word": "diminuire",
+    "synonym": "ridurre",
+    "antonym": "aumentare",
+    "difficulty": 1
+  },
+  {
+    "id": 154,
+    "word": "salvare",
+    "synonym": "soccorrere",
+    "antonym": "danneggiare",
+    "difficulty": 1
+  },
+  {
+    "id": 155,
+    "word": "danneggiare",
+    "synonym": "rovinare",
+    "antonym": "salvare",
+    "difficulty": 1
+  },
+  {
+    "id": 156,
+    "word": "parlare",
+    "synonym": "dialogare",
+    "antonym": "tacere",
+    "difficulty": 0
+  },
+  {
+    "id": 157,
+    "word": "tacere",
+    "synonym": "ammutolire",
+    "antonym": "parlare",
+    "difficulty": 1
+  },
+  {
+    "id": 158,
+    "word": "ricordare",
+    "synonym": "rammentare",
+    "antonym": "dimenticare",
+    "difficulty": 0
+  },
+  {
+    "id": 159,
+    "word": "dimenticare",
+    "synonym": "scordare",
+    "antonym": "ricordare",
+    "difficulty": 0
+  },
+  {
+    "id": 160,
+    "word": "svegliarsi",
+    "synonym": "destarsi",
+    "antonym": "addormentarsi",
+    "difficulty": 0
+  },
+  {
+    "id": 161,
+    "word": "addormentarsi",
+    "synonym": "assopirsi",
+    "antonym": "svegliarsi",
+    "difficulty": 0
+  },
+  {
+    "id": 162,
+    "word": "lavorare",
+    "synonym": "operare",
+    "antonym": "riposare",
+    "difficulty": 0
+  },
+  {
+    "id": 163,
+    "word": "riposare",
+    "synonym": "rilassarsi",
+    "antonym": "lavorare",
+    "difficulty": 0
+  },
+  {
+    "id": 164,
+    "word": "pulire",
+    "synonym": "ripulire",
+    "antonym": "sporcare",
+    "difficulty": 0
+  },
+  {
+    "id": 165,
+    "word": "sporcare",
+    "synonym": "insudiciare",
+    "antonym": "pulire",
+    "difficulty": 0
+  },
+  {
+    "id": 166,
+    "word": "rompere",
+    "synonym": "spezzare",
+    "antonym": "aggiustare",
+    "difficulty": 0
+  },
+  {
+    "id": 167,
+    "word": "aggiustare",
+    "synonym": "riparare",
+    "antonym": "rompere",
+    "difficulty": 0
+  },
+  {
+    "id": 168,
+    "word": "concludere",
+    "synonym": "terminare",
+    "antonym": "iniziare",
+    "difficulty": 1
+  },
+  {
+    "id": 169,
+    "word": "domandare",
+    "synonym": "chiedere",
+    "antonym": "rispondere",
+    "difficulty": 0
+  },
+  {
+    "id": 170,
+    "word": "rispondere",
+    "synonym": "replicare",
+    "antonym": "domandare",
+    "difficulty": 0
+  },
+  {
+    "id": 171,
+    "word": "insegnare",
+    "synonym": "istruire",
+    "antonym": "imparare",
+    "difficulty": 1
+  },
+  {
+    "id": 172,
+    "word": "imparare",
+    "synonym": "apprendere",
+    "antonym": "insegnare",
+    "difficulty": 1
+  },
+  {
+    "id": 173,
+    "word": "attaccare",
+    "synonym": "aggredire",
+    "antonym": "difendere",
+    "difficulty": 1
+  },
+  {
+    "id": 174,
+    "word": "difendere",
+    "synonym": "proteggere",
+    "antonym": "attaccare",
+    "difficulty": 1
+  },
+  {
+    "id": 175,
+    "word": "accettare",
+    "synonym": "approvare",
+    "antonym": "rifiutare",
+    "difficulty": 1
+  },
+  {
+    "id": 176,
+    "word": "rifiutare",
+    "synonym": "respingere",
+    "antonym": "accettare",
+    "difficulty": 1
+  },
+  {
+    "id": 177,
+    "word": "gridare",
+    "synonym": "urlare",
+    "antonym": "sussurrare",
+    "difficulty": 1
+  },
+  {
+    "id": 178,
+    "word": "sussurrare",
+    "synonym": "bisbigliare",
+    "antonym": "gridare",
+    "difficulty": 1
+  },
+  {
+    "id": 179,
+    "word": "crescere",
+    "synonym": "svilupparsi",
+    "antonym": "decrescere",
+    "difficulty": 1
+  },
+  {
+    "id": 180,
+    "word": "decrescere",
+    "synonym": "calare",
+    "antonym": "crescere",
+    "difficulty": 2
+  },
+  {
+    "id": 181,
+    "word": "arrivare",
+    "synonym": "giungere",
+    "antonym": "partire",
+    "difficulty": 0
+  },
+  {
+    "id": 182,
+    "word": "partire",
+    "synonym": "andarsene",
+    "antonym": "arrivare",
+    "difficulty": 0
+  },
+  {
+    "id": 183,
+    "word": "avviare",
+    "synonym": "mettere in moto",
+    "antonym": "terminare",
+    "difficulty": 1
+  },
+  {
+    "id": 184,
+    "word": "fermare",
+    "synonym": "bloccare",
+    "antonym": "avviare",
+    "difficulty": 1
+  },
+  {
+    "id": 185,
+    "word": "continuare",
+    "synonym": "proseguire",
+    "antonym": "interrompere",
+    "difficulty": 1
+  },
+  {
+    "id": 186,
+    "word": "interrompere",
+    "synonym": "sospendere",
+    "antonym": "continuare",
+    "difficulty": 1
+  },
+  {
+    "id": 187,
+    "word": "ottenere",
+    "synonym": "conseguire",
+    "antonym": "mancare",
+    "difficulty": 2
+  },
+  {
+    "id": 188,
+    "word": "cercare",
+    "synonym": "ricercare",
+    "antonym": "trovare",
+    "difficulty": 1
+  },
+  {
+    "id": 189,
+    "word": "nascondere",
+    "synonym": "celare",
+    "antonym": "mostrare",
+    "difficulty": 1
+  },
+  {
+    "id": 190,
+    "word": "mostrare",
+    "synonym": "esibire",
+    "antonym": "nascondere",
+    "difficulty": 1
+  },
+  {
+    "id": 191,
+    "word": "credere",
+    "synonym": "ritenere",
+    "antonym": "dubitare",
+    "difficulty": 1
+  },
+  {
+    "id": 192,
+    "word": "dubitare",
+    "synonym": "sospettare",
+    "antonym": "credere",
+    "difficulty": 2
+  },
+  {
+    "id": 193,
+    "word": "capire",
+    "synonym": "comprendere",
+    "antonym": "fraintendere",
+    "difficulty": 1
+  },
+  {
+    "id": 194,
+    "word": "fraintendere",
+    "synonym": "equivocare",
+    "antonym": "capire",
+    "difficulty": 2
+  },
+  {
+    "id": 195,
+    "word": "vero",
+    "synonym": "autentico",
+    "antonym": "falso",
+    "difficulty": 0
+  },
+  {
+    "id": 196,
+    "word": "falso",
+    "synonym": "finto",
+    "antonym": "vero",
+    "difficulty": 0
+  },
+  {
+    "id": 197,
+    "word": "giusto",
+    "synonym": "corretto",
+    "antonym": "sbagliato",
+    "difficulty": 0
+  },
+  {
+    "id": 198,
+    "word": "sbagliato",
+    "synonym": "errato",
+    "antonym": "giusto",
+    "difficulty": 0
+  },
+  {
+    "id": 199,
+    "word": "semplice",
+    "synonym": "elementare",
+    "antonym": "complesso",
+    "difficulty": 1
+  },
+  {
+    "id": 200,
+    "word": "complesso",
+    "synonym": "intricato",
+    "antonym": "semplice",
+    "difficulty": 1
+  }
+]

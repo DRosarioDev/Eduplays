@@ -1,25 +1,43 @@
 :root {
+  /* Colori brand */
   --primary-color: #ffd200;
   --secondary-color: #f4fafd;
   --tertiary-color: #000;
+
+  /* Colori base */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-text: #333;
+  --color-text-muted: #555;
+  --color-text-faint: #aaa;
+  --bg-page: #f4fafd;
+
+  /* Bordo "fumetto" condiviso da container, game-container, game-not-started */
+  --comic-border-width: 3px 9px 9px 3px;
+  --comic-border-color: var(--color-black);
+  --comic-border-style: solid;
+  --comic-border-radius: 50px;
+  --comic-border-radius-mobile: 30px;
+
+  --font-base: "Atkinson Hyperlegible", sans-serif;
 }
 
 body {
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  background-color: #f4fafd;
+  font-family: var(--font-base);
+  background-color: var(--bg-page);
   width: 100%;
   margin: 0;
   padding: 0;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 /*  ==========================================
     Header
-    ==========================================   
+    ==========================================
 */
 
 header {
-  background: #f4fafd;
+  background: var(--bg-page);
   padding: 0 1.5rem;
   height: 60px;
   display: flex;
@@ -28,18 +46,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 3px solid #000;
+  border-bottom: 3px solid var(--color-black);
 }
 
 .header-left h2 {
   margin: 0;
 }
 
-.link-home-prop {
-  text-decoration: none;
-  color: inherit;
-}
-
+.link-home-prop,
 .link-home-prop:visited {
   text-decoration: none;
   color: inherit;
@@ -55,7 +69,7 @@ header {
   height: 10px;
   padding: 0 16px;
   background: transparent;
-  border: 2px solid #000;
+  border: 2px solid var(--color-black);
   border-radius: 8px;
   font-size: 12px;
   font-weight: 500;
@@ -69,7 +83,7 @@ header {
 }
 
 .nav-btn:hover {
-  background: #ffd200;
+  background: var(--primary-color);
 }
 
 .nav-btn:visited {
@@ -77,8 +91,8 @@ header {
 }
 
 .help-btn {
-  color: #333;
-  background-color: #ffd200;
+  color: var(--color-text);
+  background-color: var(--primary-color);
   border: none;
   border-radius: 10px;
   padding: 10px 20px;
@@ -86,12 +100,27 @@ header {
   font-size: 14px;
   width: 90%;
   gap: 5px;
-  font-family: "Atkinson Hyperlegible", sans-serif;
+}
+
+/*  ==========================================
+    Layout condiviso (container "fumetto")
+    ==========================================
+*/
+
+.container,
+.game-container,
+.game-not-started {
+  background-color: var(--color-white);
+  border-width: var(--comic-border-width);
+  border-color: var(--comic-border-color);
+  border-style: var(--comic-border-style);
+  border-radius: var(--comic-border-radius);
+  box-sizing: border-box;
 }
 
 /*  ==========================================
     Home Page
-    ==========================================   
+    ==========================================
 */
 
 .first-section {
@@ -103,7 +132,6 @@ header {
   justify-content: center;
   padding: 50px 0 0 0;
   box-sizing: border-box;
-  /* border: 5px solid #000; */
 }
 
 .container {
@@ -112,15 +140,9 @@ header {
   align-items: center;
   justify-content: space-between;
   margin: 20px auto;
-  border-width: 3px 9px 9px 3px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 50px;
   width: 50%;
   height: 100%;
   padding: 50px 30px;
-  background-color: #fff;
-  box-sizing: border-box;
 }
 
 .container h2 {
@@ -146,7 +168,6 @@ header {
 .mascotte {
   width: 200px;
   height: auto;
-  -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
 
@@ -179,11 +200,12 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 0 0 15px 0;
-  border: 3px solid #000;
+  border: 3px solid var(--color-black);
   border-radius: 20px;
   width: 200px;
   height: 300px;
-  background-color: #fff;
+  background-color: var(--color-white);
+  transition: transform 0.15s;
 }
 
 .game-card:hover {
@@ -223,7 +245,7 @@ header {
 .card-title {
   font-size: 18px;
   font-weight: bold;
-  margin: 10px 0 0px 0;
+  margin: 10px 0 0 0;
 }
 
 .card-desc {
@@ -231,38 +253,29 @@ header {
   margin: 5px 10px 20px 10px;
 }
 
-.link-prop {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: inherit;
-  width: 90%;
-}
-
+.link-prop,
 .link-prop:visited {
   text-decoration: none;
-  color: inherit;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: inherit;
   width: 90%;
 }
 
 .btn {
-  color: #333;
-  border: solid 2px #000;
+  color: var(--color-text);
+  border: solid 2px var(--color-black);
   border-radius: 15px;
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
   width: 90%;
-  font-family: "Atkinson Hyperlegible", sans-serif;
 }
 
 /*  ==========================================
     Start Component
-    ==========================================   
+    ==========================================
 */
 
 .switch {
@@ -293,7 +306,7 @@ header {
   width: 20px;
   left: 4px;
   bottom: 4px;
-  background-color: white;
+  background-color: var(--color-white);
   transition: 0.3s;
 }
 
@@ -342,37 +355,37 @@ input:checked + .slider:before {
 .timer-section p {
   margin: 0;
   font-size: 1rem;
-  color: var(--text-color, #333);
+  color: var(--text-color, var(--color-text));
 }
 
 .diff-select {
   appearance: none;
   -webkit-appearance: none;
-  background: #fff
+  background: var(--color-white)
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
     no-repeat right 12px center;
-  border: 2px solid #000;
+  border: 2px solid var(--color-black);
   border-radius: 12px;
   padding: 6px 36px 6px 12px;
   font-size: 14px;
   font-weight: 600;
-  font-family: "Atkinson Hyperlegible", sans-serif;
   cursor: pointer;
-  color: #333;
+  color: var(--color-text);
   width: fit-content;
+}
+
+.diff-select:focus,
+.diff-select:hover {
+  background-color: var(--primary-color);
 }
 
 .diff-select:focus {
   outline: none;
-  background-color: #ffd200;
 }
 
-.diff-select:hover {
-  background-color: #ffd200;
-}
 /*  ==========================================
     Math Game
-    ==========================================   
+    ==========================================
 */
 
 .container-color {
@@ -402,11 +415,6 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border-width: 3px 9px 9px 3px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 50px;
   padding: 40px 50px;
   gap: 20px;
   min-width: 500px;
@@ -436,30 +444,29 @@ input:checked + .slider:before {
   font-weight: bold;
   border-radius: 15px;
   padding: 15px 0;
-  border: 3px solid #000;
-  background-color: #fff;
+  border: 3px solid var(--color-black);
+  background-color: var(--color-white);
   cursor: pointer;
   transition: background-color 0.15s;
 }
 
 .buttons-container .btn:hover {
-  background-color: #ffd200;
+  background-color: var(--primary-color);
 }
 
 /*  ==========================================
     Color Game
-    ==========================================   
+    ==========================================
 */
 
 .buttons-container .btn-color {
   flex: 1;
-  height: 80px;
-  border-radius: 15px;
-  border: 3px solid #000;
-  cursor: pointer;
-  transition: transform 0.15s;
   width: 100%;
   height: 70px;
+  border-radius: 15px;
+  border: 3px solid var(--color-black);
+  cursor: pointer;
+  transition: transform 0.15s;
 }
 
 .buttons-container .btn-color:hover {
@@ -469,7 +476,7 @@ input:checked + .slider:before {
 
 /*  ==========================================
     Memory Game
-    ==========================================   
+    ==========================================
 */
 
 .memory-game {
@@ -487,13 +494,12 @@ input:checked + .slider:before {
   width: 100%;
   aspect-ratio: 1 / 1;
   border-width: 3px 6px 6px 3px;
-  border-color: #000;
+  border-color: var(--color-black);
   border-style: solid;
   border-radius: 15px;
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  font-family: "Atkinson Hyperlegible", sans-serif;
   transition: transform 0.15s;
   user-select: none;
   box-sizing: border-box;
@@ -526,7 +532,7 @@ input:checked + .slider:before {
 
 /*  ==========================================
     Score
-    ==========================================   
+    ==========================================
 */
 
 .game-not-started {
@@ -534,11 +540,6 @@ input:checked + .slider:before {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border-width: 3px 9px 9px 3px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 50px;
   padding: 40px 50px;
   gap: 20px;
   min-width: 300px;
@@ -558,7 +559,7 @@ input:checked + .slider:before {
 
 /*  ==========================================
     Footer
-    ==========================================   
+    ==========================================
 */
 
 footer {
@@ -566,9 +567,9 @@ footer {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border-top: 3px solid #000;
+  border-top: 3px solid var(--color-black);
   padding: 30px 1.5rem;
-  background-color: #f4fafd;
+  background-color: var(--bg-page);
   gap: 10px;
   text-align: center;
 }
@@ -582,7 +583,7 @@ footer {
 .footer-desc {
   font-size: 14px;
   margin: 0;
-  color: #555;
+  color: var(--color-text-muted);
 }
 
 .footer-links {
@@ -607,18 +608,101 @@ footer {
 }
 
 .footer-divider {
-  color: #aaa;
+  color: var(--color-text-faint);
 }
 
 .footer-copy {
   font-size: 12px;
-  color: #aaa;
+  color: var(--color-text-faint);
   margin: 0;
 }
 
 /*  ==========================================
-    Responsive
+    Anagram Game
     ==========================================   
+*/
+
+.anagram-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.letter-slot {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.anagram-slots.correct .letter-slot {
+  background-color: #a8e6cf;
+}
+
+.anagram-slots.wrong .letter-slot {
+  background-color: #ffb3b3;
+}
+
+.anagram-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.letter-tile {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #000;
+  border-radius: 12px;
+  background-color: #ffd200;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.letter-tile:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.letter-tile.used {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.anagram-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.anagram-controls .btn {
+  width: auto;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+.hint-text {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}
+
+/*  ==========================================
+    Responsive — Tablet (≤768px)
+    ==========================================
 */
 
 @media (max-width: 768px) {
@@ -657,7 +741,7 @@ footer {
     text-align: center;
     width: 90%;
     padding: 30px 20px;
-    border-radius: 30px;
+    border-radius: var(--comic-border-radius-mobile);
   }
 
   .content-left {
@@ -694,10 +778,9 @@ footer {
 
   .game-container {
     padding: 30px 20px;
-    border-radius: 30px;
+    border-radius: var(--comic-border-radius-mobile);
     min-width: unset;
     width: 85vw;
-    box-sizing: border-box;
   }
 
   .game-container h2 {
@@ -716,8 +799,7 @@ footer {
 
   .buttons-container .btn-color {
     width: 100%;
-    height: 70px;
-    min-height: 90px;
+    height: 90px;
   }
 
   /* Memory Game */
@@ -735,10 +817,9 @@ footer {
   /* Score */
   .game-not-started {
     padding: 30px 20px;
-    border-radius: 30px;
+    border-radius: var(--comic-border-radius-mobile);
     min-width: unset;
     width: 85vw;
-    box-sizing: border-box;
   }
 
   .game-not-started h2 {
@@ -755,6 +836,11 @@ footer {
     text-align: center;
   }
 }
+
+/*  ==========================================
+    Responsive — Mobile (≤480px)
+    ==========================================
+*/
 
 @media (max-width: 480px) {
   .header-left h2 {
@@ -789,13 +875,13 @@ footer {
     padding: 12px 0;
   }
 
-  .game-not-started {
-    width: 92vw;
-  }
-
   .buttons-container .btn-color {
     width: 100%;
     height: 90px;
+  }
+
+  .game-not-started {
+    width: 92vw;
   }
 
   .memory-game {

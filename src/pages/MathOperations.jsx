@@ -3,7 +3,7 @@ import GameScreen from "../components/GameScreen";
 import { useGameEngine } from "../hooks/useGameEngine";
 import { useSound } from "../hooks/useSound";
 
-export default function Multiplication() {
+export default function MathOperations() {
   const [calculus, setCalculus] = useState("0 + 0");
   const [textBtn1, setTextBtn1] = useState("0");
   const [textBtn2, setTextBtn2] = useState("0");
@@ -12,15 +12,25 @@ export default function Multiplication() {
   const { playCorrect } = useSound();
 
   const changeOperation = useCallback(() => {
-    const operations = "*";
+    const operations = ["+", "-", "*", "/"];
     const newOperation = operations[Math.floor(Math.random() * operations.length)];
 
     let firstNum, secondNum;
+    if (newOperation === "/") {
+      secondNum = Math.floor(Math.random() * 9) + 1;
+      const multiplier = Math.floor(Math.random() * 9) + 1;
+      firstNum = secondNum * multiplier;
+    } else {
       firstNum = Math.floor(Math.random() * 10) + 1;
       secondNum = Math.floor(Math.random() * 10) + 1;
+    }
     setCalculus(`${firstNum} ${newOperation} ${secondNum}`);
 
     let correct = eval(firstNum + newOperation + secondNum);
+    if (newOperation === "-" && correct < 0) {
+      correct = secondNum - firstNum;
+      setCalculus(`${secondNum} ${newOperation} ${firstNum}`);
+    }
 
     let wrong = correct;
     while (wrong === correct) {
