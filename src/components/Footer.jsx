@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-content">
-        <p className="footer-title">Eduplays v0.6.0-alpha</p>
+        <p className="footer-title">Eduplays v0.6.1-alpha</p>
         <p className="footer-desc">Sfida la tua mente con giochi di logica e velocità.</p>
       </div>
       <div className="footer-links">

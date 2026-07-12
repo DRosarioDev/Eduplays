@@ -16,6 +16,7 @@ import CapitalWorld from "./pages/CapitalWorld";
 import Synonym from "./pages/Synonym";
 import Antonym from "./pages/Antonym";
 import Anagram from "./pages/Anagram";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/italian/antonym" element={<Antonym />} />
           <Route path="/italian/anagram" element={<Anagram />} />
           <Route path="/aiuto" element={<Help />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />
       </NotificationProvider>
