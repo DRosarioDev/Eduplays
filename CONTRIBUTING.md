@@ -59,6 +59,7 @@ Branch naming conventions:
 ```bash
 npm run build
 npm run preview
+npm run lint
 ```
 
 ### 5. Commit
@@ -92,11 +93,13 @@ Then open a Pull Request against the `main` branch on GitHub. Include:
 
 ### Available Scripts
 
-| Command           | Description                        |
-|-------------------|------------------------------------|
-| `npm run dev`     | Start local dev server (port 5173) |
-| `npm run build`   | Production build                   |
-| `npm run preview` | Preview the production build       |
+| Command           | Description                            |
+|-------------------|-----------------------------------------|
+| `npm run dev`     | Start local dev server (port 5173)      |
+| `npm run build`   | Production build                        |
+| `npm run preview` | Preview the production build            |
+| `npm run lint`    | Run ESLint                              |
+| `npm run deploy`  | Build and deploy to Cloudflare Pages via Wrangler |
 
 ---
 
@@ -104,32 +107,85 @@ Then open a Pull Request against the `main` branch on GitHub. Include:
 
 ```
 src/
-├── pages/
-│   ├── Home.jsx              # Game selection menu
-│   ├── Maths.jsx             # Math game
-│   ├── Color.jsx             # Color game
-│   └── Help.jsx              # Help & rules page
+├── pages/                     # One page per game, plus Home/Help/404
+│   ├── Home.jsx
+│   ├── MathOperations.jsx
+│   ├── Multiplication.jsx
+│   ├── GreaterOrLesser.jsx
+│   ├── Synonym.jsx
+│   ├── Antonym.jsx
+│   ├── Anagram.jsx
+│   ├── Flag.jsx
+│   ├── CapitalWorld.jsx
+│   ├── MemoryColor.jsx
+│   ├── MemoryFlag.jsx
+│   ├── Help.jsx
+│   └── NotFound.jsx
 ├── components/
-│   ├── Header.jsx            # Site header with navigation
-│   ├── Footer.jsx            # Site footer
-│   ├── CardGame.jsx          # Reusable game card for Home
-│   ├── StartComponent.jsx    # Reusable start screen
-│   ├── Timer.jsx             # Countdown timer
-│   ├── Score.jsx             # End-of-game score screen
+│   ├── Header.jsx
+│   ├── Footer.jsx
+│   ├── CardGame.jsx           # Reusable game card for Home
+│   ├── CardMemoryGame.jsx     # Single card for Memory games
+│   ├── GameScreen.jsx         # Shared shell for "quiz-style" games
+│   ├── MemoryGameEngine.jsx   # Shared shell for Memory games
+│   ├── StartComponent.jsx     # Start screen (timer/difficulty toggle)
+│   ├── Difficulty.jsx         # 5-level difficulty selector
+│   ├── Timer.jsx
+│   ├── Score.jsx
 │   └── NotificationContext.jsx
+├── hooks/
+│   ├── useGameEngine.js
+│   ├── useSound.js
+│   └── usePreloadImages.js
+├── utils/
+│   └── memoryDeck.js
+├── assets/
+│   ├── flags/country-flag.json
+│   ├── words_it.json
+│   ├── memoryColor.js
+│   └── thumbnails/
+├── styles/                    # Global CSS, split by section — see index.css
 └── index.css
 
+public/
+└── sounds/                    # .mp3 sound effects
 ```
 
-### Adding a New Game
+---
 
-1. Create `src/pages/YourGame.jsx` — use `Maths.jsx` or `Color.jsx` as a reference.
-2. Add a route in `src/App.jsx`:
+## 🎮 Adding a New Game
+
+Eduplays has **two reusable architectures** — pick whichever matches the game you're adding, and you'll rarely need to touch shared infrastructure files.
+
+### A) Quiz-style game (question + buttons + timer + score)
+
+Used by Operazioni Matematiche, Tabelline, Maggiore o Minore, Sinonimi, Contrari, Anagrammi, Bandiere, Capitali.
+
+1. Create `src/pages/YourGame.jsx`.
+2. Use the `useGameEngine` hook for state (points, start/first, timer toggle, difficulty) and wrap your UI in `<GameScreen>`.
+3. You only need to implement:
+   - a `newRound(diff)` function that picks the next question,
+   - the JSX for the question and answer buttons.
+4. Reference `Multiplication.jsx` or `GreaterOrLesser.jsx` as a minimal example.
+
+### B) Memory-style game (flip cards, find pairs)
+
+Used by Memory Colori and Memory Bandiere.
+
+1. Create `src/pages/YourMemoryGame.jsx`.
+2. Build an `items` array (id, type, value) and pass it to `<MemoryGameEngine>`.
+3. Customize the card face and background via the `renderFace` / `bgColor` render props — no need to modify `MemoryGameEngine.jsx` or `CardMemoryGame.jsx`.
+4. Reference `MemoryColor.jsx` or `MemoryFlag.jsx` as a minimal example.
+
+### Wiring it up
+
+1. Add a route in `src/App.jsx`:
    ```jsx
-   <Route path="/yourgame" element={<YourGame />} />
+   <Route path="/category/your-game" element={<YourGame />} />
    ```
-3. Add a button for it in `src/pages/Home.jsx`.
-4. Reuse the existing components (`StartComponent`, `Timer`, `Score`) as much as possible.
+2. Add a `<CardGame>` entry for it in `src/pages/Home.jsx`.
+3. Add a matching rule card in `src/pages/Help.jsx`.
+4. If your game uses a JSON dataset, put it in `src/data/` or `src/assets/` following the existing `id` / `difficulty` (0–2) field conventions.
 
 ---
 
@@ -139,7 +195,8 @@ src/
 - **Components**: keep components small and focused on a single responsibility.
 - **No new dependencies** without discussing it first in an issue. The project intentionally stays lightweight.
 - **Accessibility**: new UI elements should be keyboard-navigable and have appropriate labels.
-- **Responsive**: test your changes on mobile viewport sizes too. The CSS already has breakpoints at 768px and 480px.
+- **Responsive**: test your changes on mobile viewport sizes too. The CSS already has breakpoints at 768px and 480px — check `src/styles/responsive.css`.
+- **CSS**: add new rules to the relevant file in `src/styles/` (not directly to `index.css`, which only aggregates imports). Use the existing CSS custom properties (`--primary-color`, `--comic-border-*`, etc.) instead of hardcoding values where possible.
 
 ---
 
@@ -149,21 +206,15 @@ Looking for something to work on? Here are some open ideas:
 
 | Area | Idea |
 |------|------|
-| 🆕 New game | Flag guessing game |
-| 🆕 New game | Greater / Less than number comparison |
+| 🆕 New game | Geometry and shapes |
+| 🆕 New game | Additional Italian vocabulary games |
 | 🆕 New game | Emoji meaning quiz |
 | 🆕 New game | Sequence memory |
-| 🆕 New game | Word scramble / anagram |
-| 🏆 Feature | Difficulty levels (Easy / Normal / Hard) |
-| 🏆 Feature | Infinite mode & survival mode |
-| 🏆 Feature | Optional no-timer toggle |
 | 🌍 Feature | Internationalization (i18n) — Italian & English |
-| ♿ Feature | Audio feedback for answers |
-| ♿ Feature | High contrast mode & larger text option |
-| ♿ Feature | Adaptive difficulty |
-| 🧪 Testing | Unit tests for game logic (e.g. Vitest) |
+| ♿ Feature | Adaptive difficulty (auto-adjust based on performance) |
 | 🎨 UI | Animated transitions between game states |
 
+Already shipped (no longer needed, listed here just so it's clear they're done): flag guessing game, greater/less-than game, word scramble/anagram game, difficulty levels, optional no-timer toggle, and audio feedback on answers.
 
 Feel free to open an issue to discuss any of these (or your own idea) before starting work on it.
 

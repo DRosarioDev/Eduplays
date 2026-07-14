@@ -1,0 +1,26 @@
+/*  ==========================================
+    Score
+    ==========================================
+*/
+
+.game-not-started {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px;
+  gap: 20px;
+  min-width: 300px;
+  text-align: center;
+}
+
+.game-not-started h2 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.game-not-started .buttons-row {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}

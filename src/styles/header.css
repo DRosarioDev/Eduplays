@@ -1,0 +1,70 @@
+/*  ==========================================
+    Header
+    ==========================================
+*/
+
+header {
+  background: var(--bg-page);
+  padding: 0 1.5rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 3px solid var(--color-black);
+}
+
+.header-left h2 {
+  margin: 0;
+}
+
+.link-home-prop,
+.link-home-prop:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-btn {
+  height: 10px;
+  padding: 0 16px;
+  background: transparent;
+  border: 2px solid var(--color-black);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+
+.nav-btn:hover {
+  background: var(--primary-color);
+}
+
+.nav-btn:visited {
+  color: inherit;
+}
+
+.help-btn {
+  color: var(--color-text);
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 14px;
+  width: 90%;
+  gap: 5px;
+}

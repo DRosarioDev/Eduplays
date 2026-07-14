@@ -1,0 +1,32 @@
+:root {
+  /* Colori brand */
+  --primary-color: #ffd200;
+  --secondary-color: #f4fafd;
+  --tertiary-color: #000;
+
+  /* Colori base */
+  --color-black: #000;
+  --color-white: #fff;
+  --color-text: #333;
+  --color-text-muted: #555;
+  --color-text-faint: #aaa;
+  --bg-page: #f4fafd;
+
+  /* Bordo "fumetto" condiviso da container, game-container, game-not-started */
+  --comic-border-width: 3px 9px 9px 3px;
+  --comic-border-color: var(--color-black);
+  --comic-border-style: solid;
+  --comic-border-radius: 50px;
+  --comic-border-radius-mobile: 30px;
+
+  --font-base: "Atkinson Hyperlegible", sans-serif;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-page);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}

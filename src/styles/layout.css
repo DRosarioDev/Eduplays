@@ -1,0 +1,25 @@
+/*  ==========================================
+    Layout condiviso (container "fumetto")
+    ==========================================
+*/
+
+.container,
+.game-container,
+.game-not-started {
+  background-color: var(--color-white);
+  border-width: var(--comic-border-width);
+  border-color: var(--comic-border-color);
+  border-style: var(--comic-border-style);
+  border-radius: var(--comic-border-radius);
+  box-sizing: border-box;
+}
+
+.btn {
+  color: var(--color-text);
+  border: solid 2px var(--color-black);
+  border-radius: 15px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 90%;
+}

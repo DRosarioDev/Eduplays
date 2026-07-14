@@ -1,0 +1,109 @@
+/*  ==========================================
+    Start Component
+    ==========================================
+*/
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 28px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--border-color, #ccc);
+  transition: 0.3s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--color-white);
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+input:focus-visible + .slider {
+  box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.general-section {
+  display: flex;
+  flex-direction: column;
+  width: min(90%, 400px);
+  padding: 0.75rem 1rem;
+  border-radius: var(--border-radius, 8px);
+  background-color: var(--background-secondary, #f5f5f5);
+  margin: 0.5rem auto;
+}
+
+.game-not-started .general-section {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.timer-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.timer-section p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text-color, var(--color-text));
+}
+
+.diff-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: var(--color-white)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23000' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")
+    no-repeat right 12px center;
+  border: 2px solid var(--color-black);
+  border-radius: 12px;
+  padding: 6px 36px 6px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--color-text);
+  width: fit-content;
+}
+
+.diff-select:focus,
+.diff-select:hover {
+  background-color: var(--primary-color);
+}
+
+.diff-select:focus {
+  outline: none;
+}

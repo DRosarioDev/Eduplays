@@ -1,0 +1,82 @@
+/*  ==========================================
+    Anagram Game
+    ==========================================   
+*/
+
+.anagram-slots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.letter-slot {
+  width: 44px;
+  height: 44px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.anagram-slots.correct .letter-slot {
+  background-color: #a8e6cf;
+}
+
+.anagram-slots.wrong .letter-slot {
+  background-color: #ffb3b3;
+}
+
+.anagram-letters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.letter-tile {
+  width: 50px;
+  height: 50px;
+  border: 3px solid #000;
+  border-radius: 12px;
+  background-color: #ffd200;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  font-family: "Atkinson Hyperlegible", sans-serif;
+  transition: transform 0.15s, opacity 0.15s;
+}
+
+.letter-tile:hover:not(:disabled) {
+  transform: scale(1.08);
+}
+
+.letter-tile.used {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.anagram-controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.anagram-controls .btn {
+  width: auto;
+  padding: 10px 18px;
+  font-size: 14px;
+}
+
+.hint-text {
+  margin-top: 10px;
+  font-style: italic;
+  color: #555;
+  text-align: center;
+}

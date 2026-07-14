@@ -1,0 +1,55 @@
+/*  ==========================================
+    Memory Game
+    ==========================================
+*/
+
+.memory-game {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-memory-game {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-width: 3px 6px 6px 3px;
+  border-color: var(--color-black);
+  border-style: solid;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.15s;
+  user-select: none;
+  box-sizing: border-box;
+}
+
+.card-memory-game p {
+  margin: 0;
+  text-align: center;
+  visibility: hidden;
+}
+
+.card-memory-game:hover {
+  transform: scale(1.05);
+}
+
+.card-memory-game.flipped p {
+  visibility: visible;
+}
+
+.card-memory-game.flipped:hover {
+  transform: none;
+  cursor: default;
+}
+
+.card-memory-game.matched {
+  visibility: hidden;
+  cursor: default;
+  pointer-events: none;
+}
