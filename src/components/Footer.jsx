@@ -24,6 +24,7 @@ export default function Footer() {
           Cookie Policy
         </a>
       </div>
+      <p className="footer-copy">Contiene immagini generati dall'AI</p>
       <p className="footer-copy">© 2026 Eduplays. Tutti i diritti riservati.</p>
     </footer>
   );
