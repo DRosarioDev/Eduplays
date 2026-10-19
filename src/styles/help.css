@@ -1,0 +1,45 @@
+/*  ==========================================
+    Help — regole dei giochi
+    Griglia con numero di colonne responsive:
+    3 (desktop) → 2 (tablet) → 1 (mobile)
+    ==========================================
+*/
+
+.cards-container.rules-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+  justify-items: center;
+  gap: 20px;
+  width: min(100%, 1000px);
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.rules-container .rule-card {
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  justify-content: flex-start;
+}
+
+.rules-container .rule-card .card-top i {
+  font-size: 40px;
+  margin: 10px 0;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .cards-container.rules-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .cards-container.rules-container {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
