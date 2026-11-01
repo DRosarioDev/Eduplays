@@ -1,82 +1,105 @@
-/*  ==========================================
-    Anagram Game
-    ==========================================   
-*/
+/* ==========================================
+   Anagrammi
+   ========================================== */
 
 .anagram-slots {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
   justify-content: center;
+  gap: 0.5rem;
+  min-height: 64px;
   transition: background-color 0.2s ease;
 }
 
 .letter-slot {
-  width: 44px;
-  height: 44px;
-  border: 3px solid #000;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 22px;
-  font-weight: bold;
-  background-color: #fff;
+  display: grid;
+  place-items: center;
+  width: clamp(46px, 9vw, 62px);
+  height: clamp(46px, 9vw, 62px);
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  font-size: clamp(1.3rem, 4vw, 1.9rem);
+  font-weight: 700;
 }
 
-.anagram-slots.correct .letter-slot {
-  background-color: #a8e6cf;
+.anagram-slots--correct .letter-slot {
+  border-color: var(--success);
+  background: var(--success-bg);
+  color: var(--success);
 }
 
-.anagram-slots.wrong .letter-slot {
-  background-color: #ffb3b3;
+.anagram-slots--wrong .letter-slot {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
 }
 
 .anagram-letters {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
   justify-content: center;
-  margin-top: 10px;
+  gap: 0.55rem;
 }
 
 .letter-tile {
-  width: 50px;
-  height: 50px;
-  border: 3px solid #000;
-  border-radius: 12px;
-  background-color: #ffd200;
-  font-size: 22px;
-  font-weight: bold;
+  display: grid;
+  place-items: center;
+  width: clamp(52px, 10vw, 66px);
+  height: clamp(52px, 10vw, 66px);
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--primary);
+  color: var(--ink);
+  box-shadow: 2px 3px 0 var(--line);
+  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-weight: 700;
   cursor: pointer;
-  font-family: "Atkinson Hyperlegible", sans-serif;
-  transition: transform 0.15s, opacity 0.15s;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
 }
 
 .letter-tile:hover:not(:disabled) {
-  transform: scale(1.08);
+  transform: translateY(-2px);
+  box-shadow: 4px 5px 0 var(--line);
 }
 
-.letter-tile.used {
-  opacity: 0;
-  pointer-events: none;
+.letter-tile.is-used {
+  border-style: dashed;
+  background: #eef3f6;
+  box-shadow: none;
+  opacity: 0.55;
+}
+
+.letter-tile:disabled {
+  cursor: default;
 }
 
 .anagram-controls {
   display: flex;
-  gap: 10px;
-  margin-top: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.7rem;
 }
 
 .anagram-controls .btn {
-  width: auto;
-  padding: 10px 18px;
-  font-size: 14px;
+  min-height: 48px;
+  padding: 0.5rem 1.1rem;
+  font-size: 0.95rem;
 }
 
 .hint-text {
-  margin-top: 10px;
-  font-style: italic;
-  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0.7rem 1rem;
+  border: 2px solid #e4c34b;
+  border-radius: 14px;
+  background: #fff8d6;
+  color: #5e4800;
+  font-weight: 700;
   text-align: center;
 }

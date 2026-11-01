@@ -1,144 +1,316 @@
-/*  ==========================================
-    Home Page
-    ==========================================
-*/
+/* ==========================================
+   Home
+   ========================================== */
 
-.first-section {
-  display: flex;
-  flex-direction: column;
+.home-hero {
+  max-width: 1160px;
+  margin: 2rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.hero-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+  gap: 1rem;
   align-items: center;
-  width: 100%;
-  min-height: 20vh;
-  justify-content: center;
-  padding: 50px 0 0 0;
-  box-sizing: border-box;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf3 100%);
+  border: 3px solid var(--line);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-hard-lg);
+  overflow: hidden;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
+.hero-card::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  right: -70px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.18;
+}
+
+.hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 20px auto;
-  width: 50%;
-  height: 100%;
-  padding: 50px 30px;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
-.container h2 {
-  margin: 0;
+.hero-copy h1 {
+  max-width: 16ch;
+  margin: 0 0 0.8rem;
 }
 
-.content-left {
+.hero-copy p {
+  max-width: 44ch;
+  margin: 0 0 1.4rem;
+  color: var(--color-text-muted);
+  font-size: 1.15rem;
+}
+
+.hero-actions {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: center;
-  flex: 1;
-  height: 100%;
+  flex-wrap: wrap;
+  gap: 0.75rem;
 }
 
-.content-right {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+.hero-art {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
 }
 
 .mascotte {
-  width: 200px;
+  width: min(300px, 100%);
   height: auto;
-  transform: scaleX(-1);
+  filter: drop-shadow(0 14px 18px rgba(23, 34, 43, 0.16));
+  animation: float 5s ease-in-out infinite;
 }
 
-.second-section {
+.category-jump {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  min-height: 20vh;
+  flex-wrap: wrap;
   justify-content: center;
-  padding: 0 0 50px 0;
-  box-sizing: border-box;
+  gap: 0.6rem;
+  margin: 1.2rem auto 0;
 }
 
-.second-section h2 {
-  margin: 0 0 10px 0;
+.jump-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 46px;
+  padding: 0.35rem 1rem;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.98rem;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
 }
 
-.cards-container {
+.jump-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 3px 0 var(--line);
+  background: color-mix(in srgb, var(--category) 30%, white);
+}
+
+.games-wrap {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.games-section {
+  padding: 3rem 0 0;
+  scroll-margin-top: 96px;
+}
+
+.section-heading {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  gap: 20px;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
 }
+
+.section-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--category) 38%, white);
+  box-shadow: 3px 3px 0 rgba(23, 34, 43, 0.12);
+  font-size: 1.6rem;
+}
+
+.section-copy {
+  flex: 1;
+  min-width: 180px;
+}
+
+.section-copy h2 {
+  margin: 0;
+}
+
+.section-copy p {
+  margin: 0.15rem 0 0;
+  color: var(--color-text-muted);
+}
+
+.section-count {
+  padding: 0.2rem 0.7rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 330px));
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+/* ---------- Card gioco ---------- */
 
 .game-card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 0 15px 0;
-  border: 3px solid var(--color-black);
-  border-radius: 20px;
-  width: 200px;
-  height: 300px;
-  background-color: var(--color-white);
-  transition: transform 0.15s;
-}
-
-.game-card:hover {
-  transform: scale(1.05);
-}
-
-.card-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
-.img-prop {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 150px;
-  border-radius: 17px 17px 0 0;
+  min-width: 0;
   overflow: hidden;
+  background: var(--surface);
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  box-shadow: 4px 5px 0 rgba(23, 34, 43, 0.9);
+  color: inherit;
+  text-decoration: none;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
 
-.img-prop img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.game-card:hover,
+.game-card:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 7px 9px 0 var(--line);
 }
 
-.text-prop {
+.game-card:active {
+  transform: translateY(-1px);
+  box-shadow: 3px 3px 0 var(--line);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--category) 28%, white);
+  border-bottom: 3px solid var(--line);
+}
+
+.card-body {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  gap: 0.4rem;
+  padding: 1rem 1.1rem 1.15rem;
 }
 
 .card-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 0 0;
+  margin: 0;
+  font-size: 1.32rem;
+  line-height: 1.2;
 }
 
 .card-desc {
-  font-size: 14px;
-  margin: 5px 10px 20px 10px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 1rem;
+  line-height: 1.45;
 }
 
-.link-prop,
-.link-prop:visited {
-  text-decoration: none;
+.card-footer {
   display: flex;
   align-items: center;
+  gap: 0.6rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+}
+
+.card-record {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.55rem;
+  border: 2px solid #e0bd3c;
+  border-radius: 999px;
+  background: #fff6cf;
+  color: #7a5a00;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.card-play {
+  display: inline-flex;
+  flex: 1;
+  align-items: center;
   justify-content: center;
-  color: inherit;
-  width: 90%;
+  gap: 0.5rem;
+  min-height: 48px;
+  padding: 0.4rem 1rem;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--category);
+  color: var(--category-ink);
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.home-note {
+  max-width: 1160px;
+  margin: 3rem auto 4rem;
+  padding: 0 1.25rem;
+}
+
+.note-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 1.5rem;
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  background: color-mix(in srgb, var(--primary) 18%, white);
+  box-shadow: var(--shadow-hard);
+}
+
+.note-icon {
+  font-size: 2rem;
+}
+
+.note-card > div {
+  flex: 1;
+  min-width: 220px;
+}
+
+.note-card h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.note-card p {
+  margin: 0.2rem 0 0;
+  color: var(--ink-soft);
 }

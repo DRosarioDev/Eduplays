@@ -1,0 +1,661 @@
+/* ==========================================
+   Materiali didattici
+   ========================================== */
+
+.didattica-hero {
+  max-width: 1100px;
+  margin: 2rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.didattica-hero-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(230px, 0.75fr);
+  gap: 1rem;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 3px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf3 100%);
+  box-shadow: var(--shadow-hard-lg);
+  overflow: hidden;
+}
+
+.didattica-hero-card::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.16;
+}
+
+.didattica-hero-copy {
+  position: relative;
+  z-index: 1;
+}
+
+.didattica-hero-copy h1 {
+  max-width: 17ch;
+  margin: 0 0 0.8rem;
+}
+
+.didattica-hero-copy > p {
+  max-width: 54ch;
+  margin: 0 0 1.3rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.didattica-facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.didattica-facts li {
+  padding: 0.28rem 0.8rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.88rem;
+}
+
+.didattica-facts strong {
+  font-weight: 700;
+}
+
+/* ---------- Illustrazione hero ---------- */
+
+.didattica-hero-art {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  min-height: 300px;
+}
+
+.paper-sheet {
+  position: absolute;
+  width: 190px;
+  height: 250px;
+  padding: 1rem;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: var(--shadow-hard);
+}
+
+.paper-sheet--back {
+  transform: rotate(-7deg) translate(-26px, -8px);
+  background: color-mix(in srgb, var(--primary) 38%, white);
+}
+
+.paper-sheet--front {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transform: rotate(4deg) translate(24px, 10px);
+}
+
+.paper-tag {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  padding: 0.08rem 0.5rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.paper-title {
+  margin-top: 1.3rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.paper-line {
+  display: block;
+  width: 100%;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+.paper-line--long {
+  width: 90%;
+}
+
+.paper-line--short {
+  width: 55%;
+}
+
+.paper-badge {
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 0.22rem 0.7rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--primary);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* ---------- Sezioni ---------- */
+
+.didattica-section {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 1.25rem;
+  scroll-margin-top: 96px;
+}
+
+.didattica-section-head {
+  margin-bottom: 1.25rem;
+}
+
+.didattica-section-head h2 {
+  margin: 0;
+}
+
+.didattica-section-head p {
+  max-width: 62ch;
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+}
+
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+/* ---------- Card lezione ---------- */
+
+.download-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 1.25rem;
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  background: var(--surface);
+  box-shadow: 4px 5px 0 rgba(23, 34, 43, 0.14);
+  scroll-margin-top: 96px;
+}
+
+.download-card-head {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.download-card-emoji {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--category) 40%, white);
+  font-size: 1.5rem;
+}
+
+.download-card-area {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.download-card-heading h3 {
+  margin: 0.05rem 0 0;
+  font-size: 1.35rem;
+}
+
+.download-card-desc {
+  margin: 0.8rem 0 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.download-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.download-topics li {
+  padding: 0.16rem 0.55rem;
+  border: 2px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--bg-page);
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.download-files {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.download-file {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
+  gap: 0.65rem;
+  align-items: center;
+  padding: 0.6rem 0.75rem;
+  border: 2px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  color: var(--ink);
+  text-decoration: none;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.download-file:hover,
+.download-file:focus-visible {
+  transform: translateY(-2px);
+  background: var(--primary-soft);
+  box-shadow: 2px 3px 0 var(--line);
+}
+
+.download-file-icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--danger-bg);
+  color: var(--danger);
+  font-size: 1rem;
+}
+
+.download-file-copy {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.download-file-copy strong {
+  font-size: 0.98rem;
+}
+
+.download-file-copy span {
+  color: var(--ink-soft);
+  font-size: 0.76rem;
+}
+
+.download-file-size {
+  color: var(--ink-soft);
+  font-size: 0.74rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.download-file-arrow {
+  font-size: 0.85rem;
+}
+
+.download-game {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.95rem;
+  padding-bottom: 0.08rem;
+  border-bottom: 2px solid var(--line);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.download-game:hover {
+  background: var(--primary);
+}
+
+/* ---------- Come usarli ---------- */
+
+.didattica-tips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.didattica-tip {
+  padding: 1.2rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 3px 4px 0 rgba(23, 34, 43, 0.14);
+}
+
+.didattica-tip-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 0.65rem;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--primary) 40%, white);
+  font-size: 1.15rem;
+}
+
+.didattica-tip h3 {
+  margin: 0 0 0.25rem;
+  font-size: 1.08rem;
+}
+
+.didattica-tip p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Nota finale ---------- */
+
+.didattica-note {
+  margin-bottom: 4rem;
+}
+
+.didattica-note-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.2rem;
+  padding: clamp(1.2rem, 3vw, 1.8rem);
+  border: 3px solid var(--line);
+  border-radius: 32px;
+  background: color-mix(in srgb, var(--primary) 18%, white);
+  box-shadow: var(--shadow-hard);
+}
+
+.didattica-note-icon {
+  font-size: 2rem;
+}
+
+.didattica-note-card > div {
+  flex: 1;
+  min-width: 240px;
+}
+
+.didattica-note-card h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.3rem;
+}
+
+.didattica-note-card p {
+  max-width: 56ch;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.didattica-note-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ==========================================
+   Richiamo in home
+   ========================================== */
+
+.home-materials {
+  max-width: 1160px;
+  margin: 2.5rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.materials-band {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.1rem;
+  padding: 1.2rem 1.5rem;
+  border: 3px solid var(--line);
+  border-radius: 28px;
+  background: linear-gradient(135deg, #ffffff 0%, #fff8dd 100%);
+  box-shadow: var(--shadow-hard);
+}
+
+.materials-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  background: var(--primary);
+  font-size: 1.4rem;
+}
+
+.materials-copy {
+  flex: 1;
+  min-width: 220px;
+}
+
+.materials-eyebrow {
+  display: block;
+  color: var(--ink-soft);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.materials-copy h2 {
+  margin: 0.05rem 0 0.15rem;
+  font-size: 1.35rem;
+}
+
+.materials-copy p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.materials-band .btn {
+  margin-left: auto;
+}
+
+/* ==========================================
+   Responsive
+   ========================================== */
+
+@media (max-width: 900px) {
+  .didattica-hero-card {
+    grid-template-columns: 1fr;
+  }
+
+  .didattica-hero-copy h1 {
+    max-width: none;
+  }
+
+  .didattica-hero-art {
+    min-height: 280px;
+  }
+
+  .didattica-tips {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .didattica-hero-card {
+    padding: 1.35rem;
+    border-radius: 30px;
+  }
+
+  .didattica-hero-copy > p {
+    font-size: 1.02rem;
+  }
+
+  .didattica-hero-art {
+    min-height: 250px;
+  }
+
+  .paper-sheet {
+    width: 165px;
+    height: 220px;
+  }
+
+  .paper-sheet--back {
+    transform: rotate(-7deg) translate(-20px, -6px);
+  }
+
+  .paper-sheet--front {
+    transform: rotate(4deg) translate(18px, 8px);
+  }
+
+  .didattica-section {
+    margin-top: 2.4rem;
+  }
+
+  .download-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 560px;
+    margin-inline: auto;
+  }
+
+  .didattica-tips {
+    grid-template-columns: 1fr;
+  }
+
+  .didattica-note-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .didattica-hero {
+    margin-top: 1.1rem;
+    padding: 0 0.9rem;
+  }
+
+  .didattica-hero-card {
+    padding: 1.15rem;
+    border-radius: 26px;
+  }
+
+  .didattica-hero-copy h1 {
+    font-size: 1.8rem;
+  }
+
+  .didattica-hero-copy > p {
+    font-size: 0.98rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .didattica-facts li {
+    padding: 0.22rem 0.65rem;
+    font-size: 0.8rem;
+  }
+
+  .didattica-hero-art {
+    min-height: 220px;
+  }
+
+  .paper-sheet {
+    width: 145px;
+    height: 195px;
+    padding: 0.85rem;
+  }
+
+  .paper-title {
+    font-size: 1.1rem;
+  }
+
+  .didattica-section {
+    margin-top: 2rem;
+    padding: 0 0.9rem;
+  }
+
+  .didattica-section-head h2 {
+    font-size: 1.45rem;
+  }
+
+  .download-card {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .download-card-heading h3 {
+    font-size: 1.2rem;
+  }
+
+  .download-file {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.55rem;
+    padding: 0.55rem 0.65rem;
+  }
+
+  .download-file-size {
+    display: none;
+  }
+
+  .didattica-tip {
+    padding: 0.95rem;
+  }
+
+  .didattica-note {
+    margin-bottom: 3rem;
+  }
+
+  .didattica-note-card {
+    padding: 1.1rem;
+    border-radius: 24px;
+  }
+
+  .didattica-note-actions {
+    width: 100%;
+  }
+
+  .didattica-note-actions .btn {
+    flex: 1;
+  }
+
+  .home-materials {
+    margin-top: 2rem;
+    padding: 0 0.9rem;
+  }
+
+  .materials-band {
+    padding: 1rem;
+    border-radius: 24px;
+  }
+
+  .materials-band .btn {
+    width: 100%;
+    margin-left: 0;
+  }
+}

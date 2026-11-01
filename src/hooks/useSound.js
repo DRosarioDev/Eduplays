@@ -1,44 +1,71 @@
-export function useSound() {
-  // Frequency = HZ, duration = seconds, type = wave of the sound (frequency, duration, type = "sine")
+import { useSoundSettings } from "./useSoundSettings";
 
-  const playFreqSound = (frequency, duration, type = "sine") => {
-    const contextAudio = new (
-      window.AudioContext || window.webkitAudioContext
-    )();
-    const oscillator = contextAudio.createOscillator(); // Generation of the sound
-    const gain = contextAudio.createGain(); // Volume controll
+let sharedAudioContext = null;
+
+function getAudioContext() {
+  if (typeof window === "undefined") return null;
+  const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  if (!AudioContextClass) return null;
+
+  if (!sharedAudioContext) {
+    sharedAudioContext = new AudioContextClass();
+  }
+  if (sharedAudioContext.state === "suspended") {
+    sharedAudioContext.resume().catch(() => {});
+  }
+  return sharedAudioContext;
+}
+
+/**
+ * Effetti sonori del gioco. Rispetta l'interruttore audio dell'header
+ * e non fa rumore se il browser blocca la riproduzione automatica.
+ */
+export function useSound() {
+  const { soundEnabled } = useSoundSettings();
+
+  const playFile = (src, volume = 0.45) => {
+    if (!soundEnabled) return;
+    const audio = new Audio(src);
+    audio.volume = volume;
+    audio.play().catch(() => {});
+  };
+
+  const playTone = (frequency, duration, type = "sine", volume = 0.12) => {
+    if (!soundEnabled) return;
+    const context = getAudioContext();
+    if (!context) return;
+
+    const oscillator = context.createOscillator();
+    const gain = context.createGain();
 
     oscillator.connect(gain);
-    gain.connect(contextAudio.destination); // Exit of the audio from the device
-
-    // Settings of the sounds
+    gain.connect(context.destination);
     oscillator.type = type;
-    oscillator.frequency.setValueAtTime(frequency, contextAudio.currentTime);
+    oscillator.frequency.setValueAtTime(frequency, context.currentTime);
 
-    // Fade out of the sounds
-    gain.gain.setValueAtTime(0.3, contextAudio.currentTime);
+    gain.gain.setValueAtTime(volume, context.currentTime);
     gain.gain.exponentialRampToValueAtTime(
       0.001,
-      contextAudio.currentTime + duration,
+      context.currentTime + duration
     );
 
-    oscillator.start(contextAudio.currentTime);
-    oscillator.stop(contextAudio.currentTime + duration);
+    oscillator.start(context.currentTime);
+    oscillator.stop(context.currentTime + duration);
   };
 
-  const playDirSound = (dir, volume) => {
-    const audio = new Audio(dir);
-    audio.volume = volume;
-    audio.play();
-  };
+  const playCorrect = () => playFile("/sounds/correct_sound.mp3", 0.45);
+  const playFlip = () => playFile("/sounds/flipping_card.mp3", 0.35);
+  const playWin = () => playFile("/sounds/victory.mp3", 0.25);
 
-  const playCorrect = () => playDirSound("/sounds/correct_sound.mp3", 0.5);
-  const playFlip = () => playDirSound("/sounds/flipping_card.mp3", 0.5);
   const playMatch = () => {
-    playFreqSound(500, 0.15);
-    setTimeout(() => playFreqSound(700, 0.2), 150);
+    playTone(520, 0.12);
+    setTimeout(() => playTone(760, 0.16), 120);
   };
-  const playWin = () => playDirSound("/sounds/victory.mp3", 0.2);
 
-  return { playCorrect, playFlip, playMatch, playWin };
+  const playWrong = () => {
+    playTone(220, 0.16, "triangle", 0.09);
+    setTimeout(() => playTone(174, 0.18, "triangle", 0.08), 130);
+  };
+
+  return { playCorrect, playFlip, playMatch, playWin, playWrong };
 }

@@ -1,70 +1,382 @@
-/*  ==========================================
-    Math Game
-    ==========================================
-*/
+/* ==========================================
+   Schermata di gioco
+   ========================================== */
 
-.container-color {
+.play-page {
+  width: min(900px, 100%);
+  margin: 0 auto;
+  padding: 1.5rem 1rem 4rem;
+}
+
+.play-topbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.8rem;
+}
+
+.back-btn,
+.quit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 46px;
+  padding: 0.3rem 0.85rem;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.back-btn:hover {
+  background: var(--primary);
+  transform: translateY(-1px);
+}
+
+.quit-btn {
+  justify-self: end;
+  color: var(--ink-soft);
+}
+
+.quit-btn:hover {
+  background: var(--surface);
+  transform: translateY(-1px);
+}
+
+.back-btn {
+  justify-self: start;
+}
+
+.play-title:focus,
+.end-card h1:focus {
+  outline: none;
+}
+
+.play-title {
+  min-width: 0;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.topbar-spacer {
+  width: 78px;
+}
+
+/* ---------- Stato: timer, punteggio, serie ---------- */
+
+.play-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 0.6rem;
+  margin-bottom: 0.7rem;
+}
+
+.timer {
+  display: flex;
+  flex: 1 1 220px;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 52px;
+  padding: 0.35rem 0.8rem;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  font-weight: 700;
+}
+
+.timer--off {
+  flex: 0 1 auto;
+  color: var(--ink-soft);
+}
+
+.timer i {
+  font-size: 1rem;
+}
+
+.timer-value {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.15rem;
+  font-size: 1.15rem;
+}
+
+.timer-unit {
+  font-size: 0.8rem;
+}
+
+.timer-track {
+  flex: 1;
+  height: 12px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--line-soft);
+}
+
+.timer-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--primary);
+  transition: width 0.4s linear;
+}
+
+.timer--low {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.timer--low .timer-fill {
+  background: var(--danger);
+}
+
+.timer--low .timer-value {
+  animation: pulse 1s ease-in-out infinite;
+}
+
+.score-chip,
+.streak-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 52px;
+  padding: 0.3rem 0.9rem;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--category);
+  color: var(--category-ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.score-chip i {
+  color: #8a6500;
+}
+
+.streak-chip {
+  background: #fff3d1;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* ---------- Feedback ---------- */
+
+.game-feedback {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 60px);
-  transition: background-color 0.3s ease;
-}
-
-.points {
-  font-size: 20px;
-  font-weight: bold;
+  gap: 0.55rem;
+  min-height: 54px;
+  margin-bottom: 0.7rem;
+  border: 3px solid transparent;
+  border-radius: 16px;
+  font-weight: 700;
   text-align: center;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition:
+    opacity 0.16s ease,
+    transform 0.16s ease;
 }
 
-.game-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin-bottom: 20px;
+.game-feedback--correct,
+.game-feedback--wrong {
+  opacity: 1;
+  transform: translateY(0);
+  animation: pop 0.25s ease-out;
 }
 
-.game-container {
+.game-feedback--correct {
+  border-color: var(--success);
+  background: var(--success-bg);
+  color: var(--success);
+}
+
+.game-feedback--wrong {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+/* ---------- Tavolo di gioco ---------- */
+
+.play-board {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 50px;
-  gap: 20px;
-  min-width: 500px;
+  gap: clamp(1.25rem, 3vw, 2rem);
+  padding: clamp(1.4rem, 4vw, 2.6rem);
+  border: 3px solid var(--line);
+  border-radius: 38px;
+  background: var(--board-tone, var(--surface));
+  box-shadow: var(--shadow-hard-lg);
+  transition: background-color 0.35s ease;
 }
 
-.timer h2 {
-  font-size: 20px;
-  font-weight: bold;
+.prompt-hint {
   margin: 0;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  text-align: center;
 }
 
-.game-container h2 {
-  font-size: 48px;
+.question,
+.word-prompt,
+.color-name {
   margin: 0;
+  font-size: clamp(2.6rem, 8vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+  text-align: center;
+  animation: pop 0.22s ease-out;
 }
 
-.buttons-container {
+.word-prompt,
+.color-name {
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+}
+
+.word-prompt {
+  text-transform: capitalize;
+}
+
+/* ---------- Confronto numeri ---------- */
+
+.compare-row {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 1.5rem);
+  animation: pop 0.22s ease-out;
+}
+
+.compare-number {
+  font-size: clamp(2.8rem, 9vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.compare-slot {
+  display: grid;
+  place-items: center;
+  width: clamp(64px, 12vw, 92px);
+  height: clamp(64px, 12vw, 92px);
+  border: 3px dashed var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  color: var(--ink-soft);
+  font-size: clamp(2rem, 6vw, 3rem);
+  font-weight: 700;
+}
+
+/* ---------- Risposte ---------- */
+
+.answers {
+  display: grid;
+  gap: 1rem;
   width: 100%;
 }
 
-.buttons-container .btn {
-  flex: 1;
-  font-size: 22px;
-  font-weight: bold;
-  border-radius: 15px;
-  padding: 15px 0;
-  border: 3px solid var(--color-black);
-  background-color: var(--color-white);
-  cursor: pointer;
-  transition: background-color 0.15s;
+.answers--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.buttons-container .btn:hover {
-  background-color: var(--primary-color);
+.answers--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.answer-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 100px;
+  padding: 1rem;
+  border: 3px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 0 var(--line);
+  background: #fffbe6;
+}
+
+.answer-btn:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.answer-btn:disabled {
+  cursor: default;
+}
+
+.answer-btn--correct {
+  border-color: var(--success);
+  background: var(--success-bg);
+  color: var(--success);
+  box-shadow: 0 0 0 3px #cdeee0;
+}
+
+.answer-btn--wrong {
+  border-color: var(--danger);
+  background: var(--danger-bg);
+  color: var(--danger);
+}
+
+.answer-btn--dim {
+  opacity: 0.45;
+}
+
+.answer-icon {
+  flex: 0 0 auto;
+  font-size: 1.5rem;
+}
+
+.answer-text {
+  overflow-wrap: anywhere;
+}
+
+.answers--short .answer-btn {
+  font-size: clamp(2rem, 6vw, 3rem);
+}
+
+/* ---------- Bandiere ---------- */
+
+.flag-image {
+  width: min(320px, 80%);
+  height: auto;
+  padding: 0.9rem;
+  border: 3px solid var(--line);
+  border-radius: 20px;
+  background: var(--surface);
+  box-shadow: 3px 4px 0 rgba(23, 34, 43, 0.16);
+  animation: pop 0.22s ease-out;
 }

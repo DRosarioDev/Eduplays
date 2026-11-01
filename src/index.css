@@ -2,12 +2,14 @@
 @import "./styles/layout.css";
 @import "./styles/header.css";
 @import "./styles/home.css";
+@import "./styles/didattica.css";
 @import "./styles/start-component.css";
 @import "./styles/game.css";
 @import "./styles/color-game.css";
 @import "./styles/memory-game.css";
+@import "./styles/games-extra.css";
 @import "./styles/score.css";
 @import "./styles/footer.css";
 @import "./styles/anagram.css";
-@import "./styles/responsive.css";
 @import "./styles/help.css";
+@import "./styles/responsive.css";

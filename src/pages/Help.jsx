@@ -1,220 +1,196 @@
 import { Link } from "react-router-dom";
+import {
+  CATEGORIES,
+  CATEGORY_ORDER,
+  GAMES,
+  getGamesByCategory,
+} from "../data/games";
+
+const STEPS = [
+  {
+    emoji: "1",
+    title: "Scegli un gioco",
+    text: "Dalla home tocca la card del gioco che ti interessa.",
+  },
+  {
+    emoji: "2",
+    title: "Decidi il tempo",
+    text: "Puoi giocare con calma, senza tempo, oppure metterti alla prova per 30 secondi.",
+  },
+  {
+    emoji: "3",
+    title: "Tocca la risposta",
+    text: "Dopo ogni risposta vedi subito se è giusta. Poi arriva la domanda successiva.",
+  },
+];
+
+function tagsFor(game) {
+  const tags = [];
+  if (game.kind === "memory") {
+    tags.push("Trova le coppie");
+  } else {
+    tags.push(game.timer ? "Con o senza tempo" : "Senza tempo");
+  }
+  if (game.maxDifficulty !== null) {
+    const levels = game.maxDifficulty + 1;
+    tags.push(`${levels} ${levels === 1 ? "livello" : "livelli"}`);
+  }
+  return tags;
+}
 
 export default function Help() {
   return (
     <>
-      <section className="first-section">
-        <div className="container">
-          <div className="content-left">
-            <h2>Aiuto</h2>
-            <p>Trova qui le regole dei giochi e i contatti per supporto.</p>
+      <section className="help-hero">
+        <div className="help-hero-card">
+          <span className="hero-eyebrow">
+            <i className="fa-regular fa-circle-question" aria-hidden="true" />{" "}
+            Aiuto
+          </span>
+          <h1>Regole semplici, giochi alla portata di tutti</h1>
+          <p>
+            Ogni gioco dura quanto vuoi: scegli &ldquo;Senza tempo&rdquo; per
+            giocare con calma, oppure 30 secondi per una sfida veloce. Ogni
+            risposta giusta vale 1 punto.
+          </p>
+          <div className="hero-actions">
+            <Link to="/" className="btn btn-primary">
+              <i className="fa-solid fa-play" aria-hidden="true" /> Torna ai
+              giochi
+            </Link>
+            <a href="mailto:supporto@eduplays.it" className="btn btn-secondary">
+              <i className="fa-regular fa-envelope" aria-hidden="true" />{" "}
+              Scrivici
+            </a>
           </div>
         </div>
       </section>
 
-<section className="first-section">
-        <h2>Regole dei giochi</h2>
-        <div className="cards-container rules-container">
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-calculator"></i>
-              <div className="text-prop">
-                <p className="card-title">Operazioni Matematiche</p>
-                <p className="card-desc">
-                  Ti viene mostrata un'operazione aritmetica e due possibili
-                  risultati. Scegli quello corretto prima che il tempo finisca!
-                  Ogni risposta giusta vale 1 punto.
-                </p>
+      <section className="help-section" aria-labelledby="steps-title">
+        <div className="help-section-head">
+          <h2 id="steps-title">Come si gioca</h2>
+          <p>Tre passi, sempre uguali in tutti i giochi.</p>
+        </div>
+        <div className="help-steps">
+          {STEPS.map((step) => (
+            <div className="help-step" key={step.title}>
+              <span className="help-step-number" aria-hidden="true">
+                {step.emoji}
+              </span>
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="help-section" aria-labelledby="rules-title">
+        <div className="help-section-head">
+          <h2 id="rules-title">Regole dei giochi</h2>
+          <p>
+            Le regole di tutti i {GAMES.length} giochi, divise per categoria.
+          </p>
+        </div>
+
+        <div className="rules-wrap">
+          {CATEGORY_ORDER.map((categoryId) => {
+            const category = CATEGORIES[categoryId];
+            const games = getGamesByCategory(categoryId);
+
+            return (
+              <div
+                className="rules-category"
+                key={categoryId}
+                style={{
+                  "--category": category.color,
+                  "--category-ink": category.ink,
+                }}
+              >
+                <h3 className="rules-category-title">
+                  <span aria-hidden="true">{category.emoji}</span>{" "}
+                  {category.label}
+                </h3>
+
+                <div className="rules-grid">
+                  {games.map((game) => (
+                    <article className="rule-card" key={game.id}>
+                      <div className="rule-head">
+                        <span className="rule-icon" aria-hidden="true">
+                          <i className={game.icon} />
+                        </span>
+                        <h4>{game.title}</h4>
+                      </div>
+                      <p className="rule-text">{game.rules}</p>
+                      <div className="rule-tags">
+                        {tagsFor(game).map((tag) => (
+                          <span className="rule-tag" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <Link to={game.link} className="rule-link">
+                        Gioca <i className="fa-solid fa-arrow-right" aria-hidden="true" />
+                      </Link>
+                    </article>
+                  ))}
+                </div>
               </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="help-section" aria-labelledby="accessibility-title">
+        <div className="help-section-head">
+          <h2 id="accessibility-title">Giocare sereni</h2>
+          <p>Piccoli accorgimenti pensati per chi ha bisogno di più calma.</p>
+        </div>
+        <div className="help-tips">
+          <div className="help-tip">
+            <span aria-hidden="true">⏳</span>
+            <div>
+              <h3>Senza tempo</h3>
+              <p>Nessun conto alla rovescia: decidi tu quando fermarti con il pulsante Fine.</p>
             </div>
           </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-xmark"></i>
-              <div className="text-prop">
-                <p className="card-title">Tabelline</p>
-                <p className="card-desc">
-                  Ti viene mostrata una moltiplicazione e due possibili
-                  risultati. Scegli quello corretto prima che il tempo scada!
-                  Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
+          <div className="help-tip">
+            <span aria-hidden="true">🔊</span>
+            <div>
+              <h3>Suoni controllabili</h3>
+              <p>Il pulsante in alto a destra attiva o disattiva tutti gli effetti sonori.</p>
             </div>
           </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-code-compare"></i>
-              <div className="text-prop">
-                <p className="card-title">Maggiore o Minore</p>
-                <p className="card-desc">
-                  Vengono mostrati due numeri: scegli il simbolo corretto
-                  ({">"}, {"<"} o {"="}) prima che il tempo finisca. Ogni
-                  risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-palette"></i>
-              <div className="text-prop">
-                <p className="card-title">Indovina il colore</p>
-                <p className="card-desc">
-                  Ti viene mostrato il nome di un colore e due riquadri
-                  colorati. Seleziona quello corretto prima che il tempo scada!
-                  Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-clone"></i>
-              <div className="text-prop">
-                <p className="card-title">Memory Colori</p>
-                <p className="card-desc">
-                  Una griglia di carte coperte: giranne due alla volta e
-                  trova tutte le coppie di colori uguali per vincere.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-flag"></i>
-              <div className="text-prop">
-                <p className="card-title">Indovina le bandiere</p>
-                <p className="card-desc">
-                  Ti viene mostrata la bandiera di un paese e due possibili
-                  nomi. Scegli quello corretto prima che il tempo scada!
-                  Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-earth-europe"></i>
-              <div className="text-prop">
-                <p className="card-title">Capitali del mondo</p>
-                <p className="card-desc">
-                  Ti viene mostrata la bandiera di un paese e due possibili
-                  capitali. Scegli quella corretta prima che il tempo scada!
-                  Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-images"></i>
-              <div className="text-prop">
-                <p className="card-title">Memory Bandiere</p>
-                <p className="card-desc">
-                  Una griglia di carte coperte: giranne due alla volta e
-                  trova tutte le coppie di bandiere uguali per vincere.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-equals"></i>
-              <div className="text-prop">
-                <p className="card-title">Sinonimi italiani</p>
-                <p className="card-desc">
-                  Ti viene mostrata una parola in italiano e due possibili
-                  significati simili. Scegli il sinonimo corretto prima che
-                  il tempo scada! Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-not-equal"></i>
-              <div className="text-prop">
-                <p className="card-title">Contrari italiani</p>
-                <p className="card-desc">
-                  Ti viene mostrata una parola in italiano e due possibili
-                  significati opposti. Scegli il contrario corretto prima che
-                  il tempo scada! Ogni risposta giusta vale 1 punto.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="game-card rule-card">
-            <div className="card-top">
-              <i className="fa-solid fa-shuffle"></i>
-              <div className="text-prop">
-                <p className="card-title">Anagrammi</p>
-                <p className="card-desc">
-                  Le lettere di una parola sono mescolate: toccale nell'ordine
-                  giusto per ricomporla. Usa "Aiuto" per un suggerimento. Ogni
-                  parola indovinata vale 1 punto.
-                </p>
-              </div>
+          <div className="help-tip">
+            <span aria-hidden="true">✅</span>
+            <div>
+              <h3>Risposte chiare</h3>
+              <p>Le risposte giuste sono evidenziate anche con icone e testo, non solo con il colore.</p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="first-section">
-        <h2>Contatti</h2>
-        <div
-          className="container"
-          style={{ alignItems: "center", textAlign: "center" }}
-        >
-          <p>Hai trovato un bug o vuoi darci un feedback? Contattaci!</p>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "10px",
-              width: "100%",
-            }}
-          >
-            <a
-              className="btn"
-              href="mailto:supporto@eduplays.it"
-              style={{
-                backgroundColor: "#FFD200",
-                textDecoration: "none",
-                textAlign: "center",
-              }}
-            >
-              <i
-                className="fa-regular fa-envelope"
-                style={{ marginRight: "8px" }}
-              ></i>
+      <section className="help-section help-contact" aria-labelledby="contact-title">
+        <div className="contact-card">
+          <div>
+            <h2 id="contact-title">Hai bisogno di una mano?</h2>
+            <p>
+              Scrivici per segnalare un problema, proporre un gioco o darci un
+              suggerimento.
+            </p>
+          </div>
+          <div className="contact-actions">
+            <a className="btn btn-primary" href="mailto:supporto@eduplays.it">
+              <i className="fa-regular fa-envelope" aria-hidden="true" />{" "}
               supporto@eduplays.it
             </a>
             <a
-              className="btn"
-              href="https://github.com/DRosarioDev/MindRush"
+              className="btn btn-secondary"
+              href="https://github.com/DRosarioDev/Eduplays"
               target="_blank"
               rel="noreferrer"
-              style={{
-                backgroundColor: "#fff",
-                textDecoration: "none",
-                textAlign: "center",
-              }}
             >
-              <i
-                className="fa-brands fa-github"
-                style={{ marginRight: "8px" }}
-              ></i>
-              GitHub
+              <i className="fa-brands fa-github" aria-hidden="true" /> GitHub
             </a>
           </div>
         </div>

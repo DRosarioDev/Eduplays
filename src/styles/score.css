@@ -1,26 +1,141 @@
-/*  ==========================================
-    Score
-    ==========================================
-*/
+/* ==========================================
+   Schermata finale
+   ========================================== */
 
-.game-not-started {
+.end-page {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  padding: 40px 50px;
-  gap: 20px;
-  min-width: 300px;
+  padding: 3rem 1rem 4rem;
+}
+
+.end-card {
+  position: relative;
+  width: min(660px, 100%);
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  overflow: hidden;
+  border: 3px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-lg);
   text-align: center;
 }
 
-.game-not-started h2 {
-  font-size: 36px;
-  margin: 0;
+.end-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 14px;
+  background: var(--category, var(--primary));
 }
 
-.game-not-started .buttons-row {
+.end-mascot {
   display: flex;
-  flex-direction: row;
-  gap: 15px;
+  justify-content: center;
+  margin: 0.25rem 0 0.4rem;
+}
+
+.end-mascot img {
+  width: 130px;
+  height: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 14px rgba(23, 34, 43, 0.15));
+  animation: float 4s ease-in-out infinite;
+}
+
+.end-kicker {
+  margin: 0 0 0.2rem;
+  color: var(--color-text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.end-card h1 {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+}
+
+.end-score {
+  margin: 0.15rem 0 0;
+  font-size: clamp(3.4rem, 12vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.end-score span {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--ink-soft);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.end-score--text {
+  font-size: clamp(2.6rem, 9vw, 3.6rem);
+}
+
+.end-stars {
+  display: flex;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 1rem 0 0.6rem;
+  color: #d5dde3;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+}
+
+.end-stars .is-on {
+  color: #f4b400;
+  text-shadow: 0 2px 0 rgba(0, 0, 0, 0.12);
+  animation: star-pop 0.35s ease-out both;
+}
+
+.end-stars .is-on:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.end-stars .is-on:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.end-message {
+  max-width: 38ch;
+  margin: 0 auto 1rem;
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+.end-record {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.15rem 0 0;
+  padding: 0.35rem 0.8rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: #fff6cf;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+.end-record--new {
+  border-color: var(--success);
+  background: var(--success-bg);
+  color: var(--success);
+  animation: pop 0.35s ease-out;
+}
+
+.end-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+  margin-top: 1.6rem;
+}
+
+.end-actions .btn-primary {
+  background: var(--category, var(--primary));
+  color: var(--category-ink, var(--ink));
 }

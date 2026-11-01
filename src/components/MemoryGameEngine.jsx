@@ -1,15 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import CardMemoryGame from "./CardMemoryGame";
-import Score from "./Score";
-import StartComponent from "./StartComponent";
+import GameScreen from "./GameScreen";
 import { useSound } from "../hooks/useSound";
-import { buildMemoryDeck } from "../utils/memoryDeck";
-import { usePreloadImages } from "../hooks/usePreloadImages";
+import { buildMemoryDeck, shuffleArray } from "../utils/memoryDeck";
+import { readRecord, saveIfBetter } from "../utils/storage";
+import { formatCount } from "../utils/formatCount";
+import { getGame } from "../data/games";
 
 function defaultRenderCard(item) {
   if (item.type === "color") return null;
-  if (item.type === "image")
-    return <img src={item.value} alt={item.label || ""} className="card-memory-img" />;
+  if (item.type === "image") {
+    return <img src={item.value} alt="" className="card-memory-img" />;
+  }
   return <p>{item.value}</p>;
 }
 
@@ -17,117 +19,208 @@ function defaultCardBgColor(item) {
   return item.type === "color" ? item.value : "#fff";
 }
 
+function pickItems(items, pairCount) {
+  if (!pairCount || pairCount >= items.length) return items;
+  return shuffleArray(items).slice(0, pairCount);
+}
+
 export default function MemoryGameEngine({
-  title,
+  gameId,
   items,
-  bgColor = "#f4fafd",
+  pairCount,
   renderCard = defaultRenderCard,
   cardBgColor = defaultCardBgColor,
 }) {
+  const game = getGame(gameId);
+
   const [start, setStart] = useState(true);
   const [first, setFirst] = useState(true);
-  const [cards, setCards] = useState(() => buildMemoryDeck(items));
+  const [activeItems, setActiveItems] = useState(() =>
+    pickItems(items, pairCount)
+  );
+  const [cards, setCards] = useState(() => buildMemoryDeck(activeItems));
   const [firstCard, setFirstCard] = useState(null);
-  const [secondCard, setSecondCard] = useState(null);
   const [isLocked, setIsLocked] = useState(false);
+  const [moves, setMoves] = useState(0);
+  const [matched, setMatched] = useState(0);
+  const [best, setBest] = useState(() => readRecord(game?.storageKey));
+  const [isNewRecord, setIsNewRecord] = useState(false);
 
   const { playFlip, playMatch, playWin } = useSound();
 
+  const cardsRef = useRef(cards);
+  const timersRef = useRef([]);
+
+  useEffect(() => {
+    cardsRef.current = cards;
+  }, [cards]);
+
+  useEffect(() => {
+    const timers = timersRef.current;
+    return () => {
+      timers.forEach((timer) => clearTimeout(timer));
+    };
+  }, []);
+
+  const later = (callback, delay) => {
+    const timer = setTimeout(callback, delay);
+    timersRef.current.push(timer);
+    return timer;
+  };
+
+  const clearTimers = () => {
+    timersRef.current.forEach((timer) => clearTimeout(timer));
+    timersRef.current = [];
+  };
+
   const handleStart = () => {
-    setCards(buildMemoryDeck(items));
+    clearTimers();
+    const nextItems = pickItems(items, pairCount);
+    const deck = buildMemoryDeck(nextItems);
+    setActiveItems(nextItems);
+    cardsRef.current = deck;
+    setCards(deck);
     setFirstCard(null);
-    setSecondCard(null);
     setIsLocked(false);
+    setMoves(0);
+    setMatched(0);
+    setIsNewRecord(false);
     setStart(false);
     setFirst(false);
   };
 
-  usePreloadImages(
-    items.filter((item) => item.type === "image").map((item) => item.value)
-  )
+  const handleCardClick = (index) => {
+    if (isLocked || start) return;
 
-  useEffect(() => {
-    if (firstCard === null || secondCard === null) return;
-    const isMatch = cards[firstCard].id === cards[secondCard].id;
-    if (isMatch) return;
-    const timer = setTimeout(() => {
-      setCards((prev) =>
-        prev.map((card, i) =>
-          i === firstCard || i === secondCard ? { ...card, isFlipped: false } : card
-        )
-      );
-      setFirstCard(null);
-      setSecondCard(null);
-      setIsLocked(false);
-    }, 500);
-    return () => clearTimeout(timer);
-  }, [firstCard, secondCard]);
-
-  function clickHandle(index) {
-    if (isLocked) return;
-    if (cards[index].isFlipped || cards[index].isMatched) return;
+    const currentCards = cardsRef.current;
+    const card = currentCards[index];
+    if (!card || card.isFlipped || card.isMatched) return;
 
     playFlip();
 
-    const newCards = cards.map((card, i) => (i === index ? { ...card, isFlipped: true } : card));
-
     if (firstCard === null) {
-      setCards(newCards);
+      const updated = currentCards.map((current, currentIndex) =>
+        currentIndex === index ? { ...current, isFlipped: true } : current
+      );
+      cardsRef.current = updated;
+      setCards(updated);
       setFirstCard(index);
-    } else {
-      const isMatch = cards[firstCard].id === cards[index].id;
-      if (isMatch) {
-        playMatch();
-        setCards(newCards);
-        setIsLocked(true);
-        setTimeout(() => {
-          const matchedCards = newCards.map((card, i) =>
-            i === firstCard || i === index ? { ...card, isMatched: true } : card
-          );
-          const allMatched = matchedCards.every((card) => card.isMatched);
-          setCards(matchedCards);
-          setFirstCard(null);
-          setSecondCard(null);
-          setIsLocked(false);
-          if (allMatched) {
-            playWin();
-            setTimeout(() => setStart(true), 100);
-          }
-        }, 500);
-      } else {
-        setCards(newCards);
-        setSecondCard(index);
-        setIsLocked(true);
-      }
+      return;
     }
-  }
+
+    if (firstCard === index) return;
+
+    const firstIndex = firstCard;
+    const updated = currentCards.map((current, currentIndex) =>
+      currentIndex === index || currentIndex === firstIndex
+        ? { ...current, isFlipped: true }
+        : current
+    );
+    cardsRef.current = updated;
+    setCards(updated);
+    setFirstCard(null);
+    setIsLocked(true);
+
+    const nextMoves = moves + 1;
+    setMoves(nextMoves);
+
+    const isMatch = currentCards[firstIndex].id === currentCards[index].id;
+
+    if (isMatch) {
+      later(() => {
+        const matchedCards = cardsRef.current.map((current, currentIndex) =>
+          currentIndex === firstIndex || currentIndex === index
+            ? { ...current, isMatched: true }
+            : current
+        );
+        cardsRef.current = matchedCards;
+        setCards(matchedCards);
+        setIsLocked(false);
+
+        const pairsFound = matchedCards.filter((current) => current.isMatched).length / 2;
+        setMatched(pairsFound);
+        playMatch();
+
+        if (pairsFound === activeItems.length) {
+          later(() => {
+            if (saveIfBetter(game.storageKey, nextMoves, "min")) {
+              setBest(nextMoves);
+              setIsNewRecord(true);
+            }
+            playWin();
+            setStart(true);
+            setFirst(false);
+          }, 900);
+        }
+      }, 450);
+    } else {
+      later(() => {
+        const resetCards = cardsRef.current.map((current, currentIndex) =>
+          currentIndex === firstIndex || currentIndex === index
+            ? { ...current, isFlipped: false }
+            : current
+        );
+        cardsRef.current = resetCards;
+        setCards(resetCards);
+        setIsLocked(false);
+      }, 900);
+    }
+  };
+
+  const totalPairs = activeItems.length;
+  const progress = totalPairs > 0 ? (matched / totalPairs) * 100 : 0;
 
   return (
-    <div className="container-color" style={{ backgroundColor: bgColor }}>
-      {start && first ? (
-        <StartComponent title={title} onStart={handleStart} isTime={false} />
-      ) : !start ? (
-        <div>
-          <h1 style={{ display: "flex", justifyContent: "center" }}>{title}</h1>
-          <div className="game-container memory">
-            <div className="memory-game">
-              {cards.map((card, index) => (
-                <CardMemoryGame
-                  key={card.uid}
-                  index={index}
-                  isFlipped={card.isFlipped}
-                  isMatched={card.isMatched}
-                  clickHandle={clickHandle}
-                  bgColor={cardBgColor(card)}
-                  renderFace={renderCard(card)}
-                />
-              ))}
-            </div>
-          </div>
+    <GameScreen
+      meta={game}
+      start={start}
+      first={first}
+      timeEnabled={null}
+      feedback={undefined}
+      showScore={false}
+      showQuit={false}
+      best={best}
+      isNewRecord={isNewRecord}
+      onStart={handleStart}
+      scoreVariant="memory"
+      scoreStats={{ moves }}
+    >
+      <div className="memory-summary">
+        <div className="memory-stats">
+          <span className="memory-chip">
+            <span aria-hidden="true">🧩</span> {matched}/{totalPairs} coppie
+          </span>
+          <span className="memory-chip">
+            <span aria-hidden="true">👆</span>{" "}
+            {formatCount(moves, "mossa", "mosse")}
+          </span>
         </div>
-      ) : (
-        <Score points={null} isPoint={false} onStart={handleStart} />
-      )}
-    </div>
+        <div
+          className="memory-progress"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={totalPairs}
+          aria-valuenow={matched}
+          aria-label={`Coppie trovate: ${matched} su ${totalPairs}`}
+        >
+          <span style={{ width: `${progress}%` }} />
+        </div>
+      </div>
+
+      <div className="memory-grid">
+        {cards.map((card, index) => (
+          <CardMemoryGame
+            key={card.uid}
+            index={index}
+            isFlipped={card.isFlipped}
+            isMatched={card.isMatched}
+            clickHandle={handleCardClick}
+            bgColor={cardBgColor(card)}
+            renderFace={renderCard(card)}
+            label={card.label_it || card.label || ""}
+          />
+        ))}
+      </div>
+    </GameScreen>
   );
 }

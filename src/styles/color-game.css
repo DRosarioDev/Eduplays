@@ -1,19 +1,82 @@
-/*  ==========================================
-    Color Game
-    ==========================================
-*/
+/* ==========================================
+   Gioco dei colori
+   ========================================== */
 
-.buttons-container .btn-color {
-  flex: 1;
+.swatch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
   width: 100%;
-  height: 70px;
-  border-radius: 15px;
-  border: 3px solid var(--color-black);
-  cursor: pointer;
-  transition: transform 0.15s;
 }
 
-.buttons-container .btn-color:hover {
-  transform: scale(1.05);
-  border-width: 4px;
+.swatch {
+  position: relative;
+  min-height: 160px;
+  border: 3px solid var(--line);
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    opacity 0.16s ease;
+}
+
+.swatch:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 255, 255, 0.7),
+    4px 5px 0 var(--line);
+}
+
+.swatch--correct {
+  outline: 6px solid var(--success);
+  outline-offset: 3px;
+}
+
+.swatch--wrong {
+  outline: 6px solid var(--danger);
+  outline-offset: 3px;
+}
+
+.swatch--dim {
+  opacity: 0.45;
+}
+
+.swatch-tag {
+  position: absolute;
+  bottom: 0.7rem;
+  left: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.swatch-state {
+  position: absolute;
+  top: 0.7rem;
+  right: 0.7rem;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 3px solid currentColor;
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 1rem;
+}
+
+.swatch-state--correct {
+  color: var(--success);
+}
+
+.swatch-state--wrong {
+  color: var(--danger);
 }

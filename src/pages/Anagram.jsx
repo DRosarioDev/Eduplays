@@ -1,25 +1,30 @@
-/* eslint-disable react-hooks/purity */
-import StartComponent from "../components/StartComponent";
-import Timer from "../components/Timer";
-import Score from "../components/Score";
+import { useCallback, useState } from "react";
+import GameScreen from "../components/GameScreen";
+import { useGameEngine } from "../hooks/useGameEngine";
 import { useSound } from "../hooks/useSound";
-import italianWords from "../assets/words_it.json";
-import { useState } from "react";
+import { getGame } from "../data/games";
+import { anagramWordBanks } from "../assets/anagramWords";
+import { createWeightedDeck } from "../utils/questionDeck";
 
-// Fisher-Yates shuffle
+const game = getGame("italian-anagram");
+const drawWord = createWeightedDeck(anagramWordBanks);
+
 function shuffleArray(array) {
-  const arr = [...array];
-  for (let i = arr.length; i > 0; i--) {
+  const result = [...array];
+  for (let i = result.length; i > 0; i -= 1) {
     const randomIndex = Math.floor(Math.random() * i);
     const currentIndex = i - 1;
-    [arr[currentIndex], arr[randomIndex]] = [arr[randomIndex], arr[currentIndex]];
+    [result[currentIndex], result[randomIndex]] = [
+      result[randomIndex],
+      result[currentIndex],
+    ];
   }
-  return arr;
+  return result;
 }
 
 function buildLetterTiles(word) {
-  let tiles = word.word.split("").map((char, i) => ({
-    id: `${i}-${char}-${Math.random().toString(36).slice(2, 7)}`,
+  let tiles = word.word.split("").map((char, index) => ({
+    id: `${index}-${char}-${Math.random().toString(36).slice(2, 7)}`,
     char,
     used: false,
   }));
@@ -29,159 +34,190 @@ function buildLetterTiles(word) {
   let attempts = 0;
   while (
     tiles.length > 1 &&
-    tiles.map((t) => t.char).join("") === word.word &&
+    tiles.map((tile) => tile.char).join("") === word.word &&
     attempts < 10
   ) {
     tiles = shuffleArray(tiles);
-    attempts++;
+    attempts += 1;
   }
 
   return tiles;
 }
 
-export default function Anagram() {
-  const [start, setStart] = useState(true);
-  const [first, setFirst] = useState(true);
-  const [timeEnabled, setTimeEnabled] = useState(true);
-  const [difficulty, setDifficulty] = useState(0);
-  const [points, setPoints] = useState(0);
+function pickWord(difficulty) {
+  return drawWord(difficulty);
+}
 
+export default function Anagram() {
   const [currentWord, setCurrentWord] = useState(null);
   const [letters, setLetters] = useState([]);
   const [selected, setSelected] = useState([]);
-  const [feedback, setFeedback] = useState(null); // "correct" | "wrong" | null
   const [showHint, setShowHint] = useState(false);
 
-  const { playCorrect } = useSound();
+  const { playCorrect, playWrong } = useSound();
 
-  const pickWord = (diff) => {
-    const filtered = italianWords.filter((w) => w.difficulty <= diff);
-    const pool = filtered.length > 0 ? filtered : italianWords;
-    return pool[Math.floor(Math.random() * pool.length)];
-  };
-
-  const changeWord = (diff = difficulty) => {
-    const word = pickWord(diff);
+  const changeWord = useCallback((difficulty = 0) => {
+    const word = pickWord(difficulty);
     setCurrentWord(word);
     setLetters(buildLetterTiles(word));
     setSelected([]);
-    setFeedback(null);
     setShowHint(false);
-  };
+  }, []);
 
-  const handleTimerOver = () => {
-    setStart(true);
-  };
+  const {
+    points,
+    start,
+    first,
+    timeEnabled,
+    difficulty,
+    feedback,
+    streak,
+    best,
+    isNewRecord,
+    gameKey,
+    handleStart,
+    handleTimerOver,
+    finishGame,
+    submitAnswer,
+  } = useGameEngine({
+    onRound: (diff) => changeWord(diff),
+    storageKey: game.storageKey,
+  });
 
-  const handleStart = (timeEnable, diff) => {
-    setPoints(0);
-    setDifficulty(diff);
-    setTimeEnabled(timeEnable);
-    changeWord(diff);
-    setStart(false);
-    setFirst(false);
-  };
+  const resetSelection = useCallback(() => {
+    setSelected([]);
+    setLetters((current) =>
+      current.map((tile) => ({ ...tile, used: false }))
+    );
+  }, []);
 
-const handleLetterClick = (tileId) => {
-  if (feedback) return;
-  const tile = letters.find((t) => t.id === tileId && !t.used);
-  if (!tile) return;
+  const handleLetterClick = (tile) => {
+    if (feedback || !currentWord || tile.used) return;
 
-  const newLetters = letters.map((t) =>
-    t.id === tileId ? { ...t, used: true } : t
-  );
-  const newSelected = [...selected, tile];
+    const nextSelected = [...selected, tile];
+    setLetters((current) =>
+      current.map((currentTile) =>
+        currentTile.id === tile.id
+          ? { ...currentTile, used: true }
+          : currentTile
+      )
+    );
+    setSelected(nextSelected);
 
-  setLetters(newLetters);
-  setSelected(newSelected);
+    if (nextSelected.length === letters.length) {
+      const attempt = nextSelected.map((item) => item.char).join("");
+      const isCorrect = attempt === currentWord.word;
+      if (isCorrect) playCorrect();
+      else playWrong();
 
-  if (newSelected.length === newLetters.length) {
-    const attempt = newSelected.map((t) => t.char).join("");
-
-    if (attempt === currentWord.word) {
-      playCorrect();
-      setFeedback("correct");
-      setPoints((p) => p + 1);
-      setTimeout(() => changeWord(difficulty), 900);
-    } else {
-      setFeedback("wrong");
-      setTimeout(() => {
-        setSelected([]);
-        setLetters((prev) => prev.map((t) => ({ ...t, used: false })));
-        setFeedback(null);
-      }, 900);
+      submitAnswer(isCorrect, attempt, () => {
+        if (isCorrect) {
+          changeWord(difficulty);
+        } else {
+          resetSelection();
+        }
+      });
     }
-  }
-};
+  };
+
   const handleRemoveLast = () => {
     if (feedback || selected.length === 0) return;
     const last = selected[selected.length - 1];
-    setSelected((prev) => prev.slice(0, -1));
-    setLetters((prev) =>
-      prev.map((t) => (t.id === last.id ? { ...t, used: false } : t))
+    setSelected((current) => current.slice(0, -1));
+    setLetters((current) =>
+      current.map((tile) =>
+        tile.id === last.id ? { ...tile, used: false } : tile
+      )
     );
   };
+
+  const selectedWord = selected.map((tile) => tile.char).join("");
+
   return (
-    <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
-      {start && first ? (
-        <StartComponent
-          title="Anagrammi"
-          isTime={true}
-          isDifficulty={true}
-          onStart={(timeEnable, diff) => handleStart(timeEnable, diff)}
-        />
-      ) : !start ? (
-        <div>
-          <div className="game-header">
-            <Timer onTimeOver={handleTimerOver} isTimer={timeEnabled} />
-            <div className="points">Score: {points}</div>
-          </div>
+    <GameScreen
+      meta={game}
+      start={start}
+      first={first}
+      points={points}
+      timeEnabled={timeEnabled}
+      timerKey={gameKey}
+      feedback={feedback}
+      streak={streak}
+      best={best}
+      isNewRecord={isNewRecord}
+      onStart={handleStart}
+      onTimerOver={handleTimerOver}
+      onQuit={finishGame}
+      wrongFeedback="Ops! Le lettere non sono nell'ordine giusto."
+    >
+      <p className="prompt-hint">Ricomponi la parola toccando le lettere.</p>
 
-          <div className="game-container anagram">
-            <div
-              className={`anagram-slots ${feedback ? feedback : ""}`}
-            >
-              {letters.map((tile, i) => (
-                <div key={`slot-${i}`} className="letter-slot">
-                  {selected[i] ? selected[i].char.toUpperCase() : ""}
-                </div>
-              ))}
-            </div>
+      <div
+        className={`anagram-slots ${
+          feedback ? `anagram-slots--${feedback.type}` : ""
+        }`}
+        role="status"
+        aria-live="polite"
+        aria-label={`Parola composta: ${
+          selectedWord ? selectedWord.split("").join(" ") : "vuota"
+        }`}
+      >
+        {letters.map((tile, index) => (
+          <span className="letter-slot" key={`slot-${index}`}>
+            {selected[index] ? selected[index].char.toUpperCase() : ""}
+          </span>
+        ))}
+      </div>
 
-            <div className="anagram-letters">
-              {letters.map((tile) => (
-                <button
-                  key={tile.id}
-                  className={`letter-tile ${tile.used ? "used" : ""}`}
-                  onClick={() => handleLetterClick(tile.id)}
-                  disabled={tile.used || !!feedback}
-                >
-                  {tile.char.toUpperCase()}
-                </button>
-              ))}
-            </div>
+      <div className="anagram-letters">
+        {letters.map((tile) => (
+          <button
+            key={tile.id}
+            type="button"
+            className={`letter-tile ${tile.used ? "is-used" : ""}`}
+            onClick={() => handleLetterClick(tile)}
+            disabled={tile.used || Boolean(feedback)}
+            aria-label={`Lettera ${tile.char.toUpperCase()}`}
+          >
+            {tile.char.toUpperCase()}
+          </button>
+        ))}
+      </div>
 
-            <div className="anagram-controls">
-              <button className="btn" onClick={handleRemoveLast}>
-                <i className="fa-solid fa-delete-left" style={{ marginRight: "8px" }}></i>
-                Cancella
-              </button>
-              <button className="btn" onClick={() => setShowHint(true)}>
-                <i className="fa-regular fa-lightbulb" style={{ marginRight: "8px" }}></i>
-                Aiuto
-              </button>
-            </div>
+      <div className="anagram-controls">
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={handleRemoveLast}
+          disabled={selected.length === 0 || Boolean(feedback)}
+        >
+          <i className="fa-solid fa-delete-left" aria-hidden="true" />
+          Cancella
+        </button>
+        <button
+          type="button"
+          className="btn btn-secondary"
+          onClick={() => setShowHint(true)}
+          disabled={showHint}
+        >
+          <i className="fa-regular fa-lightbulb" aria-hidden="true" />
+          Indizio
+        </button>
+      </div>
 
-            {showHint && currentWord && (
-              <p className="hint-text">
-                Suggerimento: significa come "{currentWord.synonym}"
-              </p>
-            )}
-          </div>
-        </div>
-      ) : (
-        <Score points={points} isPoint={true} onStart={handleStart} />
+      {showHint && currentWord && (
+        <p className="hint-text" role="status">
+          <i className="fa-solid fa-lightbulb" aria-hidden="true" />
+          {currentWord.synonym ? (
+            <>Significa come &ldquo;{currentWord.synonym}&rdquo;.</>
+          ) : (
+            <>
+              Inizia con la lettera{" "}
+              <strong>{currentWord.word[0].toUpperCase()}</strong>.
+            </>
+          )}
+        </p>
       )}
-    </div>
+    </GameScreen>
   );
 }

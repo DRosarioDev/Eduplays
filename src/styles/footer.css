@@ -1,51 +1,69 @@
-/*  ==========================================
-    Footer
-    ==========================================
-*/
+/* ==========================================
+   Footer
+   ========================================== */
 
-footer {
+.site-footer {
+  padding: 2rem 1.25rem 2.4rem;
+  border-top: 3px solid var(--line);
+  background: var(--surface);
+}
+
+.footer-inner {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-top: 3px solid var(--color-black);
-  padding: 30px 1.5rem;
-  background-color: var(--bg-page);
-  gap: 10px;
+  gap: 0.55rem;
+  max-width: 1000px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.footer-title {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0;
+.footer-logo-row {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+}
+
+.footer-logo {
+  width: auto;
+  height: 36px;
+}
+
+.footer-version {
+  padding: 0.05rem 0.5rem;
+  border: 2px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--bg-page);
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 400;
 }
 
 .footer-desc {
-  font-size: 14px;
   margin: 0;
   color: var(--color-text-muted);
+  font-size: 0.95rem;
 }
 
 .footer-links {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  justify-content: center;
+  gap: 0.4rem 0.7rem;
 }
 
 .footer-link {
-  font-size: 14px;
-  color: inherit;
+  border-bottom: 2px solid transparent;
+  font-size: 0.9rem;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 500;
 }
 
 .footer-link:hover {
-  text-decoration: none;
-}
-
-.footer-link:visited {
-  color: inherit;
+  border-bottom-color: var(--ink);
 }
 
 .footer-divider {
@@ -53,7 +71,7 @@ footer {
 }
 
 .footer-copy {
-  font-size: 12px;
-  color: var(--color-text-faint);
   margin: 0;
+  color: var(--color-text-faint);
+  font-size: 0.78rem;
 }

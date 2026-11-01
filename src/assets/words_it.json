@@ -1398,5 +1398,145 @@
     "synonym": "intricato",
     "antonym": "semplice",
     "difficulty": 1
+  },
+  {
+    "id": 201,
+    "word": "amico",
+    "synonym": "compagno",
+    "antonym": "nemico",
+    "difficulty": 0
+  },
+  {
+    "id": 202,
+    "word": "nemico",
+    "synonym": "avversario",
+    "antonym": "amico",
+    "difficulty": 0
+  },
+  {
+    "id": 203,
+    "word": "pace",
+    "synonym": "quiete",
+    "antonym": "guerra",
+    "difficulty": 0
+  },
+  {
+    "id": 204,
+    "word": "guerra",
+    "synonym": "conflitto",
+    "antonym": "pace",
+    "difficulty": 0
+  },
+  {
+    "id": 205,
+    "word": "gioia",
+    "synonym": "felicità",
+    "antonym": "dolore",
+    "difficulty": 0
+  },
+  {
+    "id": 206,
+    "word": "dolore",
+    "synonym": "pena",
+    "antonym": "gioia",
+    "difficulty": 0
+  },
+  {
+    "id": 207,
+    "word": "paura",
+    "synonym": "timore",
+    "antonym": "coraggio",
+    "difficulty": 0
+  },
+  {
+    "id": 208,
+    "word": "forza",
+    "synonym": "vigore",
+    "antonym": "debolezza",
+    "difficulty": 0
+  },
+  {
+    "id": 209,
+    "word": "fame",
+    "synonym": "appetito",
+    "antonym": "sazietà",
+    "difficulty": 0
+  },
+  {
+    "id": 210,
+    "word": "sonno",
+    "synonym": "stanchezza",
+    "antonym": "veglia",
+    "difficulty": 0
+  },
+  {
+    "id": 211,
+    "word": "notte",
+    "synonym": "buio",
+    "antonym": "giorno",
+    "difficulty": 0
+  },
+  {
+    "id": 212,
+    "word": "giorno",
+    "synonym": "dì",
+    "antonym": "notte",
+    "difficulty": 0
+  },
+  {
+    "id": 213,
+    "word": "alba",
+    "synonym": "aurora",
+    "antonym": "tramonto",
+    "difficulty": 0
+  },
+  {
+    "id": 214,
+    "word": "cielo",
+    "synonym": "firmamento",
+    "antonym": "terra",
+    "difficulty": 0
+  },
+  {
+    "id": 215,
+    "word": "terra",
+    "synonym": "suolo",
+    "antonym": "cielo",
+    "difficulty": 0
+  },
+  {
+    "id": 216,
+    "word": "mare",
+    "synonym": "oceano",
+    "antonym": "terra",
+    "difficulty": 0
+  },
+  {
+    "id": 217,
+    "word": "monte",
+    "synonym": "montagna",
+    "antonym": "valle",
+    "difficulty": 0
+  },
+  {
+    "id": 218,
+    "word": "valle",
+    "synonym": "pianura",
+    "antonym": "monte",
+    "difficulty": 0
+  },
+  {
+    "id": 219,
+    "word": "bosco",
+    "synonym": "foresta",
+    "antonym": "radura",
+    "difficulty": 0
+  },
+  {
+    "id": 220,
+    "word": "prato",
+    "synonym": "pascolo",
+    "antonym": "bosco",
+    "difficulty": 0
   }
 ]

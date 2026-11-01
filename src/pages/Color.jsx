@@ -1,143 +1,129 @@
-/* eslint-disable no-unused-vars */
-import { useState } from "react";
-import StartComponent from "../components/StartComponent";
-import Timer from "../components/Timer";
-import Score from "../components/Score";
+import { useCallback, useState } from "react";
+import GameScreen from "../components/GameScreen";
+import { useGameEngine } from "../hooks/useGameEngine";
 import { useSound } from "../hooks/useSound";
+import { getAnswerState } from "../utils/answerState";
+import { getGame } from "../data/games";
+import { COLORS, COLOR_TONES } from "../assets/colors";
+
+const game = getGame("color");
+
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function buildRound() {
+  const correct = COLORS[randomInt(0, COLORS.length - 1)];
+  let wrong = correct;
+  while (wrong.name === correct.name) {
+    wrong = COLORS[randomInt(0, COLORS.length - 1)];
+  }
+
+  const options =
+    Math.random() < 0.5
+      ? [correct.value, wrong.value]
+      : [wrong.value, correct.value];
+
+  return {
+    name: correct.name,
+    answer: correct.value,
+    options,
+    tone: COLOR_TONES[randomInt(0, COLOR_TONES.length - 1)],
+    key: `${correct.name}-${options.join("-")}`,
+  };
+}
 
 export default function Color() {
-  const selectedBgColor = [
-    "#B0C4DE",
-    "9DC183",
-    "#E6E6FA",
-    "#F5F5DC",
-    "#D3D3D3",
-    "#AFEEEE",
-    "#FFE5B4",
-    "#caffcaff",
-    "#87CEEB",
-    "#FFFDD0",
-  ];
+  const [round, setRound] = useState(buildRound);
+  const { playCorrect, playWrong } = useSound();
 
-  const colors = [
-    { colorName: "Bianco", colorValue: "#FFFFFF" },
-    { colorName: "Nero", colorValue: "#000000" },
-    { colorName: "Rosso", colorValue: "#FF0000" },
-    { colorName: "Verde", colorValue: "#00FF00" },
-    { colorName: "Blu", colorValue: "#0000FF" },
-    { colorName: "Giallo", colorValue: "#FFFF00" },
-    { colorName: "Arancione", colorValue: "#FFA500" },
-    { colorName: "Viola", colorValue: "#800080" },
-    { colorName: "Rosa", colorValue: "#FFC0CB" },
-    { colorName: "Grigio", colorValue: "#808080" },
-    { colorName: "Azzurro", colorValue: "#00FFFF" },
-    { colorName: "Magenta", colorValue: "#FF00FF" },
-  ];
+  const nextRound = useCallback(() => {
+    setRound(buildRound());
+  }, []);
 
-  const [result, setResult] = useState("#FFFFFF");
-  const [points, setPoints] = useState(0);
-  const [start, setStart] = useState(true);
-  const [first, setFirst] = useState(true);
-  const [bgColor, setBgColor] = useState(selectedBgColor[0]);
-  const [color, setColour] = useState(() => {
-    Math.floor(Math.random() * colors.length);
+  const {
+    points,
+    start,
+    first,
+    timeEnabled,
+    feedback,
+    streak,
+    best,
+    isNewRecord,
+    gameKey,
+    handleStart,
+    handleTimerOver,
+    finishGame,
+    submitAnswer,
+  } = useGameEngine({
+    onRound: () => setRound(buildRound()),
+    storageKey: game.storageKey,
   });
-  const [textBtn1, setTextBtn1] = useState("White");
-  const [textBtn2, setTextBtn2] = useState("Blue");
-  const [timeEnabled, setTimeEnabled] = useState(true);
 
-  const { playCorrect } = useSound();
-
-  const changeColor = () => {
-    const nuovoColore =
-      selectedBgColor[Math.floor(Math.random() * selectedBgColor.length)];
-    setBgColor(nuovoColore);
-  };
-
-  const changeOperation = () => {
-    const newColor =
-      colors[Math.floor(Math.random() * colors.length)].colorName;
-    let newIDColor = colors.findIndex((c) => c.colorName === newColor);
-    newIDColor = colors[newIDColor].colorValue;
-    setColour(newColor);
-    randomButton(newIDColor);
-  };
-
-  const randomButton = (correctValue) => {
-    let wrong = correctValue;
-    while (wrong === correctValue) {
-      wrong = colors[Math.floor(Math.random() * colors.length)].colorValue;
-    }
-    const arr = [correctValue, wrong].sort(() => Math.random() - 0.5);
-    setResult(correctValue);
-    setTextBtn1(arr[0]);
-    setTextBtn2(arr[1]);
-  };
-
-  const handleStart = (timeEnabled) => {
-    changeColor();
-    changeOperation();
-    setPoints(0);
-    setStart(false);
-    setFirst(false);
-    setTimeEnabled(timeEnabled)
-  };
-
-  const handleTimerOver = () => {
-    setStart(true);
-  };
-
-  const handleClick = (e) => {
-    const value = e.target.value;
-    if (value === result) {
-      playCorrect();
-      setPoints(points + 1);
-    }
+  const handleAnswer = (value) => {
+    if (feedback) return;
+    const isCorrect = value === round.answer;
+    if (isCorrect) playCorrect();
+    else playWrong();
+    submitAnswer(isCorrect, value, nextRound);
   };
 
   return (
-    <>
-      <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
-        {start && first ? (
-          <StartComponent title="Indovina il colore" isTime={true} onStart={(timeEnabled) => {
-            handleStart(timeEnabled);
-          }} />
-        ) : !start ? (
-          <div>
-            <div className="game-header">
-              <Timer onTimeOver={handleTimerOver} isTimer={timeEnabled}/>
-              <div className="points">Score: {points}</div>
-            </div>
-            <div className="game-container">
-              <h2>{color}</h2>
-              <div className="buttons-container">
-                <button
-                  value={textBtn1}
-                  className="btn-color"
-                  style={{ backgroundColor: textBtn1 }}
-                  onClick={(e) => {
-                    changeColor();
-                    changeOperation();
-                    handleClick(e);
-                  }}
-                />
-                <button
-                  value={textBtn2}
-                  className="btn-color"
-                  style={{ backgroundColor: textBtn2 }}
-                  onClick={(e) => {
-                    changeColor();
-                    changeOperation();
-                    handleClick(e);
-                  }}
-                />
-              </div>
-            </div>
-          </div>
-        ) : (
-          <Score points={points} onStart={handleStart} isPoint={true} />
-        )}
+    <GameScreen
+      meta={game}
+      start={start}
+      first={first}
+      points={points}
+      timeEnabled={timeEnabled}
+      timerKey={gameKey}
+      feedback={feedback}
+      streak={streak}
+      best={best}
+      isNewRecord={isNewRecord}
+      onStart={handleStart}
+      onTimerOver={handleTimerOver}
+      onQuit={finishGame}
+      tone={round.tone}
+      wrongFeedback="Ops! Guarda il riquadro giusto."
+    >
+      <p className="prompt-hint">Tocca il riquadro di questo colore:</p>
+
+      <p className="color-name" key={round.key}>
+        {round.name}
+      </p>
+
+      <div className="swatch-grid">
+        {round.options.map((color, index) => {
+          const state = getAnswerState(feedback, color, round.answer);
+          return (
+            <button
+              key={color}
+              type="button"
+              className={`swatch swatch--${state}`}
+              style={{ backgroundColor: color }}
+              onClick={() => handleAnswer(color)}
+              disabled={state !== "idle"}
+              aria-label={`Riquadro colorato ${index + 1}${
+                state === "correct" ? " — risposta giusta" : ""
+              }${state === "wrong" ? " — risposta scelta, sbagliata" : ""}`}
+            >
+              <span className="swatch-tag" aria-hidden="true">
+                {index + 1}
+              </span>
+              {state === "correct" && (
+                <span className="swatch-state swatch-state--correct">
+                  <i className="fa-solid fa-check" aria-hidden="true" />
+                </span>
+              )}
+              {state === "wrong" && (
+                <span className="swatch-state swatch-state--wrong">
+                  <i className="fa-solid fa-xmark" aria-hidden="true" />
+                </span>
+              )}
+            </button>
+          );
+        })}
       </div>
-    </>
+    </GameScreen>
   );
 }

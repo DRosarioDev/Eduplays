@@ -1,0 +1,807 @@
+/* ==========================================
+   Nuovi giochi: schermate e illustrazioni
+   ========================================== */
+
+/* ---------- Illustrazioni leggere per le card ---------- */
+
+.card-art {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 18% 22%,
+      rgba(255, 255, 255, 0.85) 0 2.5px,
+      transparent 3px
+    ),
+    linear-gradient(
+      135deg,
+      color-mix(in srgb, var(--category) 58%, white),
+      color-mix(in srgb, var(--category) 24%, white)
+    );
+  background-size: 18px 18px, 100% 100%;
+}
+
+.card-art::before {
+  content: "";
+  position: absolute;
+  width: 78%;
+  aspect-ratio: 1;
+  border: 3px dashed rgba(23, 34, 43, 0.17);
+  border-radius: 50%;
+  transform: rotate(-9deg);
+}
+
+.card-art-spark {
+  position: absolute;
+  z-index: 1;
+  color: rgba(23, 34, 43, 0.35);
+  font-size: clamp(0.8rem, 1.8vw, 1.3rem);
+  line-height: 1;
+}
+
+.card-art-spark--one {
+  top: 11%;
+  left: 12%;
+  transform: rotate(-12deg);
+}
+
+.card-art-spark--two {
+  right: 12%;
+  bottom: 12%;
+  transform: rotate(14deg);
+}
+
+.card-art-row,
+.card-art-mini-grid,
+.card-art-emoji {
+  position: relative;
+  z-index: 2;
+}
+
+.card-art-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(3px, 0.6vw, 8px);
+}
+
+.card-art-tile {
+  display: grid;
+  place-items: center;
+  width: clamp(20px, 4vw, 44px);
+  height: clamp(24px, 4.6vw, 50px);
+  border: clamp(2px, 0.2vw, 3px) solid var(--line);
+  border-radius: clamp(5px, 1vw, 10px);
+  background: var(--surface);
+  box-shadow: 2px 2px 0 rgba(23, 34, 43, 0.25);
+  color: var(--ink);
+  font-size: clamp(0.85rem, 1.8vw, 1.55rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-art-tile--blank {
+  border-style: dashed;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--ink-soft);
+}
+
+.card-art-pill {
+  min-width: clamp(34px, 6vw, 64px);
+  padding: 0.15em 0.45em;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 2px 3px 0 rgba(23, 34, 43, 0.25);
+  color: var(--ink);
+  font-size: clamp(1rem, 2.2vw, 1.9rem);
+  font-weight: 700;
+  line-height: 1.15;
+  text-align: center;
+  transform: rotate(-7deg);
+}
+
+.card-art-pill--alt {
+  background: color-mix(in srgb, var(--category) 36%, white);
+  transform: rotate(7deg);
+}
+
+.card-art-chip {
+  padding: 0.1em 0.35em;
+  border: 2px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  box-shadow: 2px 2px 0 rgba(23, 34, 43, 0.25);
+  font-size: clamp(0.72rem, 1.5vw, 1.25rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.card-art-sep,
+.card-art-op {
+  color: var(--ink-soft);
+  font-size: clamp(0.9rem, 2vw, 1.6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-art-mini {
+  display: grid;
+  place-items: center;
+  font-size: clamp(1.05rem, 2.4vw, 2rem);
+  line-height: 1;
+}
+
+.card-art-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(1px, 0.3vw, 4px);
+}
+
+.card-art-mini-grid .card-art-mini {
+  width: clamp(20px, 3.8vw, 34px);
+  height: clamp(20px, 3.8vw, 34px);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 1px 2px 0 rgba(23, 34, 43, 0.2);
+  font-size: clamp(0.72rem, 1.7vw, 1.25rem);
+}
+
+.card-art-mini-grid--animals {
+  gap: clamp(2px, 0.4vw, 5px);
+}
+
+.card-art-mini-grid--animals .card-art-mini {
+  width: clamp(23px, 4.2vw, 38px);
+  height: clamp(23px, 4.2vw, 38px);
+  font-size: clamp(0.85rem, 2vw, 1.5rem);
+}
+
+.card-art-magnifier {
+  margin-left: clamp(1px, 0.6vw, 6px);
+  font-size: clamp(1.1rem, 2.5vw, 2rem);
+  transform: rotate(-12deg);
+}
+
+.card-art-label {
+  padding: 0.15em 0.5em;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: 2px 2px 0 rgba(23, 34, 43, 0.25);
+  font-size: clamp(0.7rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.card-art-flag {
+  position: relative;
+  width: clamp(34px, 7vw, 58px);
+  height: clamp(24px, 5vw, 40px);
+  border: 2px solid var(--line);
+  border-radius: 4px;
+  background: linear-gradient(135deg, #4a90e2, #2e6fc7);
+  box-shadow: 2px 2px 0 rgba(23, 34, 43, 0.25);
+}
+
+.card-art-flag::before {
+  content: "";
+  position: absolute;
+  top: -7px;
+  bottom: -7px;
+  left: -5px;
+  width: 3px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.card-art-flag::after {
+  content: "★";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: #ffd200;
+  font-size: clamp(0.8rem, 2vw, 1.35rem);
+  line-height: 1;
+}
+
+.card-art-swatch {
+  width: clamp(18px, 3.4vw, 34px);
+  height: clamp(18px, 3.4vw, 34px);
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.45);
+}
+
+.card-art-question {
+  display: grid;
+  place-items: center;
+  width: clamp(22px, 4.2vw, 40px);
+  height: clamp(22px, 4.2vw, 40px);
+  border: 2px dashed var(--line);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--ink-soft);
+  font-size: clamp(0.9rem, 2vw, 1.5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.card-art-emoji {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1;
+}
+
+/* ---------- Struttura comune dei nuovi quiz ---------- */
+
+.choice-prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  animation: pop 0.22s ease-out;
+}
+
+.choice-reveal {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 2px dashed var(--line-soft);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  text-align: center;
+  animation: pop 0.2s ease-out;
+}
+
+.answers--four {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* ---------- Sequenze numeriche ---------- */
+
+.sequence-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.25rem, 1.2vw, 0.6rem);
+  width: 100%;
+}
+
+.sequence-chip {
+  display: grid;
+  place-items: center;
+  min-width: clamp(42px, 8vw, 64px);
+  height: clamp(52px, 9vw, 72px);
+  padding: 0 0.4rem;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 3px 3px 0 rgba(23, 34, 43, 0.22);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.sequence-chip--blank {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--category) 24%, white);
+  color: var(--ink-soft);
+}
+
+.sequence-answer {
+  font-size: 1.2em;
+}
+
+/* ---------- Doppio o metà ---------- */
+
+.double-prompt {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  min-width: min(240px, 100%);
+  padding: 1.1rem 1.6rem 0.9rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 rgba(23, 34, 43, 0.2);
+}
+
+.double-badge {
+  position: absolute;
+  top: -15px;
+  left: 1rem;
+  padding: 0.12rem 0.65rem;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--category);
+  color: var(--category-ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.double-label {
+  color: var(--ink-soft);
+  font-size: clamp(1rem, 2.4vw, 1.25rem);
+  font-weight: 700;
+}
+
+.double-number {
+  font-size: clamp(3rem, 9vw, 5rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.double-answer {
+  font-size: 1.15em;
+}
+
+/* ---------- Lettera mancante ---------- */
+
+.missing-word {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.03em;
+  max-width: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(2rem, 8vw, 4.4rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.1;
+  text-transform: lowercase;
+}
+
+.missing-word > span {
+  display: inline-block;
+}
+
+.missing-blank {
+  width: 0.88em;
+  height: 1.08em;
+  margin: 0 0.03em;
+  border: 0.09em dashed var(--ink-soft);
+  border-radius: 0.18em;
+  background: color-mix(in srgb, var(--category) 20%, white);
+  vertical-align: -0.08em;
+}
+
+.letter-answer {
+  display: inline-grid;
+  place-items: center;
+  min-width: 0.8em;
+  font-size: 1.15em;
+  line-height: 1;
+}
+
+/* ---------- Sillabe ---------- */
+
+.syllable-word {
+  letter-spacing: 0.04em;
+}
+
+.syllable-answer {
+  font-size: 1.35em;
+  line-height: 1;
+}
+
+/* ---------- Tempi verbali ---------- */
+
+.sentence-prompt {
+  max-width: 100%;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.45rem, 4.2vw, 2.4rem);
+  font-weight: 700;
+  line-height: 1.35;
+  text-align: center;
+  animation: pop 0.22s ease-out;
+}
+
+.sentence-blank {
+  display: inline-block;
+  width: 2.2em;
+  height: 0.9em;
+  margin: 0 0.15em;
+  border-bottom: 0.12em dashed var(--ink-soft);
+  vertical-align: -0.05em;
+}
+
+.verb-hint {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  text-align: center;
+}
+
+.verb-hint strong {
+  color: var(--ink);
+}
+
+.verb-answer {
+  font-size: 1.05em;
+  line-height: 1.15;
+}
+
+/* ---------- Suono H ---------- */
+
+.h-answer {
+  font-size: 1.2em;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Doppie e suono GL ---------- */
+
+.spelling-clue {
+  margin: 0;
+  padding: 0.35rem 0.85rem;
+  border: 2px solid var(--line-soft);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--ink-soft);
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  text-align: center;
+}
+
+.spelling-answer {
+  font-size: 1.1em;
+  line-height: 1.15;
+}
+
+.answer-btn.answer-btn--long {
+  font-size: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+/* ---------- Regioni d'Italia ---------- */
+
+.region-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  width: min(380px, 100%);
+  padding: 1rem 1.4rem 1.1rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 rgba(23, 34, 43, 0.2);
+}
+
+.region-kicker {
+  color: var(--color-text-muted);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.region-name {
+  font-size: clamp(1.7rem, 5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.region-answer {
+  font-size: 1.05em;
+}
+
+/* ---------- Mescola i colori ---------- */
+
+.mix-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1.2rem);
+  width: 100%;
+}
+
+.mix-color {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.mix-color-dot {
+  width: clamp(58px, 14vw, 96px);
+  height: clamp(58px, 14vw, 96px);
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 255, 255, 0.5),
+    3px 4px 0 rgba(23, 34, 43, 0.22);
+}
+
+.mix-color-name {
+  font-size: clamp(0.92rem, 2.2vw, 1.15rem);
+  font-weight: 700;
+}
+
+.mix-symbol {
+  color: var(--ink-soft);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.mix-question {
+  display: grid;
+  place-items: center;
+  width: clamp(58px, 14vw, 96px);
+  height: clamp(58px, 14vw, 96px);
+  border: 3px dashed var(--line);
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--category) 22%, white);
+  color: var(--ink-soft);
+  font-size: clamp(1.8rem, 5vw, 2.6rem);
+  font-weight: 700;
+}
+
+.answer-btn.answer-btn--swatch {
+  min-height: clamp(120px, 22vw, 180px);
+  padding: 0;
+  border-radius: 26px;
+  box-shadow: inset 0 0 0 5px rgba(255, 255, 255, 0.65);
+}
+
+.answer-btn.answer-btn--swatch:hover:not(:disabled) {
+  box-shadow:
+    inset 0 0 0 5px rgba(255, 255, 255, 0.65),
+    4px 5px 0 var(--line);
+  transform: scale(1.02);
+}
+
+.answer-btn.answer-btn--swatch.answer-btn--correct {
+  outline: 6px solid var(--success);
+  outline-offset: 3px;
+}
+
+.answer-btn.answer-btn--swatch.answer-btn--wrong {
+  outline: 6px solid var(--danger);
+  outline-offset: 3px;
+}
+
+.answer-btn.answer-btn--swatch .answer-text {
+  display: none;
+}
+
+.answer-btn.answer-btn--swatch .answer-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 1.25rem;
+}
+
+.mix-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0 0;
+}
+
+.mix-result-dot {
+  width: clamp(82px, 22vw, 132px);
+  height: clamp(82px, 22vw, 132px);
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  box-shadow:
+    inset 0 0 0 6px rgba(255, 255, 255, 0.5),
+    3px 4px 0 rgba(23, 34, 43, 0.22);
+}
+
+.mix-result-name {
+  font-size: clamp(1.15rem, 3vw, 1.55rem);
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+
+.answer-btn.answer-btn--pair {
+  min-height: clamp(108px, 20vw, 168px);
+  padding: 0.55rem;
+  border-radius: 24px;
+}
+
+.answer-btn.answer-btn--pair .answer-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.mix-pair {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.3rem, 1.6vw, 0.75rem);
+}
+
+.mix-pair-dot {
+  width: clamp(32px, 9vw, 56px);
+  height: clamp(32px, 9vw, 56px);
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.55);
+}
+
+.mix-pair-plus {
+  color: var(--ink-soft);
+  font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.answer-btn.answer-btn--pair .answer-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--line);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 1.1rem;
+}
+
+/* ---------- Trova l'intruso ---------- */
+
+.odd-help {
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: 0.98rem;
+  text-align: center;
+}
+
+.answer-btn.answer-btn--odd {
+  flex-direction: column;
+  gap: 0.2rem;
+  min-height: clamp(120px, 22vw, 160px);
+  padding: 0.7rem;
+}
+
+.answer-btn--odd .answer-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.answer-btn--odd .answer-icon {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  font-size: 1.25rem;
+}
+
+.odd-emoji {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1;
+}
+
+.odd-label {
+  font-size: clamp(0.95rem, 2.4vw, 1.15rem);
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* ---------- Sequenze di forme ---------- */
+
+.pattern-row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.15rem, 0.7vw, 0.5rem);
+  max-width: 100%;
+}
+
+.pattern-chip {
+  display: grid;
+  place-items: center;
+  width: clamp(26px, 6.5vw, 50px);
+  height: clamp(26px, 6.5vw, 50px);
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  background: var(--surface);
+  box-shadow: 2px 2px 0 rgba(23, 34, 43, 0.22);
+  font-size: clamp(1rem, 3vw, 1.8rem);
+  line-height: 1;
+}
+
+.pattern-chip--blank {
+  border-style: dashed;
+  background: color-mix(in srgb, var(--category) 24%, white);
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
+.pattern-option {
+  font-size: clamp(2rem, 6vw, 2.8rem);
+  line-height: 1;
+}
+
+.answer-btn.answer-btn--pattern {
+  min-height: clamp(84px, 16vw, 110px);
+}
+
+/* ---------- Memory animali ---------- */
+
+.memory-emoji {
+  display: block;
+  font-size: clamp(1.8rem, 6vw, 4rem);
+  line-height: 1;
+  filter: drop-shadow(0 2px 0 rgba(23, 34, 43, 0.12));
+}
+
+/* ---------- Inglese ---------- */
+
+.english-prompt {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 3vw, 1.5rem);
+  width: 100%;
+}
+
+.english-emoji {
+  font-size: clamp(4rem, 12vw, 7rem);
+  line-height: 1;
+  filter: drop-shadow(0 3px 0 rgba(23, 34, 43, 0.12));
+}
+
+.english-number {
+  display: grid;
+  place-items: center;
+  min-width: clamp(100px, 20vw, 150px);
+  padding: 0.15em 0.35em;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 4px 4px 0 rgba(23, 34, 43, 0.2);
+  font-size: clamp(3.5rem, 11vw, 6rem);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.english-color-swatch {
+  width: clamp(110px, 24vw, 180px);
+  aspect-ratio: 1;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 5px 5px 0 rgba(23, 34, 43, 0.2);
+}
+
+.english-word {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .english-prompt {
+    gap: 0.65rem;
+  }
+
+  .english-word {
+    font-size: 1.6rem;
+  }
+}

@@ -1,199 +1,761 @@
-/*  ==========================================
-    Responsive — Tablet (≤768px)
-    ==========================================
-*/
+/* ==========================================
+   Responsive
+   ========================================== */
 
-@media (max-width: 768px) {
-  /* Header */
-  header {
-    padding: 0 1rem;
+/* ---------- Tablet ---------- */
+
+@media (max-width: 900px) {
+  .hero-card {
+    grid-template-columns: 1fr;
   }
 
-  .header-left h2 {
-    font-size: 18px;
+  .hero-copy h1 {
+    max-width: none;
   }
 
-  .nav-btn {
-    font-size: 11px;
-    padding: 0 10px;
-  }
-
-  .help-btn {
-    font-size: 12px;
-    padding: 8px 16px;
-  }
-
-  /* Sezioni */
-  .first-section {
-    padding: 30px 1rem 0 1rem;
-  }
-
-  .second-section {
-    padding: 0 1rem 30px 1rem;
-  }
-
-  /* Container */
-  .container {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    width: 90%;
-    padding: 30px 20px;
-    border-radius: var(--comic-border-radius-mobile);
-  }
-
-  .content-left {
-    align-items: center;
-  }
-
-  .content-right {
-    margin-top: 10px;
+  .hero-art {
+    justify-items: start;
   }
 
   .mascotte {
-    width: 150px;
+    width: 200px;
   }
 
-  /* Cards */
-  .cards-container {
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
+  .cards-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   }
 
-  .game-card {
-    width: 75%;
-    height: auto;
-    min-height: 280px;
+  .help-steps,
+  .help-tips {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  /* Giochi */
-  .container-color {
-    padding: 20px 1rem;
-    align-items: flex-start;
-    padding-top: 40px;
-  }
-
-  .game-container {
-    padding: 30px 20px;
-    border-radius: var(--comic-border-radius-mobile);
-    min-width: unset;
-    width: 85vw;
-  }
-
-  .game-container h2 {
-    font-size: 36px;
-  }
-
-  .buttons-container {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .buttons-container .btn {
-    width: 100%;
-    font-size: 18px;
-  }
-
-  .buttons-container .btn-color {
-    flex: none;
-    width: 100%;
-    height: 90px;
-  }
-
-  /* Memory Game */
-  .memory-game {
-    gap: 10px;
-    width: 100%;
-    padding: 0;
-  }
-
-  .card-memory-game {
-    font-size: 12px;
-    border-radius: 10px;
-  }
-
-  /* Score */
-  .game-not-started {
-    padding: 30px 20px;
-    border-radius: var(--comic-border-radius-mobile);
-    min-width: unset;
-    width: 85vw;
-  }
-
-  .game-not-started h2 {
-    font-size: 28px;
-  }
-
-  .game-not-started .buttons-row {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .game-not-started .buttons-row .btn {
-    width: 100%;
-    text-align: center;
+  .rules-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-/*  ==========================================
-    Responsive — Mobile (≤480px)
-    ==========================================
-*/
+/* ---------- Piccolo tablet / telefono grande ---------- */
 
-@media (max-width: 480px) {
-  .header-left h2 {
-    font-size: 16px;
+@media (max-width: 700px) {
+  .site-header {
+    height: 68px;
   }
 
-  .container {
-    width: 95%;
-    padding: 25px 15px;
-    border-radius: 25px;
+  .header-materials {
+    justify-content: center;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .header-materials span {
+    display: none;
+  }
+
+  .home-hero {
+    margin-top: 1.25rem;
+  }
+
+  .hero-card {
+    padding: 1.35rem;
+    border-radius: 30px;
+  }
+
+  .hero-copy p {
+    font-size: 1.05rem;
   }
 
   .mascotte {
-    width: 120px;
+    width: 160px;
+  }
+
+  .category-jump {
+    justify-content: flex-start;
+  }
+
+  .games-section {
+    padding-top: 2.4rem;
+    scroll-margin-top: 84px;
+  }
+
+  .section-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.4rem;
+  }
+
+  .start-page {
+    padding: 1.5rem 0.9rem 3rem;
+  }
+
+  .start-card {
+    padding: 1.3rem;
+    border-radius: 30px;
+  }
+
+  .start-head {
+    align-items: flex-start;
+  }
+
+  .start-emoji {
+    width: 60px;
+    height: 60px;
+    border-radius: 18px;
+    font-size: 1.7rem;
+  }
+
+  .segmented {
+    grid-template-columns: 1fr;
+  }
+
+  .difficulty-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .play-page {
+    padding: 1.1rem 0.8rem 3rem;
+  }
+
+  .play-board {
+    padding: 1.25rem;
+    border-radius: 30px;
+  }
+
+  .answers--two.answers--stack-mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .answer-btn {
+    min-height: 88px;
+  }
+
+  .end-page {
+    padding: 2rem 0.9rem 3rem;
+  }
+
+  .end-card {
+    padding: 1.5rem;
+    border-radius: 32px;
+  }
+
+  .end-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .help-hero {
+    margin-top: 1.5rem;
+  }
+
+  .help-hero-card {
+    padding: 1.4rem;
+    border-radius: 30px;
+  }
+
+  .help-section {
+    margin-top: 2.4rem;
+  }
+
+  .help-steps,
+  .help-tips,
+  .rules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* ---------- Card compatte su telefono ---------- */
+
+@media (max-width: 620px) {
+  .cards-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 520px;
+    margin-inline: auto;
   }
 
   .game-card {
-    width: 90%;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    border-radius: 22px;
   }
 
-  .game-container {
-    width: 95vw;
-    padding: 25px 15px;
+  .card-media {
+    height: 100%;
+    aspect-ratio: auto;
+    border-right: 3px solid var(--line);
+    border-bottom: 0;
   }
 
-  .game-container h2 {
-    font-size: 28px;
+  .card-body {
+    padding: 0.8rem 0.9rem;
   }
 
-  .buttons-container .btn {
-    font-size: 16px;
-    padding: 12px 0;
+  .card-title {
+    font-size: 1.12rem;
   }
 
-  .buttons-container .btn-color {
-    flex: none;
+  .card-desc {
+    display: -webkit-box;
+    overflow: hidden;
+    font-size: 0.92rem;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .card-footer {
+    flex-wrap: wrap;
+    padding-top: 0.6rem;
+  }
+
+  .card-play {
+    min-height: 44px;
+    font-size: 0.92rem;
+  }
+
+  .card-record {
+    font-size: 0.7rem;
+  }
+
+  .note-card .btn {
     width: 100%;
-    height: 90px;
+  }
+}
+
+/* ---------- Telefono ---------- */
+
+@media (max-width: 480px) {
+  .site-header {
+    height: 66px;
+    gap: 0.5rem;
+    padding: 0 0.8rem;
   }
 
-  .game-not-started {
-    width: 92vw;
+  .brand {
+    gap: 0.4rem;
+    font-size: 1.2rem;
   }
 
-  .memory-game {
-    gap: 6px;
+  .brand-logo {
+    height: 36px;
   }
 
-  .card-memory-game {
-    font-size: 10px;
+  .header-actions {
+    gap: 0.4rem;
   }
 
-  .timer-section {
-    width: 95%;
+  .icon-btn {
+    width: 44px;
+    height: 44px;
+    border-width: 2px;
+  }
+
+  .header-help {
+    min-height: 44px;
+    padding: 0.3rem 0.7rem;
+    border-width: 2px;
+    font-size: 0.9rem;
+  }
+
+  .header-materials {
+    width: 44px;
+    height: 44px;
+    min-height: 44px;
+    border-width: 2px;
+  }
+
+  .home-hero {
+    padding: 0 0.9rem;
+  }
+
+  .hero-card {
+    padding: 1.1rem;
+    border-radius: 26px;
+  }
+
+  .hero-copy h1 {
+    font-size: 2rem;
+  }
+
+  .hero-copy p {
+    font-size: 1rem;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .category-jump {
+    gap: 0.4rem;
+  }
+
+  .jump-pill {
+    min-height: 42px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.9rem;
+    border-width: 2px;
+  }
+
+  .games-wrap {
+    padding: 0 0.9rem;
+  }
+
+  .section-icon {
+    width: 46px;
+    height: 46px;
+    border-radius: 14px;
+    font-size: 1.25rem;
+  }
+
+  .section-count {
+    display: none;
+  }
+
+  .game-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+
+  .card-title {
+    font-size: 1.05rem;
+  }
+
+  .card-desc {
+    -webkit-line-clamp: 2;
+  }
+
+  .note-card {
+    padding: 1rem;
+  }
+
+  .start-page {
+    padding: 1rem 0.7rem 2.5rem;
+  }
+
+  .start-card {
+    padding: 1.05rem;
+    border-radius: 26px;
+  }
+
+  .start-head {
+    gap: 0.7rem;
+  }
+
+  .start-emoji {
+    width: 54px;
+    height: 54px;
+    border-radius: 16px;
+    font-size: 1.55rem;
+  }
+
+  .start-card h1 {
+    font-size: 1.7rem;
+  }
+
+  .start-instructions {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.98rem;
+  }
+
+  .segmented-btn {
+    min-height: 60px;
     padding: 0.6rem 0.75rem;
+  }
+
+  .difficulty-btn {
+    min-height: 58px;
+  }
+
+  .btn-start {
+    min-height: 62px;
+    font-size: 1.12rem;
+  }
+
+  .start-best {
+    font-size: 0.9rem;
+  }
+
+  .play-page {
+    padding: 0.9rem 0.7rem 2.5rem;
+  }
+
+  .play-topbar {
+    gap: 0.4rem;
+  }
+
+  .back-btn {
+    min-height: 42px;
+    padding: 0.25rem 0.7rem;
+    font-size: 0.85rem;
+  }
+
+  .quit-btn {
+    min-height: 42px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .play-title {
+    font-size: 0.9rem;
+  }
+
+  .topbar-spacer {
+    width: 64px;
+  }
+
+  .play-status {
+    gap: 0.4rem;
+  }
+
+  .timer {
+    flex-basis: 100%;
+  }
+
+  .score-chip,
+  .streak-chip {
+    min-height: 46px;
+    padding: 0.2rem 0.75rem;
+    border-radius: 14px;
+    font-size: 1.05rem;
+  }
+
+  .game-feedback {
+    min-height: 48px;
+    padding: 0.4rem 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  .play-board {
+    gap: 1rem;
+    padding: 1rem 0.8rem;
+    border-radius: 26px;
+  }
+
+  .prompt-hint {
+    font-size: 0.95rem;
+  }
+
+  .question {
+    font-size: 2.4rem;
+  }
+
+  .word-prompt,
+  .color-name {
+    font-size: 2rem;
+  }
+
+  .compare-number {
+    font-size: 2.8rem;
+  }
+
+  .compare-slot {
+    width: 56px;
+    height: 56px;
+    border-radius: 16px;
+    font-size: 1.8rem;
+  }
+
+  .answer-btn {
+    min-height: 80px;
+    padding: 0.7rem;
+    border-radius: 18px;
+    font-size: 1.2rem;
+  }
+
+  .answers--short .answer-btn {
+    font-size: 2rem;
+  }
+
+  .answers {
+    gap: 0.7rem;
+  }
+
+  .answers--three.answers--stack-mobile,
+  .answers--four.answers--stack-mobile {
+    grid-template-columns: 1fr;
+  }
+
+  .answers--three.answers--pairs {
+    grid-template-columns: 1fr;
+  }
+
+  .flag-image {
+    width: 90%;
+    padding: 0.5rem;
+  }
+
+  .swatch {
+    min-height: 110px;
+    border-radius: 20px;
+  }
+
+  .swatch-tag {
+    bottom: 0.4rem;
+    left: 0.4rem;
+    width: 26px;
+    height: 26px;
+    font-size: 0.8rem;
+  }
+
+  .swatch-state {
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .letter-slot {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  .letter-tile {
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    font-size: 1.35rem;
+  }
+
+  .anagram-letters,
+  .anagram-slots {
+    gap: 0.35rem;
+  }
+
+  .anagram-controls {
+    width: 100%;
+  }
+
+  .anagram-controls .btn {
+    flex: 1;
+  }
+
+  .hint-text {
+    font-size: 0.92rem;
+  }
+
+  .memory-grid {
+    gap: 0.35rem;
+  }
+
+  .memory-face {
+    border-width: 2px;
+    border-radius: 12px;
+  }
+
+  .memory-chip {
+    font-size: 0.82rem;
+  }
+
+  .end-page {
+    padding: 1.5rem 0.7rem 3rem;
+  }
+
+  .end-card {
+    padding: 1.2rem;
+    border-radius: 28px;
+  }
+
+  .end-mascot img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .end-score {
+    font-size: 3.2rem;
+  }
+
+  .end-message {
+    font-size: 1.02rem;
+  }
+
+  .end-actions {
+    margin-top: 1.2rem;
+  }
+
+  .help-hero {
+    margin-top: 1.1rem;
+    padding: 0 0.9rem;
+  }
+
+  .help-hero-card {
+    padding: 1.2rem;
+    border-radius: 26px;
+  }
+
+  .help-hero-card h1 {
+    font-size: 1.75rem;
+  }
+
+  .help-hero-card p {
+    font-size: 1rem;
+  }
+
+  .help-section {
+    margin-top: 2rem;
+    padding: 0 0.9rem;
+  }
+
+  .help-section-head h2 {
+    font-size: 1.45rem;
+  }
+
+  .rule-card,
+  .help-step,
+  .help-tip {
+    padding: 0.95rem;
+  }
+
+  .contact-card {
+    padding: 1.1rem;
+    border-radius: 24px;
+  }
+
+  .contact-actions {
+    width: 100%;
+  }
+
+  .contact-actions .btn {
+    flex: 1;
+  }
+
+  .not-found-page {
+    padding: 1.5rem 0.8rem 3rem;
+  }
+
+  .not-found-card {
+    padding: 1.3rem;
+    border-radius: 28px;
+  }
+
+  .not-found-mascot {
+    width: 120px;
+  }
+}
+
+/* ---------- Telefono molto piccolo ---------- */
+
+@media (max-width: 380px) {
+  .brand-logo {
+    height: 32px;
+  }
+
+  .header-help {
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 50%;
+  }
+
+  .header-help span {
+    display: none;
+  }
+}
+
+/* ---------- Nuovi giochi: ritocchi per telefono ---------- */
+
+@media (max-width: 620px) {
+  .card-art {
+    background-size: 14px 14px, 100% 100%;
+  }
+
+  .card-art-spark {
+    display: none;
+  }
+
+  .card-art::before {
+    width: 86%;
+    border-width: 2px;
+  }
+}
+
+@media (max-width: 480px) {
+  .choice-prompt {
+    gap: 0.8rem;
+  }
+
+  .choice-reveal {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.92rem;
+  }
+
+  .sequence-row {
+    gap: 0.3rem;
+  }
+
+  .sequence-chip {
+    min-width: 38px;
+    height: 48px;
+    border-width: 2px;
+    border-radius: 12px;
+    font-size: 1.25rem;
+  }
+
+  .double-prompt {
+    padding: 0.9rem 1.2rem 0.8rem;
+  }
+
+  .double-number {
+    font-size: 3.2rem;
+  }
+
+  .missing-word {
+    font-size: 2rem;
+  }
+
+  .region-card {
+    padding: 0.9rem 1rem;
+    border-radius: 20px;
+  }
+
+  .mix-prompt {
+    gap: 0.35rem;
+  }
+
+  .mix-color-dot,
+  .mix-question {
+    width: 52px;
+    height: 52px;
+  }
+
+  .mix-color-name {
+    font-size: 0.88rem;
+  }
+
+  .mix-symbol {
+    font-size: 1.5rem;
+  }
+
+  .answer-btn.answer-btn--swatch {
+    min-height: 120px;
+    border-radius: 20px;
+  }
+
+  .answer-btn.answer-btn--odd {
+    min-height: 112px;
+  }
+
+  .answer-btn.answer-btn--pattern {
+    min-height: 78px;
+  }
+
+  .pattern-chip {
+    width: clamp(30px, 9vw, 38px);
+    height: clamp(30px, 9vw, 38px);
+    border-width: 2px;
+    border-radius: 9px;
+    font-size: clamp(1rem, 3.2vw, 1.2rem);
+  }
+
+  .pattern-option {
+    font-size: 2rem;
+  }
+
+  .memory-emoji {
+    font-size: 1.8rem;
   }
 }

@@ -1,55 +1,148 @@
-/*  ==========================================
-    Memory Game
-    ==========================================
-*/
+/* ==========================================
+   Memory
+   ========================================== */
 
-.memory-game {
+.play-board--memory {
+  gap: 1rem;
+}
+
+.memory-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.memory-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.memory-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.75rem;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.memory-progress {
+  width: 100%;
+  height: 14px;
+  overflow: hidden;
+  border: 2px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+}
+
+.memory-progress span {
+  display: block;
+  height: 100%;
+  background: var(--category);
+  transition: width 0.3s ease;
+}
+
+.memory-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 8px;
+  gap: clamp(0.45rem, 1.6vw, 0.85rem);
   width: 100%;
-  box-sizing: border-box;
+  max-width: 560px;
 }
 
-.card-memory-game {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  border-width: 3px 6px 6px 3px;
-  border-color: var(--color-black);
-  border-style: solid;
-  border-radius: 15px;
+.memory-card {
+  position: relative;
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  border-radius: 18px;
+  background: transparent;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: bold;
-  transition: transform 0.15s;
-  user-select: none;
-  box-sizing: border-box;
+  perspective: 800px;
 }
 
-.card-memory-game p {
-  margin: 0;
-  text-align: center;
-  visibility: hidden;
-}
-
-.card-memory-game:hover {
-  transform: scale(1.05);
-}
-
-.card-memory-game.flipped p {
-  visibility: visible;
-}
-
-.card-memory-game.flipped:hover {
-  transform: none;
+.memory-card:disabled {
   cursor: default;
 }
 
-.card-memory-game.matched {
-  visibility: hidden;
-  cursor: default;
-  pointer-events: none;
+.memory-card-inner {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.memory-card.is-flipped .memory-card-inner {
+  transform: rotateY(180deg);
+}
+
+.memory-face {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 3px solid var(--line);
+  border-radius: 18px;
+  backface-visibility: hidden;
+}
+
+.memory-face--back {
+  background: var(--category);
+  box-shadow: inset 0 0 0 6px rgba(255, 255, 255, 0.4);
+}
+
+.memory-back-mark {
+  color: var(--category-ink);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 700;
+  opacity: 0.65;
+}
+
+.memory-face--front {
+  background: var(--surface);
+  transform: rotateY(180deg);
+}
+
+.memory-face--front img {
+  width: 100%;
+  height: 100%;
+  padding: 0.35rem;
+  object-fit: contain;
+}
+
+.memory-card.is-matched {
+  opacity: 0.72;
+}
+
+.memory-card.is-matched .memory-face {
+  border-color: var(--success);
+}
+
+.memory-check {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 2px solid var(--surface);
+  border-radius: 50%;
+  background: var(--success);
+  color: var(--surface);
+  font-size: 0.7rem;
+}
+
+.memory-card:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 4px;
 }

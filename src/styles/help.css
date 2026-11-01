@@ -1,45 +1,287 @@
-/*  ==========================================
-    Help — regole dei giochi
-    Griglia con numero di colonne responsive:
-    3 (desktop) → 2 (tablet) → 1 (mobile)
-    ==========================================
-*/
+/* ==========================================
+   Aiuto
+   ========================================== */
 
-.cards-container.rules-container {
+.help-hero {
+  max-width: 1000px;
+  margin: 2rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.help-hero-card {
+  padding: clamp(1.5rem, 4vw, 2.8rem);
+  border: 3px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, #ffffff 0%, #fffdf3 100%);
+  box-shadow: var(--shadow-hard-lg);
+}
+
+.help-hero-card h1 {
+  max-width: 18ch;
+  margin: 0 0 0.8rem;
+}
+
+.help-hero-card p {
+  max-width: 60ch;
+  margin: 0 0 1.3rem;
+  color: var(--ink-soft);
+  font-size: 1.1rem;
+}
+
+.help-section {
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 1.25rem;
+}
+
+.help-section-head {
+  margin-bottom: 1.25rem;
+}
+
+.help-section-head h2 {
+  margin: 0;
+}
+
+.help-section-head p {
+  margin: 0.25rem 0 0;
+  color: var(--ink-soft);
+}
+
+/* ---------- Tre passi ---------- */
+
+.help-steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  align-items: stretch;
-  justify-items: center;
-  gap: 20px;
-  width: min(100%, 1000px);
-  padding: 0 1rem;
-  box-sizing: border-box;
+  gap: 1rem;
 }
 
-.rules-container .rule-card {
-  width: 100%;
-  height: auto;
-  min-height: 0;
-  padding: 20px;
-  box-sizing: border-box;
-  justify-content: flex-start;
+.help-step {
+  padding: 1.2rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 3px 4px 0 rgba(23, 34, 43, 0.14);
 }
 
-.rules-container .rule-card .card-top i {
-  font-size: 40px;
-  margin: 10px 0;
+.help-step-number {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 0.7rem;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: var(--primary);
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 
-/* Tablet */
-@media (max-width: 900px) {
-  .cards-container.rules-container {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.help-step h3 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
 }
 
-/* Mobile */
-@media (max-width: 600px) {
-  .cards-container.rules-container {
-    grid-template-columns: minmax(0, 1fr);
-  }
+.help-step p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+/* ---------- Regole ---------- */
+
+.rules-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.rules-category-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+  font-size: 1.3rem;
+}
+
+.rules-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.rule-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.15rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 3px 4px 0 rgba(23, 34, 43, 0.14);
+}
+
+.rule-head {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.rule-icon {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--category) 32%, white);
+  font-size: 1.1rem;
+}
+
+.rule-head h4 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.rule-text {
+  flex: 1;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+}
+
+.rule-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.rule-tag {
+  padding: 0.18rem 0.55rem;
+  border: 2px solid var(--line-soft);
+  border-radius: 999px;
+  background: var(--bg-page);
+  color: var(--ink-soft);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.rule-link {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+  padding-bottom: 0.1rem;
+  border-bottom: 2px solid var(--line);
+  font-size: 0.92rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.rule-link:hover {
+  background: var(--primary);
+}
+
+/* ---------- Consigli ---------- */
+
+.help-tips {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.help-tip {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1.1rem;
+  border: 3px solid var(--line);
+  border-radius: 24px;
+  background: var(--surface);
+  box-shadow: 3px 4px 0 rgba(23, 34, 43, 0.14);
+}
+
+.help-tip > span {
+  font-size: 1.6rem;
+}
+
+.help-tip h3 {
+  margin: 0 0 0.2rem;
+  font-size: 1.05rem;
+}
+
+.help-tip p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 0.95rem;
+}
+
+/* ---------- Contatti ---------- */
+
+.help-contact {
+  margin-bottom: 4rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: clamp(1.3rem, 3vw, 2rem);
+  border: 3px solid var(--line);
+  border-radius: 32px;
+  background: color-mix(in srgb, var(--primary) 18%, white);
+  box-shadow: var(--shadow-hard);
+}
+
+.contact-card h2 {
+  margin: 0 0 0.3rem;
+}
+
+.contact-card p {
+  max-width: 48ch;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ==========================================
+   Pagina 404
+   ========================================== */
+
+.not-found-page {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem 4rem;
+}
+
+.not-found-card {
+  width: min(640px, 100%);
+  padding: clamp(1.6rem, 4vw, 2.8rem);
+  border: 3px solid var(--line);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+  box-shadow: var(--shadow-hard-lg);
+  text-align: center;
+}
+
+.not-found-mascot {
+  width: 150px;
+  margin: 0 auto 0.5rem;
+}
+
+.not-found-card h1 {
+  margin: 0 0 0.6rem;
+}
+
+.not-found-card p {
+  max-width: 42ch;
+  margin: 0 auto 1.4rem;
+  color: var(--ink-soft);
 }

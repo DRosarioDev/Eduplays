@@ -1,32 +1,337 @@
+/* ==========================================
+   Design tokens + basi globali
+   ========================================== */
+
 :root {
-  /* Colori brand */
   --primary-color: #ffd200;
   --secondary-color: #f4fafd;
-  --tertiary-color: #000;
+  --tertiary-color: #17222b;
 
-  /* Colori base */
-  --color-black: #000;
-  --color-white: #fff;
-  --color-text: #333;
-  --color-text-muted: #555;
-  --color-text-faint: #aaa;
+  --color-black: #17222b;
+  --color-white: #ffffff;
+  --color-text: #17222b;
+  --color-text-muted: #52616d;
+  --color-text-faint: #7d8b96;
   --bg-page: #f4fafd;
 
-  /* Bordo "fumetto" condiviso da container, game-container, game-not-started */
-  --comic-border-width: 3px 9px 9px 3px;
-  --comic-border-color: var(--color-black);
-  --comic-border-style: solid;
-  --comic-border-radius: 50px;
-  --comic-border-radius-mobile: 30px;
+  --ink: #17222b;
+  --ink-soft: #3f4e5a;
+  --surface: #ffffff;
+  --line: #17222b;
+  --line-soft: #d7e2ea;
+  --primary: #ffd200;
+  --primary-soft: #fff5c2;
 
-  --font-base: "Atkinson Hyperlegible", sans-serif;
+  --success: #157a52;
+  --success-bg: #e3f7ed;
+  --danger: #b52f2f;
+  --danger-bg: #fceaea;
+  --focus: #1f6feb;
+
+  --radius-sm: 14px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-xl: 40px;
+  --shadow-hard: 4px 5px 0 var(--line);
+  --shadow-hard-lg: 6px 7px 0 var(--line);
+
+  --font-base: "Atkinson Hyperlegible", "Segoe UI", Tahoma, sans-serif;
+
+  --comic-border-width: 3px;
+  --comic-border-radius: 32px;
+  --comic-border-radius-mobile: 26px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  font-family: var(--font-base);
-  background-color: var(--bg-page);
-  width: 100%;
   margin: 0;
   padding: 0;
+  min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-base);
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--ink);
+  background-color: var(--bg-page);
+  background-image: radial-gradient(
+    circle,
+    rgba(23, 34, 43, 0.055) 1.2px,
+    transparent 1.3px
+  );
+  background-size: 24px 24px;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.15;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.1rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+}
+
+::selection {
+  background: var(--primary);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 4px solid var(--focus);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   Bottoni condivisi
+   ========================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 54px;
+  padding: 0.75rem 1.4rem;
+  border: 3px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.16s ease,
+    box-shadow 0.16s ease,
+    background-color 0.16s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 3px 4px 0 var(--line);
+  background-color: #fffbe6;
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn-primary {
+  background: var(--category, var(--primary));
+  color: var(--category-ink, var(--ink));
+}
+
+.btn-primary:hover {
+  background: color-mix(
+    in srgb,
+    var(--category, var(--primary)) 82%,
+    white
+  );
+}
+
+.btn-secondary {
+  background: var(--surface);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ==========================================
+   Utility
+   ========================================== */
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--line);
+  border-radius: 14px;
+  background: var(--primary);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* ==========================================
+   Snackbar
+   ========================================== */
+
+.snackbar {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  max-width: min(92vw, 480px);
+  padding: 0.8rem 1.2rem;
+  border: 3px solid var(--line);
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: var(--shadow-hard);
+  font-weight: 700;
+  transform: translateX(-50%);
+  animation: snackbar-in 0.2s ease-out;
+}
+
+.snackbar--success i {
+  color: var(--success);
+}
+
+.snackbar--error i {
+  color: var(--danger);
+}
+
+/* ==========================================
+   Animazioni
+   ========================================== */
+
+@keyframes float {
+  0%,
+  100% {
+    transform: scaleX(-1) translateY(0);
+  }
+  50% {
+    transform: scaleX(-1) translateY(-8px);
+  }
+}
+
+@keyframes pop {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+@keyframes star-pop {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-20deg);
+  }
+  70% {
+    transform: scale(1.15) rotate(4deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes snackbar-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 12px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

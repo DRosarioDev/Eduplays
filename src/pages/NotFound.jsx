@@ -1,29 +1,27 @@
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
+import mascotte from "../assets/thumbnails/mascotte.png";
 
 export default function NotFound() {
-  const navigate = useNavigate();
-
   return (
-    <div className="container-color" style={{ backgroundColor: "#f4fafd" }}>
-      <div className="game-not-started">
-        <i
-          className="fa-solid fa-face-frown"
-          style={{ fontSize: "50px" }}
-        ></i>
-        <h1 style={{ margin: 0 }}>404</h1>
-        <h2>Pagina non trovata</h2>
-        <p style={{ margin: 0 }}>
-          Ops! La pagina che cerchi non esiste o è stata spostata.
+    <div className="not-found-page">
+      <section className="not-found-card">
+        <img src={mascotte} alt="" className="not-found-mascot" width="160" height="160" />
+        <p className="end-kicker">Errore 404</p>
+        <h1>Pagina non trovata</h1>
+        <p>
+          Ops! La pagina che cerchi non esiste o è stata spostata. Torna ai
+          giochi e riparti da lì.
         </p>
-        <div className="buttons-row">
-          <button className="btn" onClick={() => navigate("/")}>
-            Menu principale
-          </button>
-          <button className="btn" onClick={() => navigate("/aiuto")}>
+        <div className="end-actions">
+          <Link to="/" className="btn btn-primary">
+            <i className="fa-solid fa-house" aria-hidden="true" /> Torna ai giochi
+          </Link>
+          <Link to="/aiuto" className="btn btn-secondary">
+            <i className="fa-regular fa-circle-question" aria-hidden="true" />{" "}
             Aiuto
-          </button>
+          </Link>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
