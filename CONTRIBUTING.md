@@ -22,20 +22,23 @@ When you open a PR, the CLA bot will post a comment with a link to sign. Simply 
 
 ## 🛠️ How to Contribute
 
-### 1. Fork & Clone
+### 1. Fork & clone
+
+Fork the repository on GitHub, then clone your fork:
 
 ```bash
-git clone https://github.com/DRosarioDev/Eduplays.git
+git clone https://github.com/<your-username>/Eduplays.git
 cd Eduplays
+git remote add upstream https://github.com/DRosarioDev/Eduplays.git
 ```
 
-### 2. Install Dependencies
+### 2. Install dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Create a Branch
+### 3. Create a branch
 
 Use a descriptive name for your branch:
 
@@ -46,20 +49,21 @@ git checkout -b fix/your-fix-bug
 ```
 
 Branch naming conventions:
+
 - `feature/` — new functionality
 - `fix/` — bug fixes
-- `refactor/` — code improvements without behavior change
+- `refactor/` — code improvements without behaviour change
 - `docs/` — documentation only
 
-### 4. Make Your Changes
+### 4. Make your changes
 
 - Keep changes focused. One feature or fix per PR.
-- Make sure the app builds and lints without errors:
+- Keep the user interface in **Italian**. Code comments and documentation can be in English or Italian, but new user-facing strings and game content should match the existing Italian style.
+- Make sure the app builds without errors:
 
 ```bash
 npm run build
 npm run preview
-npm run lint
 ```
 
 ### 5. Commit
@@ -72,15 +76,17 @@ git commit -m "Fix: timer not resetting on Play Again"
 git commit -m "Refactor: extract game logic into custom hook"
 ```
 
-### 6. Push & Open a Pull Request
+### 6. Push & open a Pull Request
 
 ```bash
 git push origin feature/your-feature-name
 ```
 
 Then open a Pull Request against the `main` branch on GitHub. Include:
-- A short description of what you changed and why
-- Screenshots or a screen recording if the change affects the UI
+
+- a short description of what you changed and why;
+- screenshots or a screen recording if the change affects the UI;
+- the commands you ran to verify the change.
 
 ---
 
@@ -91,112 +97,227 @@ Then open a Pull Request against the `main` branch on GitHub. Include:
 - **Node.js** `^20.19.0 || >=22.12.0`
 - **npm** ≥ 10
 
-### Available Scripts
+### Available scripts
 
-| Command           | Description                            |
-|-------------------|-----------------------------------------|
-| `npm run dev`     | Start local dev server (port 5173)      |
-| `npm run build`   | Production build                        |
-| `npm run preview` | Preview the production build            |
-| `npm run lint`    | Run ESLint                              |
-| `npm run deploy`  | Build and deploy to Cloudflare Pages via Wrangler |
+| Command | Description |
+|---|---|
+| `npm run dev` | Start the local dev server on port 5173. |
+| `npm run build` | Create a production build in `dist/`. |
+| `npm run preview` | Preview the production build locally. |
+| `npm run deploy` | Build and deploy to Cloudflare with Wrangler. |
+| `node scripts/validate-question-banks.mjs` | Validate question-bank coverage per difficulty level. |
+
+The validation script exits with a non-zero status when an included bank has fewer than 100 items at any level. Entries marked `ESCLUSO` are intentionally excluded from that rule.
 
 ---
 
-## 📁 Project Structure
+## 🏗️ Architecture at a Glance
 
-```
-src/
-├── pages/                     # One page per game, plus Home/Help/404
-│   ├── Home.jsx
-│   ├── MathOperations.jsx
-│   ├── Multiplication.jsx
-│   ├── GreaterOrLesser.jsx
-│   ├── Synonym.jsx
-│   ├── Antonym.jsx
-│   ├── Anagram.jsx
-│   ├── Flag.jsx
-│   ├── CapitalWorld.jsx
-│   ├── MemoryColor.jsx
-│   ├── MemoryFlag.jsx
-│   ├── Help.jsx
-│   └── NotFound.jsx
-├── components/
-│   ├── Header.jsx
-│   ├── Footer.jsx
-│   ├── CardGame.jsx           # Reusable game card for Home
-│   ├── CardMemoryGame.jsx     # Single card for Memory games
-│   ├── GameScreen.jsx         # Shared shell for "quiz-style" games
-│   ├── MemoryGameEngine.jsx   # Shared shell for Memory games
-│   ├── StartComponent.jsx     # Start screen (timer/difficulty toggle)
-│   ├── Difficulty.jsx         # 5-level difficulty selector
-│   ├── Timer.jsx
-│   ├── Score.jsx
-│   └── NotificationContext.jsx
-├── hooks/
-│   ├── useGameEngine.js
-│   ├── useSound.js
-│   └── usePreloadImages.js
-├── utils/
-│   └── memoryDeck.js
-├── assets/
-│   ├── flags/country-flag.json
-│   ├── words_it.json
-│   ├── memoryColor.js
-│   └── thumbnails/
-├── styles/                    # Global CSS, split by section — see index.css
-└── index.css
+Eduplays is a fully client-side React SPA. There is no backend, database, or authentication; records and the sound preference live in `localStorage`.
 
-public/
-└── sounds/                    # .mp3 sound effects
-```
+| Area | Responsibility |
+|---|---|
+| `src/data/games.js` | **Single source of truth** for titles, descriptions, rules, routes, categories, record keys, and difficulty limits. Home, Help, the start screen, score screen, and document titles read from here. |
+| `src/pages/` | One page per game. Most pages are thin configurations; a few build a custom round UI. |
+| `src/components/` | Shared engines and UI. The main engines are `ChoiceQuiz`, `MathQuiz`, `WordQuiz`, `FlagQuiz`, and `MemoryGameEngine`, all wrapped by `GameScreen`. |
+| `src/assets/` | Game content: word lists, vocabulary, flags, maths sequences, memory items, and colour data. |
+| `src/hooks/` | Shared game state (`useGameEngine`), sound, sound settings, and image preloading. |
+| `src/utils/` | Storage, weighted question decks, memory decks, answer state, labels, and board tones. |
+| `src/styles/` | Global CSS split by section. `src/index.css` only imports these files. |
+| `public/` | Static assets: sounds, favicon, robots/sitemap, and downloadable teaching PDFs. |
+
+### Key conventions
+
+- **A quiz round is normalised** as `{ answer, options, key }`. Extra fields such as `prompt`, `tone`, `mode`, or `word` are free-form and consumed by the page renderers.
+- **Question banks have three levels**: index `0` = Base, `1` = Facile, `2` = Medio. `createWeightedDeck` mixes them according to the selected difficulty.
+- **Records are local**: `readRecord` / `saveIfBetter` in `src/utils/storage.js`. `recordType: "points"` keeps the highest score; `recordType: "moves"` keeps the lowest number of moves.
+- **No global state library**: providers are limited to sound and snackbar notifications.
 
 ---
 
 ## 🎮 Adding a New Game
 
-Eduplays has **two reusable architectures** — pick whichever matches the game you're adding, and you'll rarely need to touch shared infrastructure files.
+The catalog is the starting point: a game that is not registered in `src/data/games.js` will not appear on the Home or Help pages and the shared engines will not find its metadata.
 
-### A) Quiz-style game (question + buttons + timer + score)
+### 1. Register the game in the catalog
 
-Used by Operazioni Matematiche, Tabelline, Maggiore o Minore, Sinonimi, Contrari, Anagrammi, Bandiere, Capitali.
+Add an object to `GAMES` in `src/data/games.js`:
 
-1. Create `src/pages/YourGame.jsx`.
-2. Use the `useGameEngine` hook for state (points, start/first, timer toggle, difficulty) and wrap your UI in `<GameScreen>`.
-3. You only need to implement:
-   - a `newRound(diff)` function that picks the next question,
-   - the JSX for the question and answer buttons.
-4. Reference `Multiplication.jsx` or `GreaterOrLesser.jsx` as a minimal example.
+```js
+{
+  id: "logic-new-game",
+  title: "Nuovo gioco",
+  description: "Short description shown on the game card.",
+  instructions: "What the player sees on the start screen.",
+  rules: "Full rule text shown on the Help page.",
+  category: "logic",
+  link: "/logic/new-game",
+  emoji: "🧠",
+  icon: "fa-solid fa-brain",
+  kind: "quiz",
+  timer: true,
+  maxDifficulty: 2,
+  storageKey: "eduplays:record:logic-new-game",
+  recordType: "points",
+  art: "shapes",
+}
+```
 
-### B) Memory-style game (flip cards, find pairs)
+Notes:
 
-Used by Memory Colori and Memory Bandiere.
+- `category` must be one of the ids in `CATEGORIES`.
+- `link` must match the route in `src/App.jsx`.
+- `maxDifficulty: 2` shows 3 levels (Base, Facile, Medio); `4` shows 5 levels; `null` hides the difficulty selector.
+- `timer: true` enables the optional 30-second challenge. Memory games use `timer: false`.
+- `storageKey` must be unique. If two games share it, they share the same record.
+- `recordType` is `"points"` for quizzes and `"moves"` for memory games.
+- `art` selects the illustration in `GameArt.jsx`. Add a new `case` there if you introduce a new art key.
 
-1. Create `src/pages/YourMemoryGame.jsx`.
-2. Build an `items` array (id, type, value) and pass it to `<MemoryGameEngine>`.
-3. Customize the card face and background via the `renderFace` / `bgColor` render props — no need to modify `MemoryGameEngine.jsx` or `CardMemoryGame.jsx`.
-4. Reference `MemoryColor.jsx` or `MemoryFlag.jsx` as a minimal example.
+### 2. Choose the right architecture
 
-### Wiring it up
+#### A) Multiple-choice game — `ChoiceQuiz` (preferred)
 
-1. Add a route in `src/App.jsx`:
-   ```jsx
-   <Route path="/category/your-game" element={<YourGame />} />
-   ```
-2. Add a `<CardGame>` entry for it in `src/pages/Home.jsx`.
-3. Add a matching rule card in `src/pages/Help.jsx`.
-4. If your game uses a JSON dataset, put it in `src/data/` or `src/assets/` following the existing `id` / `difficulty` (0–2) field conventions.
+Most games use this engine: the page only builds a round and renders the prompt and options.
+
+```jsx
+import ChoiceQuiz from "../components/ChoiceQuiz";
+
+export default function NewGame() {
+  return (
+    <ChoiceQuiz
+      gameId="logic-new-game"
+      buildRound={(difficulty) => buildRound(difficulty)}
+      renderPrompt={(round) => <p>{round.prompt}</p>}
+      renderOption={(option) => <span>{option}</span>}
+      getOptionValue={(option) => option.value}
+      getOptionLabel={(option) => option.label}
+    />
+  );
+}
+```
+
+`buildRound(difficulty)` must return `{ answer, options, key }`. If your options are objects, provide `getOptionValue` and `getOptionKey` so the engine can compare and animate them correctly.
+
+Good reference pages: `MathSequences.jsx`, `ItalianSyllables.jsx`, `EnglishQuiz.jsx`, `LogicPatterns.jsx`.
+
+#### B) Specialised shared engine
+
+Use an existing engine when the game fits its shape:
+
+- `MathQuiz` — random arithmetic drills (`MathOperations.jsx`, `Multiplication.jsx`);
+- `WordQuiz` — synonym/antonym pairs (`Synonym.jsx`, `Antonym.jsx`);
+- `FlagQuiz` — flags, country names, and capitals (`Flag.jsx`, `CapitalWorld.jsx`).
+
+#### C) Custom game — `useGameEngine` + `GameScreen`
+
+When the interaction is not a simple answer grid, use the shared hook and shell directly. Good references are `Color.jsx`, `GreaterOrLesser.jsx`, and `Anagram.jsx`.
+
+#### D) Memory game — `MemoryGameEngine`
+
+Create a page that passes a list of unique items to the engine. The engine duplicates and shuffles them into pairs.
+
+```jsx
+import MemoryGameEngine from "../components/MemoryGameEngine";
+import { animalMemoryItems } from "../assets/animalMemory";
+
+export default function MemoryNewGame() {
+  return (
+    <MemoryGameEngine
+      gameId="memory-new-game"
+      items={animalMemoryItems}
+      pairCount={8}
+    />
+  );
+}
+```
+
+Customise the card face with `renderCard` and the background with `cardBgColor`. Use `kind: "memory"`, `timer: false`, and `recordType: "moves"` in the catalog entry.
+
+### 3. Add the route
+
+Import the page in `src/App.jsx` and add a route that matches the catalog `link`:
+
+```jsx
+<Route path="/logic/new-game" element={<NewGame />} />
+```
+
+### 4. Add the question bank
+
+Put content in `src/assets/` and build the three-level array expected by `createWeightedDeck`:
+
+```js
+export const newGameBanks = [
+  [/* Base */],
+  [/* Easy */],
+  [/* Medium */],
+];
+```
+
+Use at least 100 items per level where possible. Every item should include a stable `key` so the deck can avoid immediate repeats. Run the validation script after adding or changing a bank.
+
+### 5. Update the artwork (if needed)
+
+`GameArt.jsx` uses `game.art`. Reuse an existing illustration when it fits; otherwise add a new case and matching CSS in `src/styles/games-extra.css`.
+
+### 6. Verify the wiring
+
+- [ ] `id` is unique and matches the `gameId` passed to the engine.
+- [ ] `link` matches the route in `App.jsx`.
+- [ ] `storageKey` is unique.
+- [ ] `kind`, `timer`, `maxDifficulty`, and `recordType` match the game type.
+- [ ] The game appears on Home and Help without editing those pages (they read `GAMES`).
+- [ ] The README game list and count are updated if the public catalog changed.
+- [ ] `npm run build`, and `node scripts/validate-question-banks.mjs` pass.
+
+---
+
+## ❓ Adding Questions to an Existing Game
+
+| Game | File |
+|---|---|
+| Sinonimi / Contrari | `src/assets/words_it.json` (`difficulty` field, 0–2) |
+| Anagrammi | `src/assets/anagramWords.js` |
+| Sillabe / Lettera mancante | `src/assets/italianPracticeWords.js` |
+| Tempi verbali | `src/assets/italianVerbTenses.js` |
+| Il suono H | `src/assets/italianHSound.js` |
+| Le doppie | `src/assets/italianDoubleConsonants.js` |
+| Il suono GL | `src/assets/italianGlSound.js` |
+| Inglese | `src/assets/englishVocabulary.js` |
+| Regioni e capoluoghi | `src/assets/italianRegions.js` |
+| Mescola i colori | `src/assets/colorMixes.js` |
+| Indovina i colori | `src/assets/colors.js` |
+| Trova l'intruso | `src/assets/oddOneOut.js` |
+| Sequenze di forme | `src/assets/logicPatterns.js` |
+| Sequenze numeriche | `src/assets/mathSequences.js` |
+| Doppio o metà | `src/assets/mathDoubleHalf.js` |
+| Bandiere / Capitali | `src/assets/flags/country-flag.json` |
+| Memory | `src/assets/animalMemory.js`, `src/assets/memoryColor.js`, `src/assets/flags/country-flag.json` |
+
+Rule of thumb: banks consumed by `createWeightedDeck` must be **an array of three arrays** (Base, Facile, Medio). Keep the existing shape of each item and its stable `key`.
+
+---
+
+## 📚 Adding a Teaching Lesson
+
+The `/didattica` page is generated from `src/data/didattica.js`:
+
+1. Add a lesson object with `id`, `title`, `category`, `emoji`, `description`, `topics`, optional `game`, and a `files` array.
+2. Put the PDFs in `public/downloads/didattica/` using the existing `NN-slug-scheda.pdf` and `NN-slug-slides.pdf` naming pattern.
+3. Use the correct `href` paths (`/downloads/didattica/...`) and update the displayed sizes.
+4. Check the page on desktop and mobile; the lesson count is derived automatically from the array.
 
 ---
 
 ## 📋 Contribution Guidelines
 
-- **Style**: follow the existing code style; ESLint is configured and enforced.
-- **Components**: keep components small and focused on a single responsibility.
+- **Style** — follow the existing code style.
+- **Components** — keep components small and focused on a single responsibility.
 - **No new dependencies** without discussing it first in an issue. The project intentionally stays lightweight.
-- **Accessibility**: new UI elements should be keyboard-navigable and have appropriate labels.
-- **Responsive**: test your changes on mobile viewport sizes too. The CSS already has breakpoints at 768px and 480px — check `src/styles/responsive.css`.
-- **CSS**: add new rules to the relevant file in `src/styles/` (not directly to `index.css`, which only aggregates imports). Use the existing CSS custom properties (`--primary-color`, `--comic-border-*`, etc.) instead of hardcoding values where possible.
+- **Accessibility** — new UI elements should be keyboard-navigable and have appropriate labels. Keep existing `aria-live`, `aria-label`, `role="timer"`, `role="progressbar"`, and focus management intact.
+- **Responsive** — test your changes on mobile viewport sizes too. The CSS already has breakpoints at 900px, 700px, 620px, 480px, and 380px; check `src/styles/responsive.css`.
+- **CSS** — add new rules to the relevant file in `src/styles/`, not directly to `index.css` (which only aggregates imports). Use the existing custom properties (`--primary-color`, `--comic-border-*`, etc.) instead of hardcoding values where possible.
+- **Content** — keep Italian spelling, accents, and typography consistent with the existing data. Avoid duplicate or near-duplicate questions inside the same bank.
+- **Tests** — there is no automated test suite yet. Manually test a full round in both timer modes, the score screen, and a mobile viewport.
 
 ---
 
@@ -205,16 +326,18 @@ Used by Memory Colori and Memory Bandiere.
 Looking for something to work on? Here are some open ideas:
 
 | Area | Idea |
-|------|------|
+|---|---|
 | 🆕 New game | Geometry and shapes |
-| 🆕 New game | Additional Italian vocabulary games |
-| 🆕 New game | Emoji meaning quiz |
-| 🆕 New game | Sequence memory |
-| 🌍 Feature | Internationalization (i18n) — Italian & English |
-| ♿ Feature | Adaptive difficulty (auto-adjust based on performance) |
+| 🆕 New game | Fractions |
+| 🆕 New game | Punctuation |
+| 🆕 New game | Singular/plural, essere/avere |
+| 🌍 Feature | Internationalization (i18n) — Italian and English |
+| ♿ Feature | Adaptive difficulty based on performance |
+| ♿ Feature | High-contrast mode and larger text |
 | 🎨 UI | Animated transitions between game states |
+| 🧪 Testing | Unit tests for question decks, storage, and game state |
 
-Already shipped (no longer needed, listed here just so it's clear they're done): flag guessing game, greater/less-than game, word scramble/anagram game, difficulty levels, optional no-timer toggle, and audio feedback on answers.
+Already shipped (listed here only to avoid duplicate suggestions): 30 mini-games across six categories, optional no-timer mode, difficulty levels, audio feedback, local records and stars, three memory games, four English games, Italian region games, colour mixing, logic patterns, and the downloadable teaching materials.
 
 Feel free to open an issue to discuss any of these (or your own idea) before starting work on it.
 
@@ -222,7 +345,7 @@ Feel free to open an issue to discuss any of these (or your own idea) before sta
 
 ## License
 
-By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0 (AGPL v3.0)](https://github.com/DRosarioDev/Eduplays/blob/main/LICENSE).
+By contributing, you agree that your contributions will be licensed under the [GNU Affero General Public License v3.0 (AGPL v3.0)](./LICENSE).
 
 ---
 

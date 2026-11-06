@@ -157,11 +157,6 @@ const EXTRA_LEVEL_2 = [
   { word: "ventaglio", clue: "Serve per fare aria" },
 ];
 
-/**
- * L'unico errore proposto è la scrittura con LI al posto di GLI.
- * La domanda resta quindi una scelta semplice: con GLI o senza GLI
- * (per esempio "figlio" oppure "filio").
- */
 function glVariants(word) {
   const index = word.indexOf("gli");
   if (index === -1) return [];
